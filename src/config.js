@@ -189,6 +189,13 @@ var config = {
 			query: 'nwr[wheelchair=yes][amenity=library]({{bbox}});way(r)({{bbox}});node(w););out skel;',
 			iconSrc: imgSrc + 'accessibilitat/wheelchair_yes.svg',
 			style: function () {
+				var fill = new ol.style.Fill({
+					color: 'rgba(0,255,0,0.4)'
+				});
+				var stroke = new ol.style.Stroke({
+					color: '#00FF00',
+					width: 1.25
+				});
 				var style = new ol.style.Style({
 					image: new ol.style.Icon({
 						scale: 0.04,

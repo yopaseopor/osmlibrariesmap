@@ -186,8 +186,7 @@ var config = {
 		{
 			group: 'Accessibilitat',
 			title: 'Biblioteca Adaptada',
-			query: 'wr["mtb:name"][name]({{bbox}});node(w););out;',
-			
+			query: 'wr["mtb:name"][name]({{bbox}});node(w););out;',		
 			iconSrc: imgSrc + 'accessibilitat/wheelchair_yes.svg',
 			style: function () {
 				var fill = new ol.style.Fill({

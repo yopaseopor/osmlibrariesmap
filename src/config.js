@@ -186,7 +186,7 @@ var config = {
 		{
 			group: 'Accessibilitat',
 			title: 'Biblioteca Adaptada',
-			query: 'nwr[wheelchair=yes][amenity=library]({{bbox}});way(r)({{bbox}});node(w););out skel;',
+			query: 'node["amenity"="fire_station"]({{bbox}});way["amenity"="fire_station"]({{bbox}});relation["amenity"="fire_station"](({{bbox}})););(._;>;);out;',
 			iconSrc: imgSrc + 'accessibilitat/wheelchair_yes.svg',
 			style: function () {
 				var fill = new ol.style.Fill({

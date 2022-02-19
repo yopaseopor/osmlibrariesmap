@@ -345,10 +345,8 @@ var config = {
 					width: 1
 				});
 				var style = new ol.style.Style({
-					image: new ol.style.Circle({
-						fill: fill,
-						stroke: stroke,
-						radius: 5
+					image: new ol.style.Icon({
+						src: imgSrc + 'accessibilitat/wheelchair_yes.png'
 					}),
 							text: new ol.style.Text({
 								text: name,

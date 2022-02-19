@@ -187,20 +187,35 @@ var config = {
 			group: 'Accessibilitat',
 			title: 'Biblioteca Adaptada',
 			query: 'wr["mtb:name"][name]({{bbox}});node(w););out;',		
-			iconSrc: imgSrc + 'accessibilitat/wheelchair_yes.svg',
-			style: function () {
+			iconSrc: imgSrc + 'base/line.png',
+			iconStyle: 'background-color:#003399',
+			style: function (feature) {
+				var key_regex = /^name$/
+				var name_key = feature.getKeys().filter(function(t){return t.match(key_regex)}).pop() || "name"
+				var name = feature.get(name_key) || '';
 				var fill = new ol.style.Fill({
-					color: 'rgba(0,255,0,0.4)'
+					color: 'rgba(0,51,153,0.1)'
 				});
+
 				var stroke = new ol.style.Stroke({
-					color: '#00FF00',
-					width: 1.25
+					color: 'rgba(0,51,153,0.4)',
+					width: 1
 				});
 				var style = new ol.style.Style({
-					image: new ol.style.Icon({
-						scale: 0.04,
-						src: imgSrc + 'accessibilitat/wheelchair_yes.svg'
-					})
+					image: new ol.style.Circle({
+						fill: fill,
+						stroke: stroke,
+						radius: 5
+					}),
+							text: new ol.style.Text({
+								text: name,
+								color: 'rgba(0,128,0,0.4)',
+								font: '14px Gill Sans Extrabold',
+								offsetX : 0,
+								offsetY : 12
+							}),
+					fill: fill,
+					stroke: stroke
 				});
 				return style;
 			}

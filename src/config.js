@@ -184,42 +184,66 @@ var config = {
 				
 		
 		{
-			group: 'mtb',
-			title: 'mtb=yes',
-			query: '(nwr["mtb"="yes"]({{bbox}});node(w););out;',
-			iconSrc: imgSrc + 'base/line.png',
-			iconStyle: 'background-color:#00ff00',
-			style: function (feature) {
-				var key_regex = /^name$/
-				var name_key = feature.getKeys().filter(function(t){return t.match(key_regex)}).pop() || "name"
-				var name = feature.get(name_key) || '';
-				var fill = new ol.style.Fill({
-					color: 'rgba(0,128,0,0.1)'
-				});
-
-				var stroke = new ol.style.Stroke({
-					color: 'rgba(0,128,0,0.4)',
-					width: 1
-				});
+			group: 'Accessibilitat',
+			title: 'Biblioteca Adaptada=sí',
+			query: 'nwr[wheelchair=yes][amenity=library]({{bbox}});out;',
+			iconSrc: imgSrc + 'accessibilitat/wheelchair_yes_shop.svg',
+			style: function () {
 				var style = new ol.style.Style({
-					image: new ol.style.Circle({
-						fill: fill,
-						stroke: stroke,
-						radius: 5
-					}),
-							text: new ol.style.Text({
-								text: name,
-								color: 'rgba(0,128,0,0.4)',
-								font: '14px Verdana',
-								offsetX : 0,
-								offsetY : 12
-							}),
-					fill: fill,
-					stroke: stroke
+					image: new ol.style.Icon({
+						scale: 0.04,
+						src: imgSrc + 'accessibilitat/wheelchair_yes_shop.svg'
+					})
 				});
 				return style;
 			}
 		},
+		{
+			group: 'Accessibilitat',
+			title: 'Biblioteca designada',
+			query: 'nwr[wheelchair=designed][amenity=library]({{bbox}});out;',
+			iconSrc: imgSrc + 'accessibilitat/wheelchair_designed.svg',
+			style: function () {
+				var style = new ol.style.Style({
+					image: new ol.style.Icon({
+						scale: 0.04,
+						src: imgSrc + 'accessibilitat/wheelchair_no_shop.svg'
+					})
+				});
+				return style;
+			}
+		},
+		{
+			group: 'Accessibilitat',
+			title: 'Biblioteca No Adaptada',
+			query: 'nwr[wheelchair=no][amenity=library]({{bbox}});out;',
+			iconSrc: imgSrc + 'accessibilitat/wheelchair_no_shop.svg',
+			style: function () {
+				var style = new ol.style.Style({
+					image: new ol.style.Icon({
+						scale: 0.04,
+						src: imgSrc + 'accessibilitat/wheelchair_no_shop.svg'
+					})
+				});
+				return style;
+			}
+		},
+		{
+			group: 'Accessibilitat',
+			title: 'Biblioteca Adaptada parcialment',
+			query: 'nwr[wheelchair=limited][amenity=library]({{bbox}});out;',
+			iconSrc: imgSrc + 'accessibilitat/wheelchair_limited_shop.svg',
+			style: function () {
+				var style = new ol.style.Style({
+					image: new ol.style.Icon({
+						scale: 0.04,
+						src: imgSrc + 'accessibilitat/wheelchair_limited_shop.svg'
+					})
+				});
+				return style;
+			}
+		},
+
 		{
 			group: 'mtb',
 			title: 'mtb=designated',

@@ -186,7 +186,7 @@ var config = {
 		{
 			group: 'Accessibilitat',
 			title: 'Biblioteca Adaptada',
-			query: 'wr["mtb:name"][name]({{bbox}});node(w););out;',		
+			query: 'nwr["mtb:name"][name]({{bbox}});node(w););out;',		
 			iconSrc: imgSrc + 'base/line.png',
 			iconStyle: 'background-color:#003399',
 			style: function (feature) {

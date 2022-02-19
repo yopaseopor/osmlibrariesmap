@@ -329,7 +329,7 @@ var config = {
 		{
 			group: 'mtb',
 			title: 'mtb=designated',
-			query: '(nwr["wheelchair"="yes"]["amenity"="library"]({{bbox}});node(w););out;',
+			query: '(nwr["wheelchair"="yes"]["amenity"="library"]({{bbox}}););out;',
 			iconSrc: imgSrc + 'base/line.png',
 			iconStyle: 'background-color:#003399',
 			style: function (feature) {

@@ -185,14 +185,14 @@ var config = {
 		
 		{
 			group: 'Accessibilitat',
-			title: 'Biblioteca Adaptada=sí',
+			title: 'Biblioteca Adaptada',
 			query: 'nwr[wheelchair=yes][amenity=library]({{bbox}});out;',
-			iconSrc: imgSrc + 'accessibilitat/wheelchair_yes_shop.svg',
+			iconSrc: imgSrc + 'accessibilitat/wheelchair_yes.svg',
 			style: function () {
 				var style = new ol.style.Style({
 					image: new ol.style.Icon({
 						scale: 0.04,
-						src: imgSrc + 'accessibilitat/wheelchair_yes_shop.svg'
+						src: imgSrc + 'accessibilitat/wheelchair_yes.svg'
 					})
 				});
 				return style;
@@ -202,12 +202,12 @@ var config = {
 			group: 'Accessibilitat',
 			title: 'Biblioteca designada',
 			query: 'nwr[wheelchair=designed][amenity=library]({{bbox}});out;',
-			iconSrc: imgSrc + 'accessibilitat/wheelchair_designed.svg',
+			iconSrc: imgSrc + 'accessibilitat/wheelchair_designated.svg',
 			style: function () {
 				var style = new ol.style.Style({
 					image: new ol.style.Icon({
 						scale: 0.04,
-						src: imgSrc + 'accessibilitat/wheelchair_no_shop.svg'
+						src: imgSrc + 'accessibilitat/wheelchair_designated.svg'
 					})
 				});
 				return style;
@@ -217,12 +217,12 @@ var config = {
 			group: 'Accessibilitat',
 			title: 'Biblioteca No Adaptada',
 			query: 'nwr[wheelchair=no][amenity=library]({{bbox}});out;',
-			iconSrc: imgSrc + 'accessibilitat/wheelchair_no_shop.svg',
+			iconSrc: imgSrc + 'accessibilitat/wheelchair_no.svg',
 			style: function () {
 				var style = new ol.style.Style({
 					image: new ol.style.Icon({
 						scale: 0.04,
-						src: imgSrc + 'accessibilitat/wheelchair_no_shop.svg'
+						src: imgSrc + 'accessibilitat/wheelchair_no.svg'
 					})
 				});
 				return style;
@@ -232,12 +232,12 @@ var config = {
 			group: 'Accessibilitat',
 			title: 'Biblioteca Adaptada parcialment',
 			query: 'nwr[wheelchair=limited][amenity=library]({{bbox}});out;',
-			iconSrc: imgSrc + 'accessibilitat/wheelchair_limited_shop.svg',
+			iconSrc: imgSrc + 'accessibilitat/wheelchair_limited.svg',
 			style: function () {
 				var style = new ol.style.Style({
 					image: new ol.style.Icon({
 						scale: 0.04,
-						src: imgSrc + 'accessibilitat/wheelchair_limited_shop.svg'
+						src: imgSrc + 'accessibilitat/wheelchair_limited.svg'
 					})
 				});
 				return style;

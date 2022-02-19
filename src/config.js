@@ -201,7 +201,7 @@ var config = {
 		{
 			group: 'Accessibilitat',
 			title: 'Biblioteca designada',
-			query: 'nwr[wheelchair=designed][amenity=library]({{bbox}});out;',
+			query: 'nwr[wheelchair=designated][amenity=library]({{bbox}});out;',
 			iconSrc: imgSrc + 'accessibilitat/wheelchair_designated.svg',
 			style: function () {
 				var style = new ol.style.Style({
@@ -238,6 +238,21 @@ var config = {
 					image: new ol.style.Icon({
 						scale: 0.04,
 						src: imgSrc + 'accessibilitat/wheelchair_limited.svg'
+					})
+				});
+				return style;
+			}
+		},
+		{
+			group: 'Tipus',
+			title: 'Públic en general',
+			query: 'nwr[library=public][amenity=library]({{bbox}});out;',
+			iconSrc: imgSrc + 'libraries/library_public.svg',
+			style: function () {
+				var style = new ol.style.Style({
+					image: new ol.style.Icon({
+						scale: 0.04,
+						src: imgSrc + 'libraries/library_public.svg'
 					})
 				});
 				return style;

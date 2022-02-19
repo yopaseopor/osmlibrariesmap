@@ -258,6 +258,51 @@ var config = {
 				return style;
 			}
 		},
+		{
+			group: 'Tipus',
+			title: 'Cinema',
+			query: 'nwr[library=cinema][amenity=library]({{bbox}});node(w););out;',
+			iconSrc: imgSrc + 'libraries/library_cinema.svg',
+			style: function () {
+				var style = new ol.style.Style({
+					image: new ol.style.Icon({
+						scale: 0.04,
+						src: imgSrc + 'libraries/library_cinema.svg'
+					})
+				});
+				return style;
+			}
+		},
+		{
+			group: 'Tipus',
+			title: 'Infantil',
+			query: 'nwr[library=children][amenity=library]({{bbox}});node(w););out;',
+			iconSrc: imgSrc + 'libraries/library_children.svg',
+			style: function () {
+				var style = new ol.style.Style({
+					image: new ol.style.Icon({
+						scale: 0.04,
+						src: imgSrc + 'libraries/library_children.svg'
+					})
+				});
+				return style;
+			}
+		},
+		{
+			group: 'Tipus',
+			title: 'Estudiants',
+			query: 'nwr[library=students][amenity=library]({{bbox}});node(w););out;',
+			iconSrc: imgSrc + 'libraries/library_students.svg',
+			style: function () {
+				var style = new ol.style.Style({
+					image: new ol.style.Icon({
+						scale: 0.04,
+						src: imgSrc + 'libraries/library_students.svg'
+					})
+				});
+				return style;
+			}
+		},
 
 		{
 			group: 'mtb',

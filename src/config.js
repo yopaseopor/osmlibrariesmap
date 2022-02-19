@@ -186,7 +186,7 @@ var config = {
 		{
 			group: 'Accessibilitat',
 			title: 'Biblioteca Adaptada',
-			query: 'node["amenity"="fire_station"]({{bbox}});way["amenity"="fire_station"]({{bbox}});relation["amenity"="fire_station"](({{bbox}}));out;',
+			query: 'wr["mtb:name"][name]({{bbox}});node(w););out;',
 			
 			iconSrc: imgSrc + 'accessibilitat/wheelchair_yes.svg',
 			style: function () {

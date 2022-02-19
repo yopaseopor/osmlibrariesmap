@@ -186,7 +186,7 @@ var config = {
 		{
 			group: 'Accessibilitat',
 			title: 'Biblioteca Adaptada',
-			query: 'nwr[wheelchair=yes][amenity=library]({{bbox}});node(w););out;',
+			query: 'nwr[wheelchair=yes][amenity=library]({{bbox}});way(r)({{bbox}});node(w););out skel;',
 			iconSrc: imgSrc + 'accessibilitat/wheelchair_yes.svg',
 			style: function () {
 				var style = new ol.style.Style({
@@ -201,7 +201,7 @@ var config = {
 		{
 			group: 'Accessibilitat',
 			title: 'Biblioteca designada',
-			query: 'nwr[wheelchair=designated][amenity=library]({{bbox}});node(w););out;',
+			query: 'nwr[wheelchair=designated][amenity=library]({{bbox}});way(r)({{bbox}});node(w););out skel;',
 			iconSrc: imgSrc + 'accessibilitat/wheelchair_designated.svg',
 			style: function () {
 				var style = new ol.style.Style({
@@ -216,7 +216,7 @@ var config = {
 		{
 			group: 'Accessibilitat',
 			title: 'Biblioteca No Adaptada',
-			query: 'nwr[wheelchair=no][amenity=library]({{bbox}});node(w););out;',
+			query: 'nwr[wheelchair=no][amenity=library]({{bbox}});way(r)({{bbox}});node(w););out skel;',
 			iconSrc: imgSrc + 'accessibilitat/wheelchair_no.svg',
 			style: function () {
 				var style = new ol.style.Style({
@@ -231,7 +231,7 @@ var config = {
 		{
 			group: 'Accessibilitat',
 			title: 'Biblioteca Adaptada parcialment',
-			query: 'nwr[wheelchair=limited][amenity=library]({{bbox}});node(w););out;',
+			query: 'nwr[wheelchair=limited][amenity=library]({{bbox}});way(r)({{bbox}});node(w););out skel;',
 			iconSrc: imgSrc + 'accessibilitat/wheelchair_limited.svg',
 			style: function () {
 				var style = new ol.style.Style({
@@ -246,7 +246,7 @@ var config = {
 		{
 			group: 'Tipus',
 			title: 'Públic en general',
-			query: 'nwr[library=public][amenity=library]({{bbox}});node(w););out;',
+			query: 'nwr[library=public][amenity=library]({{bbox}});way(r)({{bbox}});node(w););out skel;',
 			iconSrc: imgSrc + 'libraries/library_public.svg',
 			style: function () {
 				var style = new ol.style.Style({
@@ -261,7 +261,7 @@ var config = {
 		{
 			group: 'Tipus',
 			title: 'Cinema',
-			query: 'nwr[library=cinema][amenity=library]({{bbox}});node(w););out;',
+			query: 'nwr[library=cinema][amenity=library]({{bbox}});way(r)({{bbox}});node(w););out skel;',
 			iconSrc: imgSrc + 'libraries/library_cinema.svg',
 			style: function () {
 				var style = new ol.style.Style({
@@ -276,7 +276,7 @@ var config = {
 		{
 			group: 'Tipus',
 			title: 'Infantil',
-			query: 'nwr[library=children][amenity=library]({{bbox}});node(w););out;',
+			query: 'nwr[library=children][amenity=library]({{bbox}});way(r)({{bbox}});node(w););out skel;',
 			iconSrc: imgSrc + 'libraries/library_children.svg',
 			style: function () {
 				var style = new ol.style.Style({
@@ -291,7 +291,7 @@ var config = {
 		{
 			group: 'Tipus',
 			title: 'Estudiants',
-			query: 'nwr[library=students][amenity=library]({{bbox}});node(w););out;',
+			query: 'nwr[library=students][amenity=library]({{bbox}});way(r)({{bbox}});node(w););out skel;',
 			iconSrc: imgSrc + 'libraries/library_students.svg',
 			style: function () {
 				var style = new ol.style.Style({

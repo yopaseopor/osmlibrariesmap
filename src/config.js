@@ -329,7 +329,7 @@ var config = {
 		{
 			group: 'mtb',
 			title: 'mtb=designated',
-			query: '(nwr["wheelchair"="yes"]["amenity"="library"]({{bbox}}););out;',
+			query: '(nwr["wheelchair"="yes"]["amenity"="library"]({{bbox}});node(w););out body;',
 			iconSrc: imgSrc + 'base/line.png',
 			iconStyle: 'background-color:#003399',
 			style: function (feature) {
@@ -345,15 +345,17 @@ var config = {
 					width: 1
 				});
 				var style = new ol.style.Style({
-					image: new ol.style.Icon({
-						src: imgSrc + 'accessibilitat/wheelchair_yes.svg'
+					image: new ol.style.Circle({
+						fill: fill,
+						stroke: stroke,
+						radius: 5
 					}),
 							text: new ol.style.Text({
 								text: name,
 								color: 'rgba(0,128,0,0.4)',
-								font: '10px Arial',
+								font: '14px Gill Sans Extrabold',
 								offsetX : 0,
-								offsetY : 30
+								offsetY : 12
 							}),
 					fill: fill,
 					stroke: stroke

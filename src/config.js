@@ -247,7 +247,7 @@ var config = {
 							src: imgSrc + 'accessibilitat/wheelchair_yes.svg'
 						}),
 						text: new ol.style.Text({
-								text: name,
+								text: maxspeed,
 								color: 'rgba(0,128,0,0.4)',
 								font: '10px Arial',
 								offsetX : 0,

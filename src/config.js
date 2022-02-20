@@ -244,7 +244,9 @@ var config = {
 					styles.push(new ol.style.Style({
 						geometry: new ol.geom.Point(new ol.geom.LineString(coords).getCoordinateAt(0.5)), // show the image in the middle of the segment
 						image: new ol.style.Icon({
-							src: imgSrc + 'accessibilitat/wheelchair_yes.svg'
+							src: imgSrc + 'accessibilitat/wheelchair_yes.svg',
+							heigth: 12,
+							width: 12
 						}),
 						text: new ol.style.Text({
 								text: maxspeed,

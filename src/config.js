@@ -185,21 +185,17 @@ var config = {
 		
 		{
 			group: 'Accessibilitat',
-			title: 'Biblioteca Adaptada',
-			query: 'nwr["mtb:name"][name]({{bbox}});node(w););out meta;',		
-			iconSrc: imgSrc + 'base/line.png',
-			iconStyle: 'background-color:#003399',
-			style: function (feature) {
-				var key_regex = /^name$/
-				var name_key = feature.getKeys().filter(function(t){return t.match(key_regex)}).pop() || "name"
-				var name = feature.get(name_key) || '';
+			title: 'Biblioteca adaptada',
+			query: '(node["amenity"="library"]["wheelchair"="yes"]({{bbox}});node(w);way["amenity"="library"]["wheelchair"="yes"]({{bbox}});node(w);relation["amenity"="library"]["wheelchair"="yes"]({{bbox}});node(w););out meta;',
+			iconSrc: imgSrc + 'accessibilitat/wheelchair_yes.svg',
+			iconStyle: 'background-color:#00FF00',
+			style: function () {
 				var fill = new ol.style.Fill({
-					color: 'rgba(0,51,153,0.1)'
+					color: 'rgba(0,255,0,0.4)'
 				});
-
 				var stroke = new ol.style.Stroke({
-					color: 'rgba(0,51,153,0.4)',
-					width: 1
+					color: '#00FF00',
+					width: 1.25
 				});
 				var style = new ol.style.Style({
 					image: new ol.style.Circle({
@@ -207,19 +203,12 @@ var config = {
 						stroke: stroke,
 						radius: 5
 					}),
-							text: new ol.style.Text({
-								text: name,
-								color: 'rgba(0,128,0,0.4)',
-								font: '14px Gill Sans Extrabold',
-								offsetX : 0,
-								offsetY : 12
-							}),
 					fill: fill,
 					stroke: stroke
 				});
 				return style;
 			}
-		},
+ }, 
 		{
 			group: 'Accessibilitat',
 			title: 'Biblioteca designada',

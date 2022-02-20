@@ -237,7 +237,7 @@ var config = {
 				}));
 
 				// doesn't show speed sign in roundabout and similars
-				if (!feature.get('junction')) {
+
 					/* show the speed sign */ 
 					var coords = feature.getGeometry().getCoordinates();
 
@@ -254,8 +254,7 @@ var config = {
 								offsetY : 30
 						})
 					}));
-				}
-
+				
 				return styles;
 			}
 },

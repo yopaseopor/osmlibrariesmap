@@ -214,6 +214,8 @@ var config = {
 				return style;
 			}
 		},
+		{
+		
 			group: 'Accessibilitat',
 			title: 'Biblioteca designada',
 			query: 'nwr[wheelchair=designated][amenity=library]({{bbox}});way(r)({{bbox}});node(w););out skel;',

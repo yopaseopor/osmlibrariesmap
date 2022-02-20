@@ -197,11 +197,8 @@ var config = {
 					color: 'rgba(0,51,153,0.4)',
 					width: 1
 				});
-var coords = feature.getGeometry().getCoordinates();
-
-					styles.push(new ol.style.Style({
-						geometry: new ol.geom.Point(new ol.geom.LineString(coords).getCoordinateAt(0.5)), // show the image in the middle of the segment
-						image: new ol.style.Icon({
+				var style = new ol.style.Style({
+					image: new ol.style.Icon({
 						src: imgSrc + 'accessibilitat/wheelchair_yes.svg'
 					}),
 							text: new ol.style.Text({
@@ -214,7 +211,7 @@ var coords = feature.getGeometry().getCoordinates();
 					fill: fill,
 					stroke: stroke
 				});
-				return styles;
+				return style;
 			}
 		},
 		{

@@ -213,7 +213,53 @@ var config = {
 				});
 				return style;
 			}
-		},
+},
+		{
+			group: 'Accessibilitat',
+			title: 'Biblioteca adaptada',
+			query: '(node["amenity"="library"]["wheelchair"="yes"]({{bbox}});node(w);way["amenity"="library"]["wheelchair"="yes"]({{bbox}});node(w);relation["amenity"="library"]["wheelchair"="yes"]({{bbox}});node(w););out meta;',
+			iconSrc: imgSrc + 'accessibilitat/wheelchair_yes.svg',
+			style: function (feature) {
+				var maxspeed = feature.get('name') || '';
+				if (maxspeed === ''){
+					return undefined;
+				}
+				var styles = [];
+
+
+
+				var stroke = new ol.style.Stroke({
+					color: 'rgba(0,51,153,0.4)',
+					width: 1
+				});
+				styles.push(new ol.style.Style({
+					stroke: stroke
+				}));
+
+				// doesn't show speed sign in roundabout and similars
+				if (!feature.get('junction')) {
+					/* show the speed sign */ 
+					var coords = feature.getGeometry().getCoordinates();
+
+					styles.push(new ol.style.Style({
+						geometry: new ol.geom.Point(new ol.geom.LineString(coords).getCoordinateAt(0.5)), // show the image in the middle of the segment
+						image: new ol.style.Icon({
+							src: imgSrc + 'accessibilitat/wheelchair_yes.svg',
+							scale:0.04
+						}),
+						text: new ol.style.Text({
+								text: name,
+								color: 'rgba(0,128,0,0.4)',
+								font: '10px Arial',
+								offsetX : 0,
+								offsetY : 30
+						})
+					}));
+				}
+
+				return styles;
+			}
+},
 		{
 		
 			group: 'Accessibilitat',

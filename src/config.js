@@ -214,7 +214,7 @@ var coords = feature.getGeometry().getCoordinates();
 					fill: fill,
 					stroke: stroke
 				});
-				return style;
+				return styles;
 			}
 		},
 		{

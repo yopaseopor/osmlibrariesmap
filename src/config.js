@@ -206,9 +206,9 @@ var config = {
 							text: new ol.style.Text({
 								text: name,
 								color: 'rgba(0,128,0,0.4)',
-								font: '14px Verdana',
+								font: '10px Verdana',
 								offsetX : 0,
-								offsetY : 12
+								offsetY : 30
 							}),
 					fill: fill,
 					stroke: stroke

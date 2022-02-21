@@ -185,13 +185,9 @@ var config = {
 			query: '(node["amenity"="library"]["wheelchair"="yes"]({{bbox}});node(w);way["amenity"="library"]["wheelchair"="yes"]({{bbox}});node(w);relation["amenity"="library"]["wheelchair"="yes"]({{bbox}});node(w););out meta;',
 			iconSrc: imgSrc + 'accessibilitat/wheelchair_yes.svg',
 			iconStyle: 'background-color:#00FF00',
-			style: function (feature) {
-				var key_regex = /^name$/
-				var name_key = feature.getKeys().filter(function(t){return t.match(key_regex)}).pop() || "name"
-				var name = feature.get(name_key) || '';
+			style: function () {
 				var fill = new ol.style.Fill({
-					color: 'rgba(0,51,153,0.1)'
-				});
+					color: 'rgba(0,255,0,0.4)'
 
 				var stroke = new ol.style.Stroke({
 					color: 'rgba(0,51,153,0.4)',
@@ -208,7 +204,7 @@ var style = new ol.style.Style({
 								color: 'rgba(0,128,0,0.4)',
 								font: '10px Arial',
 								offsetX : 0,
-								offsetY : 30
+								offsetY : 10
 							}),
 					fill: fill,
 					stroke: stroke

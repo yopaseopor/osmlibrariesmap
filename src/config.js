@@ -184,18 +184,14 @@ var config = {
 			title: 'Biblioteca adaptada',
 			query: '(node["amenity"="library"]["wheelchair"="yes"]({{bbox}});node(w);way["amenity"="library"]["wheelchair"="yes"]({{bbox}});node(w);relation["amenity"="library"]["wheelchair"="yes"]({{bbox}});node(w););out meta;',
 			iconSrc: imgSrc + 'accessibilitat/wheelchair_yes.svg',
-			iconStyle: 'background-color:#00FF00',
-			style: function (feature) {
-				var key_regex = /^name$/
-				var name_key = feature.getKeys().filter(function(t){return t.match(key_regex)}).pop() || "name"
-				var name = feature.get(name_key) || '';
+iconStyle: 'background-color:#00FF00',
+			style: function () {
 				var fill = new ol.style.Fill({
-					color: 'rgba(0,51,153,0.1)'
+					color: 'rgba(0,255,0,0.4)'
 				});
-
 				var stroke = new ol.style.Stroke({
-					color: 'rgba(0,51,153,0.4)',
-					width: 1
+					color: '#00FF00',
+					width: 1.25
 				});
 				var style = new ol.style.Style({
 					image: new ol.style.Icon({
@@ -213,96 +209,7 @@ var config = {
 				});
 				return style;
 			}
-},
-		{
-			group: 'Accessibilitat',
-			title: 'Biblioteca adaptada',
-			query: '(node["amenity"="library"]["wheelchair"="yes"]({{bbox}});node(w);way["amenity"="library"]["wheelchair"="yes"]({{bbox}});node(w);relation["amenity"="library"]["wheelchair"="yes"]({{bbox}});node(w););out meta;',
-			iconSrc: imgSrc + 'accessibilitat/wheelchair_yes.svg',
-			style: function (feature) {
-				var maxspeed = feature.get('name') || '';
-				if (maxspeed === ''){
-					return undefined;
-				}
-				var styles = [];
 
-
-
-				var stroke = new ol.style.Stroke({
-					color: 'rgba(0,51,153,0.4)',
-					width: 1
-				});
-				styles.push(new ol.style.Style({
-					stroke: stroke
-				}));
-
-				// doesn't show speed sign in roundabout and similars
-
-					/* show the speed sign */ 
-					var coords = feature.getGeometry().getCoordinates();
-
-					styles.push(new ol.style.Style({
-						geometry: new ol.geom.Point(new ol.geom.LineString(coords).getCoordinateAt(0.5)), // show the image in the middle of the segment
-						image: new ol.style.Icon({
-							src: imgSrc + 'accessibilitat/wheelchair_yes.svg',
-							heigth: 12,
-							width: 12
-						}),
-						text: new ol.style.Text({
-								text: maxspeed,
-								color: 'rgba(0,128,0,0.4)',
-								font: '10px Arial',
-								offsetX : 0,
-								offsetY : 30
-						})
-					}));
-				
-				return styles;
-			}
-},
-		{
-			group: 'Mobilitat',
-			title: 'Vies amb "maxspeed"',
-			query: '(way[highway=motorway][maxspeed]({{bbox}});node(w);way[highway=trunk][maxspeed]({{bbox}});node(w);way[highway=primary][maxspeed]({{bbox}});node(w);way[highway=secondary][maxspeed]({{bbox}});node(w);way[highway=tertiary][maxspeed]({{bbox}});node(w);way[highway=unclassified][maxspeed]({{bbox}});node(w);way[highway=track][maxspeed]({{bbox}});node(w);way[highway=residential][maxspeed]({{bbox}});node(w);way[highway=service][maxspeed]({{bbox}});node(w););out meta;',
-			iconSrc: imgSrc + 'icones/maxspeed.svg',
-			style: function (feature) {
-				var maxspeed = feature.get('maxspeed') || '';
-				if (maxspeed === ''){
-					return undefined;
-				}
-				var styles = [];
-
-				/* draw the segment line */ 
-				var width = (parseFloat(maxspeed) / 30) + 0.5;
-				var color = linearColorInterpolation([0, 255, 0], [255, 0, 0], Math.min(maxspeed, 120) / 120);
-
-				var stroke = new ol.style.Stroke({
-					color: 'rgb(' + color.join() + ')',
-					width: width
-				});
-				styles.push(new ol.style.Style({
-					stroke: stroke
-				}));
-
-				// doesn't show speed sign in roundabout and similars
-				if (!feature.get('junction')) {
-					/* show the speed sign */ 
-					var coords = feature.getGeometry().getCoordinates();
-
-					styles.push(new ol.style.Style({
-						geometry: new ol.geom.Point(new ol.geom.LineString(coords).getCoordinateAt(0.5)), // show the image in the middle of the segment
-						image: new ol.style.Icon({
-							src: imgSrc + 'icones/maxspeed_empty.svg',
-							scale:0.04
-						}),
-						text: new ol.style.Text({
-							text: maxspeed
-						})
-					}));
-				}
-
-				return styles;
-			}
 },
 		{
 		

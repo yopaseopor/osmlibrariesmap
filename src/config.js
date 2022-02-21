@@ -335,7 +335,7 @@ var config = {
 		{
 			group: 'Accessibilitat',
 			title: 'Biblioteca amb adaptació desconeguda',
-			query: '(node["amenity"="library"]["!wheelchair"]({{bbox}});node(w);way["amenity"="library"]["!wheelchair"]({{bbox}});node(w);relation["amenity"="library"]["!wheelchair"]({{bbox}});node(w););out meta;',
+			query: '(node["amenity"="library"][!"wheelchair"]({{bbox}});node(w);way["amenity"="library"][!"wheelchair"]({{bbox}});node(w);relation["amenity"="library"][!"wheelchair"]({{bbox}});node(w););out meta;',
 			iconSrc: imgSrc + 'accessibilitat/wheelchair_unknown.svg',
 			iconStyle: 'background-color:#00FF00',
 			style: function (feature) {

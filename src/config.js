@@ -221,7 +221,7 @@ var config = {
 		
 			group: 'Accessibilitat',
 			title: 'Biblioteca designada',
-'(node["amenity"="library"]["wheelchair"="yes"]({{bbox}});node(w);way["amenity"="library"]["wheelchair"="yes"]({{bbox}});node(w);relation["amenity"="library"]["wheelchair"="yes"]({{bbox}});node(w););out meta;',
+			query: '(node["amenity"="library"]["wheelchair"="yes"]({{bbox}});node(w);way["amenity"="library"]["wheelchair"="yes"]({{bbox}});node(w);relation["amenity"="library"]["wheelchair"="yes"]({{bbox}});node(w););out meta;',
 			iconSrc: imgSrc + 'accessibilitat/wheelchair_yes.svg',
 			style: function () {
 				var style = new ol.style.Style({

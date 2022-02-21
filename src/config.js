@@ -217,68 +217,121 @@ var config = {
 			}
 
 },
+
 		{
-		
 			group: 'Accessibilitat',
 			title: 'Biblioteca designada',
-			query: '(node["amenity"="library"]["wheelchair"="yes"]({{bbox}});node(w);way["amenity"="library"]["wheelchair"="yes"]({{bbox}});node(w);relation["amenity"="library"]["wheelchair"="yes"]({{bbox}});node(w););out meta;',
-			iconSrc: imgSrc + 'accessibilitat/wheelchair_yes.svg',
-			style: function () {
-				var style = new ol.style.Style({
-					image: new ol.style.Icon({
-						scale: 0.04,
-						src: imgSrc + 'accessibilitat/wheelchair_yes.svg'
-					})
-				});
-				return style;
-			}
-		},
-		{
-		
-			group: 'Accessibilitat',
-			title: 'Biblioteca designada',
-			query: 'nwr[wheelchair=designated][amenity=library]({{bbox}});way(r)({{bbox}});node(w););out skel;',
+			query: '(node["amenity"="library"]["wheelchair"="designated"]({{bbox}});node(w);way["amenity"="library"]["wheelchair"="designated"]({{bbox}});node(w);relation["amenity"="library"]["wheelchair"="designated"]({{bbox}});node(w););out meta;',
 			iconSrc: imgSrc + 'accessibilitat/wheelchair_designated.svg',
-			style: function () {
+			iconStyle: 'background-color:#00FF00',
+			style: function (feature) {
+				var key_regex = /^name$/
+				var name_key = feature.getKeys().filter(function(t){return t.match(key_regex)}).pop() || "name"
+				var name = feature.get(name_key) || '';
+				var fill = new ol.style.Fill({
+					color: 'rgba(0,0,255,0.4)'
+				});
+
+				var stroke = new ol.style.Stroke({
+					color: '#000000',
+					width: 1.25
+				});
 				var style = new ol.style.Style({
-					image: new ol.style.Icon({
-						scale: 0.04,
-						src: imgSrc + 'accessibilitat/wheelchair_designated.svg'
-					})
+					image: new ol.style.Circle({
+						fill: fill,
+						stroke: stroke,
+						radius: 5
+					}),
+							text: new ol.style.Text({
+								text: name,
+								color: 'rgba(0,0,255,0.4)',
+								font: '10px Verdana',
+								offsetX : 0,
+								offsetY : 30
+							}),
+					fill: fill,
+					stroke: stroke
 				});
 				return style;
 			}
-		},
+
+},
 		{
 			group: 'Accessibilitat',
 			title: 'Biblioteca No Adaptada',
 			query: 'nwr[wheelchair=no][amenity=library]({{bbox}});way(r)({{bbox}});node(w););out skel;',
 			iconSrc: imgSrc + 'accessibilitat/wheelchair_no.svg',
-			style: function () {
+			iconStyle: 'background-color:#00FF00',
+			style: function (feature) {
+				var key_regex = /^name$/
+				var name_key = feature.getKeys().filter(function(t){return t.match(key_regex)}).pop() || "name"
+				var name = feature.get(name_key) || '';
+				var fill = new ol.style.Fill({
+					color: 'rgba(255,0,0,0.4)'
+				});
+
+				var stroke = new ol.style.Stroke({
+					color: '#000000',
+					width: 1.25
+				});
 				var style = new ol.style.Style({
-					image: new ol.style.Icon({
-						scale: 0.04,
-						src: imgSrc + 'accessibilitat/wheelchair_no.svg'
-					})
+					image: new ol.style.Circle({
+						fill: fill,
+						stroke: stroke,
+						radius: 5
+					}),
+							text: new ol.style.Text({
+								text: name,
+								color: 'rgba(0,0,255,0.4)',
+								font: '10px Verdana',
+								offsetX : 0,
+								offsetY : 30
+							}),
+					fill: fill,
+					stroke: stroke
 				});
 				return style;
 			}
-		},
+
+},
 		{
 			group: 'Accessibilitat',
 			title: 'Biblioteca Adaptada parcialment',
 			query: 'nwr[wheelchair=limited][amenity=library]({{bbox}});way(r)({{bbox}});node(w););out skel;',
 			iconSrc: imgSrc + 'accessibilitat/wheelchair_limited.svg',
-			style: function () {
+			iconStyle: 'background-color:#00FF00',
+			style: function (feature) {
+				var key_regex = /^name$/
+				var name_key = feature.getKeys().filter(function(t){return t.match(key_regex)}).pop() || "name"
+				var name = feature.get(name_key) || '';
+				var fill = new ol.style.Fill({
+					color: 'rgba(255,165,0,0.4)'
+				});
+
+				var stroke = new ol.style.Stroke({
+					color: '#000000',
+					width: 1.25
+				});
 				var style = new ol.style.Style({
-					image: new ol.style.Icon({
-						scale: 0.04,
-						src: imgSrc + 'accessibilitat/wheelchair_limited.svg'
-					})
+					image: new ol.style.Circle({
+						fill: fill,
+						stroke: stroke,
+						radius: 5
+					}),
+							text: new ol.style.Text({
+								text: name,
+								color: 'rgba(0,0,255,0.4)',
+								font: '10px Verdana',
+								offsetX : 0,
+								offsetY : 30
+							}),
+					fill: fill,
+					stroke: stroke
 				});
 				return style;
 			}
-		},
+
+},
 		{
 			group: 'Tipus',
 			title: 'Públic en general',

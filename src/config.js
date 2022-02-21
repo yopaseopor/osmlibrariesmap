@@ -184,18 +184,24 @@ var config = {
 			title: 'Biblioteca adaptada',
 			query: '(node["amenity"="library"]["wheelchair"="yes"]({{bbox}});node(w);way["amenity"="library"]["wheelchair"="yes"]({{bbox}});node(w);relation["amenity"="library"]["wheelchair"="yes"]({{bbox}});node(w););out meta;',
 			iconSrc: imgSrc + 'accessibilitat/wheelchair_yes.svg',
-iconStyle: 'background-color:#00FF00',
-			style: function () {
+			iconStyle: 'background-color:#00FF00',
+			style: function (feature) {
+				var key_regex = /^name$/
+				var name_key = feature.getKeys().filter(function(t){return t.match(key_regex)}).pop() || "name"
+				var name = feature.get(name_key) || '';
 				var fill = new ol.style.Fill({
 					color: 'rgba(0,255,0,0.4)'
 				});
+
 				var stroke = new ol.style.Stroke({
 					color: '#00FF00',
 					width: 1.25
 				});
 				var style = new ol.style.Style({
-					image: new ol.style.Icon({
-						src: imgSrc + 'accessibilitat/wheelchair_yes.svg'
+					image: new ol.style.Circle({
+						fill: fill,
+						stroke: stroke,
+						radius: 5
 					}),
 							text: new ol.style.Text({
 								text: name,

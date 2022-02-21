@@ -259,7 +259,7 @@ var config = {
 		{
 			group: 'Accessibilitat',
 			title: 'Biblioteca No Adaptada',
-			query: 'nwr["wheelchair"="no"]["amenity"="library"]({{bbox}});way(r)({{bbox}});node(w););out meta;',
+			query: '(node["amenity"="library"]["wheelchair"="no"]({{bbox}});node(w);way["amenity"="library"]["wheelchair"="no"]({{bbox}});node(w);relation["amenity"="library"]["wheelchair"="no"]({{bbox}});node(w););out meta;',
 			iconSrc: imgSrc + 'accessibilitat/wheelchair_no.svg',
 			iconStyle: 'background-color:#00FF00',
 			style: function (feature) {
@@ -297,7 +297,7 @@ var config = {
 		{
 			group: 'Accessibilitat',
 			title: 'Biblioteca Adaptada parcialment',
-			query: 'nwr["wheelchair"="limited"]["amenity"="library"]({{bbox}});way(r)({{bbox}});node(w););out meta;',
+			query: '(node["amenity"="library"]["wheelchair"="limited"]({{bbox}});node(w);way["amenity"="library"]["wheelchair"="limited"]({{bbox}});node(w);relation["amenity"="library"]["wheelchair"="limited"]({{bbox}});node(w););out meta;',
 			iconSrc: imgSrc + 'accessibilitat/wheelchair_limited.svg',
 			iconStyle: 'background-color:#00FF00',
 			style: function (feature) {
@@ -335,7 +335,7 @@ var config = {
 		{
 			group: 'Accessibilitat',
 			title: 'Biblioteca amb adaptació desconeguda',
-			query: 'nwr[!wheelchair]["amenity"="library"]({{bbox}});way(r)({{bbox}});node(w););out meta;',
+			query: '(node["amenity"="library"]["!wheelchair"]({{bbox}});node(w);way["amenity"="library"]["!wheelchair"]({{bbox}});node(w);relation["amenity"="library"]["!wheelchair"]({{bbox}});node(w););out meta;',
 			iconSrc: imgSrc + 'accessibilitat/wheelchair_unknown.svg',
 			iconStyle: 'background-color:#00FF00',
 			style: function (feature) {

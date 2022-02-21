@@ -197,9 +197,11 @@ var config = {
 					color: 'rgba(0,51,153,0.4)',
 					width: 1
 				});
-				var style = new ol.style.Style({
-					image: new ol.style.Icon({
-						src: imgSrc + 'accessibilitat/wheelchair_yes.svg'
+var style = new ol.style.Style({
+					image: new ol.style.Circle({
+						fill: fill,
+						stroke: stroke,
+						radius: 5
 					}),
 							text: new ol.style.Text({
 								text: name,

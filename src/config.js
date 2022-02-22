@@ -415,13 +415,13 @@ var config = {
 			title: 'Cinema',
 			query: '(node["amenity"="library"]["library"="cinema"]({{bbox}});node(w);way["amenity"="library"]["library"="cinema"]({{bbox}});node(w);relation["amenity"="library"]["library"="cinema"]({{bbox}});node(w););out meta;',
 			iconSrc: imgSrc + 'libraries/library_cinema.svg',
-			iconStyle: 'background-color:#00FF00',
+			iconStyle: 'background-color:#FFFFFF',
 			style: function (feature) {
 				var key_regex = /^name$/
 				var name_key = feature.getKeys().filter(function(t){return t.match(key_regex)}).pop() || "name"
 				var name = feature.get(name_key) || '';
 				var fill = new ol.style.Fill({
-					color: 'rgba(0,0,255,0.4)'
+					color: 'rgba(255,0,0,0.4)'
 				});
 
 				var stroke = new ol.style.Stroke({
@@ -436,7 +436,7 @@ var config = {
 					}),
 							text: new ol.style.Text({
 								text: name,
-								color: 'rgba(0,0,255,0.4)',
+								color: 'rgba(255,0,0,0.4)',
 								font: '10px Verdana',
 								offsetX : 0,
 								offsetY : 30
@@ -454,13 +454,13 @@ var config = {
 			title: 'Infantil',
 			query: '(node["amenity"="library"]["library"="children"]({{bbox}});node(w);way["amenity"="library"]["library"="children"]({{bbox}});node(w);relation["amenity"="library"]["library"="children"]({{bbox}});node(w););out meta;',
 			iconSrc: imgSrc + 'libraries/library_children.svg',
-			iconStyle: 'background-color:#00FF00',
+			iconStyle: 'background-color:#FFFFFF',
 			style: function (feature) {
 				var key_regex = /^name$/
 				var name_key = feature.getKeys().filter(function(t){return t.match(key_regex)}).pop() || "name"
 				var name = feature.get(name_key) || '';
 				var fill = new ol.style.Fill({
-					color: 'rgba(0,0,255,0.4)'
+					color: 'rgba(64,224,208,0.4)'
 				});
 
 				var stroke = new ol.style.Stroke({
@@ -475,7 +475,7 @@ var config = {
 					}),
 							text: new ol.style.Text({
 								text: name,
-								color: 'rgba(0,0,255,0.4)',
+								color: 'rgba(64,224,208,0.4)',
 								font: '10px Verdana',
 								offsetX : 0,
 								offsetY : 30
@@ -493,13 +493,13 @@ var config = {
 			title: 'Estudiants',
 			query: '(node["amenity"="library"]["library"="students"]({{bbox}});node(w);way["amenity"="library"]["library"="students"]({{bbox}});node(w);relation["amenity"="library"]["library"="students"]({{bbox}});node(w););out meta;',
 			iconSrc: imgSrc + 'libraries/library_students.svg',
-			iconStyle: 'background-color:#00FF00',
+			iconStyle: 'background-color:#FFFFFF',
 			style: function (feature) {
 				var key_regex = /^name$/
 				var name_key = feature.getKeys().filter(function(t){return t.match(key_regex)}).pop() || "name"
 				var name = feature.get(name_key) || '';
 				var fill = new ol.style.Fill({
-					color: 'rgba(0,0,255,0.4)'
+					color: 'rgba(160,82,45,0.4)'
 				});
 
 				var stroke = new ol.style.Stroke({
@@ -514,7 +514,7 @@ var config = {
 					}),
 							text: new ol.style.Text({
 								text: name,
-								color: 'rgba(0,0,255,0.4)',
+								color: 'rgba(160,82,45,0.4)',
 								font: '10px Verdana',
 								offsetX : 0,
 								offsetY : 30
@@ -532,13 +532,13 @@ var config = {
 			title: 'Recerca',
 			query: '(node["amenity"="library"]["library"="research"]({{bbox}});node(w);way["amenity"="library"]["library"="research"]({{bbox}});node(w);relation["amenity"="library"]["library"="research"]({{bbox}});node(w););out meta;',
 			iconSrc: imgSrc + 'libraries/library_research.svg',
-			iconStyle: 'background-color:#00FF00',
+			iconStyle: 'background-color:#FFFFFF',
 			style: function (feature) {
 				var key_regex = /^name$/
 				var name_key = feature.getKeys().filter(function(t){return t.match(key_regex)}).pop() || "name"
 				var name = feature.get(name_key) || '';
 				var fill = new ol.style.Fill({
-					color: 'rgba(0,0,255,0.4)'
+					color: 'rgba(0,128,0,0.4)'
 				});
 
 				var stroke = new ol.style.Stroke({
@@ -553,7 +553,7 @@ var config = {
 					}),
 							text: new ol.style.Text({
 								text: name,
-								color: 'rgba(0,0,255,0.4)',
+								color: 'rgba(0,128,0,0.4)',
 								font: '10px Verdana',
 								offsetX : 0,
 								offsetY : 30
@@ -571,13 +571,13 @@ var config = {
 			title: 'University',
 			query: '(node["amenity"="library"]["library"="university"]({{bbox}});node(w);way["amenity"="library"]["library"="university"]({{bbox}});node(w);relation["amenity"="library"]["library"="university"]({{bbox}});node(w););out meta;',
 			iconSrc: imgSrc + 'libraries/library_university.svg',
-			iconStyle: 'background-color:#00FF00',
+			iconStyle: 'background-color:#FFFFFF',
 			style: function (feature) {
 				var key_regex = /^name$/
 				var name_key = feature.getKeys().filter(function(t){return t.match(key_regex)}).pop() || "name"
 				var name = feature.get(name_key) || '';
 				var fill = new ol.style.Fill({
-					color: 'rgba(0,0,255,0.4)'
+					color: 'rgba(255,165,0,0.4)'
 				});
 
 				var stroke = new ol.style.Stroke({
@@ -592,7 +592,7 @@ var config = {
 					}),
 							text: new ol.style.Text({
 								text: name,
-								color: 'rgba(0,0,255,0.4)',
+								color: 'rgba(255,165,0,0.4)',
 								font: '10px Verdana',
 								offsetX : 0,
 								offsetY : 30
@@ -610,13 +610,13 @@ var config = {
 			title: 'Acadèmic',
 			query: '(node["amenity"="library"]["library"="academic"]({{bbox}});node(w);way["amenity"="library"]["library"="academic"]({{bbox}});node(w);relation["amenity"="library"]["library"="academic"]({{bbox}});node(w););out meta;',
 			iconSrc: imgSrc + 'libraries/library_academic.svg',
-			iconStyle: 'background-color:#00FF00',
+			iconStyle: 'background-color:#FFFFFF',
 			style: function (feature) {
 				var key_regex = /^name$/
 				var name_key = feature.getKeys().filter(function(t){return t.match(key_regex)}).pop() || "name"
 				var name = feature.get(name_key) || '';
 				var fill = new ol.style.Fill({
-					color: 'rgba(0,0,255,0.4)'
+					color: 'rgba(128,0,128,0.4)'
 				});
 
 				var stroke = new ol.style.Stroke({
@@ -631,7 +631,7 @@ var config = {
 					}),
 							text: new ol.style.Text({
 								text: name,
-								color: 'rgba(0,0,255,0.4)',
+								color: 'rgba(128,0,128,0.4)',
 								font: '10px Verdana',
 								offsetX : 0,
 								offsetY : 30
@@ -649,13 +649,13 @@ var config = {
 			title: 'Desconegut (Falta informació)',
 			query: '(node["amenity"="library"][!"library"]({{bbox}});node(w);way["amenity"="library"][!"library"]({{bbox}});node(w);relation["amenity"="library"][!"library"]({{bbox}});node(w););out meta;',
 			iconSrc: imgSrc + 'libraries/library_unknown.svg',
-			iconStyle: 'background-color:#00FF00',
+			iconStyle: 'background-color:#000000',
 			style: function (feature) {
 				var key_regex = /^name$/
 				var name_key = feature.getKeys().filter(function(t){return t.match(key_regex)}).pop() || "name"
 				var name = feature.get(name_key) || '';
 				var fill = new ol.style.Fill({
-					color: 'rgba(0,0,255,0.4)'
+					color: 'rgba(0,0,0,0.4)'
 				});
 
 				var stroke = new ol.style.Stroke({
@@ -670,7 +670,7 @@ var config = {
 					}),
 							text: new ol.style.Text({
 								text: name,
-								color: 'rgba(0,0,255,0.4)',
+								color: 'rgba(0,0,0,0.4)',
 								font: '10px Verdana',
 								offsetX : 0,
 								offsetY : 30

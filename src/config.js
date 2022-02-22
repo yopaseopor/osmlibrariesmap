@@ -375,7 +375,7 @@ var config = {
 			group: 'Tipus',
 			title: 'Públic en general',
 			query: '(node["amenity"="library"]["library"="public"]({{bbox}});node(w);way["amenity"="library"]["library"="public"]({{bbox}});node(w);relation["amenity"="library"]["library"="public"]({{bbox}});node(w););out meta;',
-			iconSrc: imgSrc + 'libraries/libraries_public.svg',
+			iconSrc: imgSrc + 'libraries/library_public.svg',
 			iconStyle: 'background-color:#00FF00',
 			style: function (feature) {
 				var key_regex = /^name$/
@@ -409,78 +409,35 @@ var config = {
 			}
 
 },
+
 		{
 			group: 'Tipus',
 			title: 'Cinema',
-			query: 'nwr[library=cinema][amenity=library]({{bbox}});way(r)({{bbox}});node(w););out skel;',
+			query: '(node["amenity"="library"]["library"="cinema"]({{bbox}});node(w);way["amenity"="library"]["library"="cinema"]({{bbox}});node(w);relation["amenity"="library"]["library"="cinema"]({{bbox}});node(w););out meta;',
 			iconSrc: imgSrc + 'libraries/library_cinema.svg',
-			style: function () {
-				var style = new ol.style.Style({
-					image: new ol.style.Icon({
-						scale: 0.04,
-						src: imgSrc + 'libraries/library_cinema.svg'
-					})
-				});
-				return style;
-			}
-		},
-		{
-			group: 'Tipus',
-			title: 'Infantil',
-			query: 'nwr[library=children][amenity=library]({{bbox}});way(r)({{bbox}});node(w););out skel;',
-			iconSrc: imgSrc + 'libraries/library_children.svg',
-			style: function () {
-				var style = new ol.style.Style({
-					image: new ol.style.Icon({
-						scale: 0.04,
-						src: imgSrc + 'libraries/library_children.svg'
-					})
-				});
-				return style;
-			}
-		},
-		{
-			group: 'Tipus',
-			title: 'Estudiants',
-			query: 'nwr[library=students][amenity=library]({{bbox}});way(r)({{bbox}});node(w););out skel;',
-			iconSrc: imgSrc + 'libraries/library_students.svg',
-			style: function () {
-				var style = new ol.style.Style({
-					image: new ol.style.Icon({
-						scale: 0.04,
-						src: imgSrc + 'libraries/library_students.svg'
-					})
-				});
-				return style;
-			}
-		},
-
-		{
-			group: 'mtb',
-			title: 'mtb=designated',
-			query: '(nwr["wheelchair"="yes"]["amenity"="library"]({{bbox}}););out;',
-			iconSrc: imgSrc + 'base/line.png',
-			iconStyle: 'background-color:#003399',
+			iconStyle: 'background-color:#00FF00',
 			style: function (feature) {
 				var key_regex = /^name$/
 				var name_key = feature.getKeys().filter(function(t){return t.match(key_regex)}).pop() || "name"
 				var name = feature.get(name_key) || '';
 				var fill = new ol.style.Fill({
-					color: 'rgba(0,51,153,0.1)'
+					color: 'rgba(0,0,255,0.4)'
 				});
 
 				var stroke = new ol.style.Stroke({
-					color: 'rgba(0,51,153,0.4)',
-					width: 1
+					color: '#000000',
+					width: 1.25
 				});
 				var style = new ol.style.Style({
-					image: new ol.style.Icon({
-						src: imgSrc + 'accessibilitat/wheelchair_yes.svg'
+					image: new ol.style.Circle({
+						fill: fill,
+						stroke: stroke,
+						radius: 5
 					}),
 							text: new ol.style.Text({
 								text: name,
-								color: 'rgba(0,128,0,0.4)',
-								font: '10px Arial',
+								color: 'rgba(0,0,255,0.4)',
+								font: '10px Verdana',
 								offsetX : 0,
 								offsetY : 30
 							}),
@@ -489,24 +446,26 @@ var config = {
 				});
 				return style;
 			}
-		},
+
+},
+
 		{
-			group: 'mtb',
-			title: 'mtb=no',
-			query: '(nwr["mtb"="no"]({{bbox}});node(w););out;',
-			iconSrc: imgSrc + 'base/tdot.png',
-			iconStyle: 'background-color:#ff0000',
+			group: 'Tipus',
+			title: 'Infantil',
+			query: '(node["amenity"="library"]["library"="children"]({{bbox}});node(w);way["amenity"="library"]["library"="children"]({{bbox}});node(w);relation["amenity"="library"]["library"="children"]({{bbox}});node(w););out meta;',
+			iconSrc: imgSrc + 'libraries/library_children.svg',
+			iconStyle: 'background-color:#00FF00',
 			style: function (feature) {
 				var key_regex = /^name$/
 				var name_key = feature.getKeys().filter(function(t){return t.match(key_regex)}).pop() || "name"
 				var name = feature.get(name_key) || '';
 				var fill = new ol.style.Fill({
-					color: 'rgba(255,0,0,0.1)'
+					color: 'rgba(0,0,255,0.4)'
 				});
 
 				var stroke = new ol.style.Stroke({
-					color: 'rgba(255,0,0,0.4)',
-					width: 1
+					color: '#000000',
+					width: 1.25
 				});
 				var style = new ol.style.Style({
 					image: new ol.style.Circle({
@@ -516,34 +475,36 @@ var config = {
 					}),
 							text: new ol.style.Text({
 								text: name,
-								color: 'rgba(255,0,0,0.4)',
-								font: '12px Verdana',
+								color: 'rgba(0,0,255,0.4)',
+								font: '10px Verdana',
 								offsetX : 0,
-								offsetY : 12
+								offsetY : 30
 							}),
 					fill: fill,
 					stroke: stroke
 				});
 				return style;
 			}
-		},
+
+},
+
 		{
-			group: 'mtb',
-			title: 'mtb:type=crosscountry',
-			query: '(nwr["mtb:type"="crosscountry"]({{bbox}});node(w););out;',
-			iconSrc: imgSrc + 'base/line.png',
-			iconStyle: 'background-color:#ffc0cb',
+			group: 'Tipus',
+			title: 'Estudiants',
+			query: '(node["amenity"="library"]["library"="students"]({{bbox}});node(w);way["amenity"="library"]["library"="students"]({{bbox}});node(w);relation["amenity"="library"]["library"="students"]({{bbox}});node(w););out meta;',
+			iconSrc: imgSrc + 'libraries/library_students.svg',
+			iconStyle: 'background-color:#00FF00',
 			style: function (feature) {
 				var key_regex = /^name$/
 				var name_key = feature.getKeys().filter(function(t){return t.match(key_regex)}).pop() || "name"
 				var name = feature.get(name_key) || '';
 				var fill = new ol.style.Fill({
-					color: 'rgba(255,192,203,0.1)'
+					color: 'rgba(0,0,255,0.4)'
 				});
 
 				var stroke = new ol.style.Stroke({
-					color: 'rgba(255,192,203,0.4)',
-					width: 1
+					color: '#000000',
+					width: 1.25
 				});
 				var style = new ol.style.Style({
 					image: new ol.style.Circle({
@@ -553,34 +514,36 @@ var config = {
 					}),
 							text: new ol.style.Text({
 								text: name,
-								color: 'rgba(0,128,0,0.4)',
-								font: '14px Verdana',
+								color: 'rgba(0,0,255,0.4)',
+								font: '10px Verdana',
 								offsetX : 0,
-								offsetY : 12
+								offsetY : 30
 							}),
 					fill: fill,
 					stroke: stroke
 				});
 				return style;
 			}
-		},
+
+},
+
 		{
-			group: 'mtb',
-			title: 'mtb:type=allmountain',
-			query: '(nwr["mtb:type"="allmountain"]({{bbox}});node(w););out;',
-			iconSrc: imgSrc + 'base/line.png',
-			iconStyle: 'background-color:#ff00ff',
+			group: 'Tipus',
+			title: 'Recerca',
+			query: '(node["amenity"="library"]["library"="research"]({{bbox}});node(w);way["amenity"="library"]["library"="research"]({{bbox}});node(w);relation["amenity"="library"]["library"="research"]({{bbox}});node(w););out meta;',
+			iconSrc: imgSrc + 'libraries/library_research.svg',
+			iconStyle: 'background-color:#00FF00',
 			style: function (feature) {
 				var key_regex = /^name$/
 				var name_key = feature.getKeys().filter(function(t){return t.match(key_regex)}).pop() || "name"
 				var name = feature.get(name_key) || '';
 				var fill = new ol.style.Fill({
-					color: 'rgba(255,0,255,0.1)'
+					color: 'rgba(0,0,255,0.4)'
 				});
 
 				var stroke = new ol.style.Stroke({
-					color: 'rgba(255,0,255,0.4)',
-					width: 1
+					color: '#000000',
+					width: 1.25
 				});
 				var style = new ol.style.Style({
 					image: new ol.style.Circle({
@@ -590,17 +553,135 @@ var config = {
 					}),
 							text: new ol.style.Text({
 								text: name,
-								color: 'rgba(0,128,0,0.4)',
-								font: '14px Gill Sans Extrabold',
+								color: 'rgba(0,0,255,0.4)',
+								font: '10px Verdana',
 								offsetX : 0,
-								offsetY : 12
+								offsetY : 30
 							}),
 					fill: fill,
 					stroke: stroke
 				});
 				return style;
 			}
-		},
+
+},
+
+		{
+			group: 'Tipus',
+			title: 'University',
+			query: '(node["amenity"="library"]["library"="university"]({{bbox}});node(w);way["amenity"="library"]["library"="university"]({{bbox}});node(w);relation["amenity"="library"]["library"="university"]({{bbox}});node(w););out meta;',
+			iconSrc: imgSrc + 'libraries/library_university.svg',
+			iconStyle: 'background-color:#00FF00',
+			style: function (feature) {
+				var key_regex = /^name$/
+				var name_key = feature.getKeys().filter(function(t){return t.match(key_regex)}).pop() || "name"
+				var name = feature.get(name_key) || '';
+				var fill = new ol.style.Fill({
+					color: 'rgba(0,0,255,0.4)'
+				});
+
+				var stroke = new ol.style.Stroke({
+					color: '#000000',
+					width: 1.25
+				});
+				var style = new ol.style.Style({
+					image: new ol.style.Circle({
+						fill: fill,
+						stroke: stroke,
+						radius: 5
+					}),
+							text: new ol.style.Text({
+								text: name,
+								color: 'rgba(0,0,255,0.4)',
+								font: '10px Verdana',
+								offsetX : 0,
+								offsetY : 30
+							}),
+					fill: fill,
+					stroke: stroke
+				});
+				return style;
+			}
+
+},
+
+		{
+			group: 'Tipus',
+			title: 'Acadèmic',
+			query: '(node["amenity"="library"]["library"="academic"]({{bbox}});node(w);way["amenity"="library"]["library"="academic"]({{bbox}});node(w);relation["amenity"="library"]["library"="academic"]({{bbox}});node(w););out meta;',
+			iconSrc: imgSrc + 'libraries/library_academic.svg',
+			iconStyle: 'background-color:#00FF00',
+			style: function (feature) {
+				var key_regex = /^name$/
+				var name_key = feature.getKeys().filter(function(t){return t.match(key_regex)}).pop() || "name"
+				var name = feature.get(name_key) || '';
+				var fill = new ol.style.Fill({
+					color: 'rgba(0,0,255,0.4)'
+				});
+
+				var stroke = new ol.style.Stroke({
+					color: '#000000',
+					width: 1.25
+				});
+				var style = new ol.style.Style({
+					image: new ol.style.Circle({
+						fill: fill,
+						stroke: stroke,
+						radius: 5
+					}),
+							text: new ol.style.Text({
+								text: name,
+								color: 'rgba(0,0,255,0.4)',
+								font: '10px Verdana',
+								offsetX : 0,
+								offsetY : 30
+							}),
+					fill: fill,
+					stroke: stroke
+				});
+				return style;
+			}
+
+},
+
+		{
+			group: 'Tipus',
+			title: 'Desconegut (Falta informació)',
+			query: '(node["amenity"="library"][!"library"]({{bbox}});node(w);way["amenity"="library"][!"library"]({{bbox}});node(w);relation["amenity"="library"][!"library"]({{bbox}});node(w););out meta;',
+			iconSrc: imgSrc + 'libraries/library_unknown.svg',
+			iconStyle: 'background-color:#00FF00',
+			style: function (feature) {
+				var key_regex = /^name$/
+				var name_key = feature.getKeys().filter(function(t){return t.match(key_regex)}).pop() || "name"
+				var name = feature.get(name_key) || '';
+				var fill = new ol.style.Fill({
+					color: 'rgba(0,0,255,0.4)'
+				});
+
+				var stroke = new ol.style.Stroke({
+					color: '#000000',
+					width: 1.25
+				});
+				var style = new ol.style.Style({
+					image: new ol.style.Circle({
+						fill: fill,
+						stroke: stroke,
+						radius: 5
+					}),
+							text: new ol.style.Text({
+								text: name,
+								color: 'rgba(0,0,255,0.4)',
+								font: '10px Verdana',
+								offsetX : 0,
+								offsetY : 30
+							}),
+					fill: fill,
+					stroke: stroke
+				});
+				return style;
+			}
+
+},
 		{
 			group: 'mtb',
 			title: 'mtb:type=downhill',

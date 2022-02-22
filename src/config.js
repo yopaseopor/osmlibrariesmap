@@ -376,7 +376,7 @@ var config = {
 			title: 'Públic en general',
 			query: '(node["amenity"="library"]["library"="public"]({{bbox}});node(w);way["amenity"="library"]["library"="public"]({{bbox}});node(w);relation["amenity"="library"]["library"="public"]({{bbox}});node(w););out meta;',
 			iconSrc: imgSrc + 'libraries/library_public.svg',
-			iconStyle: 'background-color:#00FF00',
+			iconStyle: 'background-color:#FFFFFF',
 			style: function (feature) {
 				var key_regex = /^name$/
 				var name_key = feature.getKeys().filter(function(t){return t.match(key_regex)}).pop() || "name"

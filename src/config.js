@@ -490,7 +490,7 @@ var config = {
 
 		{
 			group: 'Tipus',
-			title: 'Estudiants',
+			title: 'Estudiantil',
 			query: '(node["amenity"="library"]["library"="students"]({{bbox}});node(w);way["amenity"="library"]["library"="students"]({{bbox}});node(w);relation["amenity"="library"]["library"="students"]({{bbox}});node(w););out meta;',
 			iconSrc: imgSrc + 'libraries/library_students.svg',
 			iconStyle: 'background-color:#FFFFFF',
@@ -568,7 +568,7 @@ var config = {
 
 		{
 			group: 'Tipus',
-			title: 'University',
+			title: 'Universitària',
 			query: '(node["amenity"="library"]["library"="university"]({{bbox}});node(w);way["amenity"="library"]["library"="university"]({{bbox}});node(w);relation["amenity"="library"]["library"="university"]({{bbox}});node(w););out meta;',
 			iconSrc: imgSrc + 'libraries/library_university.svg',
 			iconStyle: 'background-color:#FFFFFF',

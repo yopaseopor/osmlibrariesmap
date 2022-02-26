@@ -682,23 +682,24 @@ var config = {
 			}
 
 },
+
 		{
-			group: 'mtb',
-			title: 'mtb:type=downhill',
-			query: '(nwr["mtb:type"="downhill"]({{bbox}});node(w););out;',
-			iconSrc: imgSrc + 'base/line.png',
-			iconStyle: 'background-color:#800080',
+			group: 'Fons documental',
+			title: 'Tots',
+			query: '(node["amenity"="library"]["books"~"all"]({{bbox}});node(w);way["amenity"="library"]["books"~"all"]({{bbox}});node(w);relation["amenity"="library"]["books"~"all"]({{bbox}});node(w););out meta;',
+			iconSrc: imgSrc + 'libraries/books_all.svg',
+			iconStyle: 'background-color:#000000',
 			style: function (feature) {
 				var key_regex = /^name$/
 				var name_key = feature.getKeys().filter(function(t){return t.match(key_regex)}).pop() || "name"
 				var name = feature.get(name_key) || '';
 				var fill = new ol.style.Fill({
-					color: 'rgba(128,0,128,0.1)'
+					color: 'rgba(0,0,0,0.4)'
 				});
 
 				var stroke = new ol.style.Stroke({
-					color: 'rgba(128,0,128,0.4)',
-					width: 1
+					color: '#000000',
+					width: 1.25
 				});
 				var style = new ol.style.Style({
 					image: new ol.style.Circle({
@@ -708,17 +709,18 @@ var config = {
 					}),
 							text: new ol.style.Text({
 								text: name,
-								color: 'rgba(255,0,0,0.4)',
-								font: '12px Verdana',
+								color: 'rgba(0,0,0,0.4)',
+								font: '10px Verdana',
 								offsetX : 0,
-								offsetY : 12
+								offsetY : 30
 							}),
 					fill: fill,
 					stroke: stroke
 				});
 				return style;
 			}
-		},
+
+},
 		{
 			group: 'mtb',
 			title: 'mtb:type=freeride',

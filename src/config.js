@@ -684,6 +684,44 @@ var config = {
 },
 
 		{
+			group: 'Tipus',
+			title: 'Desconegut (Falta informació)',
+			query: '(node["amenity"="library"][!"library"]({{bbox}});node(w);way["amenity"="library"][!"library"]({{bbox}});node(w);relation["amenity"="library"][!"library"]({{bbox}});node(w););out meta;',
+			iconSrc: imgSrc + 'libraries/library_unknown.svg',
+			iconStyle: 'background-color:#000000',
+			style: function (feature) {
+				var key_regex = /^name$/
+				var name_key = feature.getKeys().filter(function(t){return t.match(key_regex)}).pop() || "name"
+				var name = feature.get(name_key) || '';
+				var fill = new ol.style.Fill({
+					color: 'rgba(0,0,0,0.4)'
+				});
+
+				var stroke = new ol.style.Stroke({
+					color: '#000000',
+					width: 1.25
+				});
+				var style = new ol.style.Style({
+					image: new ol.style.Circle({
+						fill: fill,
+						stroke: stroke,
+						radius: 5
+					}),
+							text: new ol.style.Text({
+								text: name,
+								color: 'rgba(0,0,0,0.4)',
+								font: '10px Verdana',
+								offsetX : 0,
+								offsetY : 30
+							}),
+					fill: fill,
+					stroke: stroke
+				});
+				return style;
+			}
+
+},
+		{
 			group: 'Fons documental',
 			title: 'Tots',
 			query: '(node["amenity"="library"]["books"~"all"]({{bbox}});node(w);way["amenity"="library"]["books"~"all"]({{bbox}});node(w);relation["amenity"="library"]["books"~"all"]({{bbox}});node(w););out meta;',

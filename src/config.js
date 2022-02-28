@@ -687,7 +687,7 @@ var config = {
 			title: 'Tots',
 			query: '(node["amenity"="library"]["books"~"all"]({{bbox}});node(w);way["amenity"="library"]["books"~"all"]({{bbox}});node(w);relation["amenity"="library"]["books"~"all"]({{bbox}});node(w););out meta;',
 			iconSrc: imgSrc + 'libraries/books_all.svg',
-			iconStyle: 'background-color:#000000',
+			iconStyle: 'background-color:#FFFFFF',
 			style: function (feature) {
 				var key_regex = /^name$/
 				var name_key = feature.getKeys().filter(function(t){return t.match(key_regex)}).pop() || "name"
@@ -725,7 +725,7 @@ var config = {
 			title: 'Antiquari',
 			query: '(node["amenity"="library"]["books"~"antiquarian"]({{bbox}});node(w);way["amenity"="library"]["books"~"antiquarian"]({{bbox}});node(w);relation["amenity"="library"]["books"~"antiquarian"]({{bbox}});node(w););out meta;',
 			iconSrc: imgSrc + 'libraries/books_antiquarian.svg',
-			iconStyle: 'background-color:#000000',
+			iconStyle: 'background-color:#FFFFFF',
 			style: function (feature) {
 				var key_regex = /^name$/
 				var name_key = feature.getKeys().filter(function(t){return t.match(key_regex)}).pop() || "name"
@@ -763,7 +763,7 @@ var config = {
 			title: 'Arquitectura',
 			query: '(node["amenity"="library"]["books"~"architecture"]({{bbox}});node(w);way["amenity"="library"]["books"~"architecture"]({{bbox}});node(w);relation["amenity"="library"]["books"~"architecture"]({{bbox}});node(w););out meta;',
 			iconSrc: imgSrc + 'libraries/books_architecture.svg',
-			iconStyle: 'background-color:#000000',
+			iconStyle: 'background-color:#FFFFFF',
 			style: function (feature) {
 				var key_regex = /^name$/
 				var name_key = feature.getKeys().filter(function(t){return t.match(key_regex)}).pop() || "name"
@@ -799,9 +799,9 @@ var config = {
 		{
 			group: 'Fons documental',
 			title: 'Fine Art',
-			query: '(node["amenity"="library"]["books"~"antiquarian"]({{bbox}});node(w);way["amenity"="library"]["books"~"antiquarian"]({{bbox}});node(w);relation["amenity"="library"]["books"~"antiquarian"]({{bbox}});node(w););out meta;',
-			iconSrc: imgSrc + 'libraries/books_antiquarian.svg',
-			iconStyle: 'background-color:#000000',
+			query: '(node["amenity"="library"]["books"~"fine_art"]({{bbox}});node(w);way["amenity"="library"]["books"~"fine_art"]({{bbox}});node(w);relation["amenity"="library"]["books"~"fine_art"]({{bbox}});node(w););out meta;',
+			iconSrc: imgSrc + 'libraries/books_fine_art.svg',
+			iconStyle: 'background-color:#FFFFFF',
 			style: function (feature) {
 				var key_regex = /^name$/
 				var name_key = feature.getKeys().filter(function(t){return t.match(key_regex)}).pop() || "name"
@@ -835,22 +835,22 @@ var config = {
 
 },
 		{
-			group: 'mtb',
-			title: 'mtb:name (way)',
-			query: '(wr["mtb:name"][name]({{bbox}});node(w););out;',
-			iconSrc: imgSrc + 'base/line.png',
-			iconStyle: 'background-color:#808080',
+			group: 'Fons documental',
+			title: 'Art',
+			query: '(node["amenity"="library"]["books"~"art"]({{bbox}});node(w);way["amenity"="library"]["books"~"art"]({{bbox}});node(w);relation["amenity"="library"]["books"~"art"]({{bbox}});node(w););out meta;',
+			iconSrc: imgSrc + 'libraries/books_art.svg',
+			iconStyle: 'background-color:#FFFFFF',
 			style: function (feature) {
-				var key_regex = /^mtb:name$/
+				var key_regex = /^name$/
 				var name_key = feature.getKeys().filter(function(t){return t.match(key_regex)}).pop() || "name"
 				var name = feature.get(name_key) || '';
 				var fill = new ol.style.Fill({
-					color: 'rgba(128,128,128,0.1)'
+					color: 'rgba(0,0,0,0.4)'
 				});
 
 				var stroke = new ol.style.Stroke({
-					color: 'rgba(128,128,128,0.4)',
-					width: 1
+					color: '#000000',
+					width: 1.25
 				});
 				var style = new ol.style.Style({
 					image: new ol.style.Circle({
@@ -860,17 +860,94 @@ var config = {
 					}),
 							text: new ol.style.Text({
 								text: name,
-								color: 'rgba(0,128,0,0.4)',
-								placement: 'line',
+								color: 'rgba(0,0,0,0.4)',
+								font: '10px Verdana',
 								offsetX : 0,
-								offsetY : 12
+								offsetY : 30
 							}),
 					fill: fill,
 					stroke: stroke
 				});
 				return style;
 			}
-		},
+
+},
+		{
+			group: 'Fons documental',
+			title: 'Ciències de la comunicació',
+			query: '(node["amenity"="library"]["books"~"communication_science"]({{bbox}});node(w);way["amenity"="library"]["books"~"communication_science"]({{bbox}});node(w);relation["amenity"="library"]["books"~"communication_science"]({{bbox}});node(w););out meta;',
+			iconSrc: imgSrc + 'libraries/books_communication_science.svg',
+			iconStyle: 'background-color:#FFFFFF',
+			style: function (feature) {
+				var key_regex = /^name$/
+				var name_key = feature.getKeys().filter(function(t){return t.match(key_regex)}).pop() || "name"
+				var name = feature.get(name_key) || '';
+				var fill = new ol.style.Fill({
+					color: 'rgba(0,0,0,0.4)'
+				});
+
+				var stroke = new ol.style.Stroke({
+					color: '#000000',
+					width: 1.25
+				});
+				var style = new ol.style.Style({
+					image: new ol.style.Circle({
+						fill: fill,
+						stroke: stroke,
+						radius: 5
+					}),
+							text: new ol.style.Text({
+								text: name,
+								color: 'rgba(0,0,0,0.4)',
+								font: '10px Verdana',
+								offsetX : 0,
+								offsetY : 30
+							}),
+					fill: fill,
+					stroke: stroke
+				});
+				return style;
+			}
+
+},
+		{
+			group: 'Fons documental',
+			title: 'Estudis de comunicació',
+			query: '(node["amenity"="library"]["books"~"communication_studies"]({{bbox}});node(w);way["amenity"="library"]["books"~"communication_studies"]({{bbox}});node(w);relation["amenity"="library"]["books"~"communication_studies"]({{bbox}});node(w););out meta;',
+			iconSrc: imgSrc + 'libraries/books_communication_studies.svg',
+			iconStyle: 'background-color:#FFFFFF',
+			style: function (feature) {
+				var key_regex = /^name$/
+				var name_key = feature.getKeys().filter(function(t){return t.match(key_regex)}).pop() || "name"
+				var name = feature.get(name_key) || '';
+				var fill = new ol.style.Fill({
+					color: 'rgba(0,0,0,0.4)'
+				});
+
+				var stroke = new ol.style.Stroke({
+					color: '#000000',
+					width: 1.25
+				});
+				var style = new ol.style.Style({
+					image: new ol.style.Circle({
+						fill: fill,
+						stroke: stroke,
+						radius: 5
+					}),
+							text: new ol.style.Text({
+								text: name,
+								color: 'rgba(0,0,0,0.4)',
+								font: '10px Verdana',
+								offsetX : 0,
+								offsetY : 30
+							}),
+					fill: fill,
+					stroke: stroke
+				});
+				return style;
+			}
+
+},
 		{
 			group: 'mtb:scale',
 			title: 'mtb:scale=0',

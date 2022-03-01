@@ -103,7 +103,7 @@ Directament es pot modificar la pàgina editant els arxius corresponents:
 
 # 2-Mapcomplete
 
-Utilitzem un repte personalitzat de [Mapcomplete](https://mapcomplete.osm.be  [font](https://github.com/pietervdvn/MapComplete) per tal d'aportar les dades que faltin, fent-ho en idioma "natural" (no de la màquina ni d'Openstreetmap) i des de qualsevol dispositiu mòbil amb l'únic requisit de [registrar-se com a usuari/a d'OpenStreetMap](https://www.openstreetmap.org/login).
+Utilitzem un repte personalitzat de [Mapcomplete](https://mapcomplete.osm.be)-[font]-(https://github.com/pietervdvn/MapComplete) per tal d'aportar les dades que faltin, fent-ho en idioma "natural" (no de la màquina ni d'Openstreetmap) i des de qualsevol dispositiu mòbil amb l'únic requisit de [registrar-se com a usuari/a d'OpenStreetMap](https://www.openstreetmap.org/login).
 
 # [Exemple del mapa funcionant](http://yopaseopor.github.io/osmlitmap)
 # [Completador de Mapcomplete sobre biblioteques](https://mapcomplete.osm.be/theme.html?userlayout=https://raw.githubusercontent.com/yopaseopor/mcquests/main/libraries.json)

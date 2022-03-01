@@ -5,81 +5,80 @@ OSM L Map neix aprofitant la base de dades d'Openstreetmap amb informació sobre
 OSM (Openstreetmap) no és un mapa, és una base de dades de punts i línies geolocalitzats, que entre d'altres coses es pot aprofitar per fer mapes (renderitzacions). Però també es poden aprofitar les dades (en aquest cas, d'enllumenat) .Tot plegat es fa amb claus, valors i relacions en aquests punts i línies.
 En aquest cas utilitzarem les claus:
 
-*addr:street
-*addr:housenumber
-*addr:postcode
-*addr:floor
-*library=public/cinema/children/students/research/university/academic
-*books=antiquarian/architecture/fine_art/art/communication_science/communication_studies/tourism/tourism_geography/computer_engineering/telecommunications_engineering/economics/business_administration/education_sciences/psychology/health_sciences/industrial_engineering/law/medicine/sciences/natural_sciences/social_sciences/trade_studies/anarchism
-*operator=
-*operator:type=association/community/corporation/foundation/government/local_authority/private/private_non_profit/public/religious/university/statewide
-*network=
-*opening_hours=
-*service_times=
-*ref=
-*ref:isil=
+*	addr:street
+*	addr:housenumber
+*	addr:postcode
+*	addr:floor
+*	library=public/cinema/children/students/research/university/academic
+*	books=antiquarian/architecture/fine_art/art/communication_science/communication_studies/tourism/tourism_geography/computer_engineering/telecommunications_engineering/economics/business_administration/education_sciences/psychology/health_sciences/industrial_engineering/law/medicine/sciences/natural_sciences/social_sciences/trade_studies/anarchism
+*	operator=
+*	operator:type=association/community/corporation/foundation/government/local_authority/private/private_non_profit/public/religious/university/statewide
+*	network=
+*	opening_hours=
+*	service_times=
+*	ref=
+*	ref:isil=
 
-*wheelchair=limited/no/yes/designated
-*wheelchair:description=
-*access:blind=limited
-*blind:description=
-*access:deaf=yes
-*deaf:description=
-*access:mental_disabled=yes
-*mental_disabled:description=
+*	wheelchair=limited/no/yes/designated
+*	wheelchair:description=
+*	access:blind=limited
+*	blind:description=
+*	access:deaf=yes
+*	deaf:description=
+*	access:mental_disabled=yes
+*	mental_disabled:description=
 
-*kids_area=no/yes/indoor/outdoor
-*kids_area:supervised=no/yes
-*kids_area:fee=yes/no
-*changing_table=yes/no
-*changing_table:location=unisex_toilet/wheelchair_toilet/room
+*	kids_area=no/yes/indoor/outdoor
+*	kids_area:supervised=no/yes
+*	kids_area:fee=yes/no
+*	changing_table=yes/no
+*	changing_table:location=unisex_toilet/wheelchair_toilet/room
 
-*toilets=no/yes
-*toilets:access=public/customers/private/yes/permissive
-*toilets:female=yes
-*toilets:male=yes
-*toilets:unisex=yes
-*toilets:wheelchair=no/yes/designated/limited
+*	toilets=no/yes
+*	toilets:access=public/customers/private/yes/permissive
+*	toilets:female=yes
+*	toilets:male=yes
+*	toilets:unisex=yes
+*	toilets:wheelchair=no/yes/designated/limited
 
-*contact:email=
-*contact:phone=+34978850564
-*contact:facebook=
-*contact:twitter=@bibliojuneda
-*contact:website=http://biblioteca.santvidigital.cat/
-*contact:instagram=
-*contact:youtube=
+*	contact:email=
+*	contact:phone=
+*	contact:facebook=
+*	contact:twitter=
+*	contact:website=
+*	contact:instagram=
+*	contact:youtube=
 
-*access=customers/designated/no/permissive/private/yes
-*capacity= ?
-*air_conditioning=yes/no
-*automatic_door=button/yes/no/motion
-*outdoor_seating=yes
+*	access=customers/designated/no/permissive/private/yes
+*	capacity= ?
+*	air_conditioning=yes/no
+*	automatic_door=button/yes/no/motion
+*	outdoor_seating=yes
 
-*fee=yes/no
-*payment:cash=no/yes
-*payment:credit_cards=no/yes
+*	fee=yes/no
+*	payment:cash=no/yes
+*	payment:credit_cards=no/yes
 
-*service:computer=no/yes
-*service:copy=no/yes
-*service:print=no/yes
-*service:3dprint=yes
-*service:gaming=yes
-*service:scan=yes
+*	service:computer=no/yes
+*	service:copy=no/yes
+*	service:print=no/yes
+*	service:3dprint=yes
+*	service:gaming=yes
+*	service:scan=yes
 
-*internet_access=no/terminal/wifi/wired/yes
-*internet_access:fee=customers/free/no/yes
-*internet_access:ssid=
-*internet_access:operator=
+*	internet_access=no/terminal/wifi/wired/yes
+*	internet_access:fee=customers/free/no/yes
+*	internet_access:ssid=
+*	internet_access:operator=
 
-
-*start_date=
-*architect=
-*wikipedia=
-*wikidata=
-*wikimedia_commons=
-*image=
-*source=survey/local_knowledge/url
-*source:date=
+*	start_date=
+*	architect=
+*	wikipedia=
+*	wikidata=
+*	wikimedia_commons=
+*	image=
+*	source=survey/local_knowledge/url
+*	source:date=
 
 # 1-Mapa
 -Mapa basat en [Bicycle tags map](https://wiki.openstreetmap.org/wiki/Bicycle_tags_map)

@@ -949,47 +949,271 @@ var config = {
 
 },
 		{
-			group: 'mtb:scale',
-			title: 'mtb:scale=0',
-			query: '(nwr["mtb:scale"="0"]({{bbox}});node(w););out;',
-			iconSrc: imgSrc + 'base/tdot.png',
-			iconStyle: 'background-color:#00ff00',
-			style: function () {
+			group: 'Fons documental',
+			title: 'Turisme',
+			query: '(node["amenity"="library"]["books"~"tourism"]({{bbox}});node(w);way["amenity"="library"]["books"~"tourism"]({{bbox}});node(w);relation["amenity"="library"]["books"~"tourism"]({{bbox}});node(w););out meta;',
+			iconSrc: imgSrc + 'libraries/books_tourism.svg',
+			iconStyle: 'background-color:#FFFFFF',
+			style: function (feature) {
+				var key_regex = /^name$/
+				var name_key = feature.getKeys().filter(function(t){return t.match(key_regex)}).pop() || "name"
+				var name = feature.get(name_key) || '';
 				var fill = new ol.style.Fill({
-					color: 'rgba(0,255,0,0.4)'
+					color: 'rgba(0,0,0,0.4)'
 				});
+
 				var stroke = new ol.style.Stroke({
-					color: 'rgba(0,255,0,0.4)',
-					width: 5
+					color: '#000000',
+					width: 1.25
 				});
 				var style = new ol.style.Style({
+					image: new ol.style.Circle({
+						fill: fill,
+						stroke: stroke,
+						radius: 5
+					}),
+							text: new ol.style.Text({
+								text: name,
+								color: 'rgba(0,0,0,0.4)',
+								font: '10px Verdana',
+								offsetX : 0,
+								offsetY : 30
+							}),
 					fill: fill,
 					stroke: stroke
 				});
 				return style;
 			}
-		},
+
+},
 		{
-			group: 'mtb:scale',
-			title: 'mtb:scale=1',
-			query: '(nwr["mtb:scale"="1"]({{bbox}});node(w););out;',
-			iconSrc: imgSrc + 'base/tdot.png',
-			iconStyle: 'background-color:#ffff00',
-			style: function () {
+			group: 'Fons documental',
+			title: 'Geografia',
+			query: '(node["amenity"="library"]["books"~"tourism_geography"]({{bbox}});node(w);way["amenity"="library"]["books"~"tourism_geography"]({{bbox}});node(w);relation["amenity"="library"]["books"~"tourism_geography"]({{bbox}});node(w););out meta;',
+			iconSrc: imgSrc + 'libraries/books_tourism_geography.svg',
+			iconStyle: 'background-color:#FFFFFF',
+			style: function (feature) {
+				var key_regex = /^name$/
+				var name_key = feature.getKeys().filter(function(t){return t.match(key_regex)}).pop() || "name"
+				var name = feature.get(name_key) || '';
 				var fill = new ol.style.Fill({
-					color: 'rgba(255,255,0,0.4)'
+					color: 'rgba(0,0,0,0.4)'
 				});
+
 				var stroke = new ol.style.Stroke({
-					color: 'rgba(255,255,0,0.4)',
-					width: 5
+					color: '#000000',
+					width: 1.25
 				});
 				var style = new ol.style.Style({
+					image: new ol.style.Circle({
+						fill: fill,
+						stroke: stroke,
+						radius: 5
+					}),
+							text: new ol.style.Text({
+								text: name,
+								color: 'rgba(0,0,0,0.4)',
+								font: '10px Verdana',
+								offsetX : 0,
+								offsetY : 30
+							}),
 					fill: fill,
 					stroke: stroke
 				});
 				return style;
 			}
-		},
+
+},
+		{
+			group: 'Fons documental',
+			title: 'Enginyeria informàtica',
+			query: '(node["amenity"="library"]["books"~"computer_engineering"]({{bbox}});node(w);way["amenity"="library"]["books"~"computer_engineering"]({{bbox}});node(w);relation["amenity"="library"]["books"~"computer_engineering"]({{bbox}});node(w););out meta;',
+			iconSrc: imgSrc + 'libraries/books_computer_engineering.svg',
+			iconStyle: 'background-color:#FFFFFF',
+			style: function (feature) {
+				var key_regex = /^name$/
+				var name_key = feature.getKeys().filter(function(t){return t.match(key_regex)}).pop() || "name"
+				var name = feature.get(name_key) || '';
+				var fill = new ol.style.Fill({
+					color: 'rgba(0,0,0,0.4)'
+				});
+
+				var stroke = new ol.style.Stroke({
+					color: '#000000',
+					width: 1.25
+				});
+				var style = new ol.style.Style({
+					image: new ol.style.Circle({
+						fill: fill,
+						stroke: stroke,
+						radius: 5
+					}),
+							text: new ol.style.Text({
+								text: name,
+								color: 'rgba(0,0,0,0.4)',
+								font: '10px Verdana',
+								offsetX : 0,
+								offsetY : 30
+							}),
+					fill: fill,
+					stroke: stroke
+				});
+				return style;
+			}
+
+},
+		{
+			group: 'Fons documental',
+			title: 'Enginyeria de Telecomunicació',
+			query: '(node["amenity"="library"]["books"~"telecommunications_engineering"]({{bbox}});node(w);way["amenity"="library"]["books"~"telecommunications_engineering"]({{bbox}});node(w);relation["amenity"="library"]["books"~"telecommunications_engineering"]({{bbox}});node(w););out meta;',
+			iconSrc: imgSrc + 'libraries/books_telecommunications_engineering.svg',
+			iconStyle: 'background-color:#FFFFFF',
+			style: function (feature) {
+				var key_regex = /^name$/
+				var name_key = feature.getKeys().filter(function(t){return t.match(key_regex)}).pop() || "name"
+				var name = feature.get(name_key) || '';
+				var fill = new ol.style.Fill({
+					color: 'rgba(0,0,0,0.4)'
+				});
+
+				var stroke = new ol.style.Stroke({
+					color: '#000000',
+					width: 1.25
+				});
+				var style = new ol.style.Style({
+					image: new ol.style.Circle({
+						fill: fill,
+						stroke: stroke,
+						radius: 5
+					}),
+							text: new ol.style.Text({
+								text: name,
+								color: 'rgba(0,0,0,0.4)',
+								font: '10px Verdana',
+								offsetX : 0,
+								offsetY : 30
+							}),
+					fill: fill,
+					stroke: stroke
+				});
+				return style;
+			}
+
+},
+		{
+			group: 'Fons documental',
+			title: 'Economia',
+			query: '(node["amenity"="library"]["books"~"economics"]({{bbox}});node(w);way["amenity"="library"]["books"~"economics"]({{bbox}});node(w);relation["amenity"="library"]["books"~"economics"]({{bbox}});node(w););out meta;',
+			iconSrc: imgSrc + 'libraries/books_economics.svg',
+			iconStyle: 'background-color:#FFFFFF',
+			style: function (feature) {
+				var key_regex = /^name$/
+				var name_key = feature.getKeys().filter(function(t){return t.match(key_regex)}).pop() || "name"
+				var name = feature.get(name_key) || '';
+				var fill = new ol.style.Fill({
+					color: 'rgba(0,0,0,0.4)'
+				});
+
+				var stroke = new ol.style.Stroke({
+					color: '#000000',
+					width: 1.25
+				});
+				var style = new ol.style.Style({
+					image: new ol.style.Circle({
+						fill: fill,
+						stroke: stroke,
+						radius: 5
+					}),
+							text: new ol.style.Text({
+								text: name,
+								color: 'rgba(0,0,0,0.4)',
+								font: '10px Verdana',
+								offsetX : 0,
+								offsetY : 30
+							}),
+					fill: fill,
+					stroke: stroke
+				});
+				return style;
+			}
+
+},
+		{
+			group: 'Fons documental',
+			title: 'Administració i direcció d\'empreses',
+			query: '(node["amenity"="library"]["books"~"business_administration"]({{bbox}});node(w);way["amenity"="library"]["books"~"business_administration"]({{bbox}});node(w);relation["amenity"="library"]["books"~"business_administration"]({{bbox}});node(w););out meta;',
+			iconSrc: imgSrc + 'libraries/books_business_administration.svg',
+			iconStyle: 'background-color:#FFFFFF',
+			style: function (feature) {
+				var key_regex = /^name$/
+				var name_key = feature.getKeys().filter(function(t){return t.match(key_regex)}).pop() || "name"
+				var name = feature.get(name_key) || '';
+				var fill = new ol.style.Fill({
+					color: 'rgba(0,0,0,0.4)'
+				});
+
+				var stroke = new ol.style.Stroke({
+					color: '#000000',
+					width: 1.25
+				});
+				var style = new ol.style.Style({
+					image: new ol.style.Circle({
+						fill: fill,
+						stroke: stroke,
+						radius: 5
+					}),
+							text: new ol.style.Text({
+								text: name,
+								color: 'rgba(0,0,0,0.4)',
+								font: '10px Verdana',
+								offsetX : 0,
+								offsetY : 30
+							}),
+					fill: fill,
+					stroke: stroke
+				});
+				return style;
+			}
+
+},
+		{
+			group: 'Fons documental',
+			title: 'Ciències de l\'educació',
+			query: '(node["amenity"="library"]["books"~"education_sciences"]({{bbox}});node(w);way["amenity"="library"]["books"~"education_sciences"]({{bbox}});node(w);relation["amenity"="library"]["books"~"education_sciences"]({{bbox}});node(w););out meta;',
+			iconSrc: imgSrc + 'libraries/books_education_sciences.svg',
+			iconStyle: 'background-color:#FFFFFF',
+			style: function (feature) {
+				var key_regex = /^name$/
+				var name_key = feature.getKeys().filter(function(t){return t.match(key_regex)}).pop() || "name"
+				var name = feature.get(name_key) || '';
+				var fill = new ol.style.Fill({
+					color: 'rgba(0,0,0,0.4)'
+				});
+
+				var stroke = new ol.style.Stroke({
+					color: '#000000',
+					width: 1.25
+				});
+				var style = new ol.style.Style({
+					image: new ol.style.Circle({
+						fill: fill,
+						stroke: stroke,
+						radius: 5
+					}),
+							text: new ol.style.Text({
+								text: name,
+								color: 'rgba(0,0,0,0.4)',
+								font: '10px Verdana',
+								offsetX : 0,
+								offsetY : 30
+							}),
+					fill: fill,
+					stroke: stroke
+				});
+				return style;
+			}
+
+},
 		{
 			group: 'mtb:scale',
 			title: 'mtb:scale=2',

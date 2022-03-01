@@ -1215,47 +1215,43 @@ var config = {
 
 },
 		{
-			group: 'mtb:scale',
-			title: 'mtb:scale=2',
-			query: '(nwr["mtb:scale"="2"]({{bbox}});node(w););out;',
-			iconSrc: imgSrc + 'base/tdot.png',
-			iconStyle: 'background-color:#ffe135',
-			style: function () {
+			group: 'Fons documental',
+			title: 'Psicologia',
+			query: '(node["amenity"="library"]["books"~"psychology"]({{bbox}});node(w);way["amenity"="library"]["books"~"psychology"]({{bbox}});node(w);relation["amenity"="library"]["books"~"psychology"]({{bbox}});node(w););out meta;',
+			iconSrc: imgSrc + 'libraries/books_psychology.svg',
+			iconStyle: 'background-color:#FFFFFF',
+			style: function (feature) {
+				var key_regex = /^name$/
+				var name_key = feature.getKeys().filter(function(t){return t.match(key_regex)}).pop() || "name"
+				var name = feature.get(name_key) || '';
 				var fill = new ol.style.Fill({
-					color: 'rgba(255,225,53,0.4)'
+					color: 'rgba(0,0,0,0.4)'
 				});
+
 				var stroke = new ol.style.Stroke({
-					color: 'rgba(255,225,53,0.4)',
-					width: 5
+					color: '#000000',
+					width: 1.25
 				});
 				var style = new ol.style.Style({
+					image: new ol.style.Circle({
+						fill: fill,
+						stroke: stroke,
+						radius: 5
+					}),
+							text: new ol.style.Text({
+								text: name,
+								color: 'rgba(0,0,0,0.4)',
+								font: '10px Verdana',
+								offsetX : 0,
+								offsetY : 30
+							}),
 					fill: fill,
 					stroke: stroke
 				});
 				return style;
 			}
-		},
-		{
-			group: 'mtb:scale',
-			title: 'mtb:scale=3',
-			query: '(nwr["mtb:scale"="3"]({{bbox}});node(w););out;',
-			iconSrc: imgSrc + 'base/tdot.png',
-			iconStyle: 'background-color:#ffa500',
-			style: function () {
-				var fill = new ol.style.Fill({
-					color: 'rgba(255,165,0,0.4)'
-				});
-				var stroke = new ol.style.Stroke({
-					color: 'rgba(255,165,0,0.4)',
-					width: 5
-				});
-				var style = new ol.style.Style({
-					fill: fill,
-					stroke: stroke
-				});
-				return style;
-			}
-		},
+
+},
 		{
 			group: 'mtb:scale',
 			title: 'mtb:scale=4',

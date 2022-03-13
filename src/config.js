@@ -1332,7 +1332,7 @@ var config = {
 			group: 'Fons documental',
 			title: 'Dret',
 			query: '(node["amenity"="library"]["books"~"law"]({{bbox}});node(w);way["amenity"="library"]["books"~"law"]({{bbox}});node(w);relation["amenity"="library"]["books"~"law"]({{bbox}});node(w););out meta;',
-			iconSrc: imgSrc + 'libraries/books_law_engineering.svg',
+			iconSrc: imgSrc + 'libraries/books_law.svg',
 			iconStyle: 'background-color:#FFFFFF',
 			style: function (feature) {
 				var key_regex = /^name$/

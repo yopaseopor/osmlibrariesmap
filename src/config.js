@@ -1253,89 +1253,345 @@ var config = {
 
 },
 		{
-			group: 'mtb:scale',
-			title: 'mtb:scale=4',
-			query: '(nwr["mtb:scale"="4"]({{bbox}});node(w););out;',
-			iconSrc: imgSrc + 'base/tdot.png',
-			iconStyle: 'background-color:#ff0000',
-			style: function () {
+			group: 'Fons documental',
+			title: 'Ciències de la salut',
+			query: '(node["amenity"="library"]["books"~"health_sciences"]({{bbox}});node(w);way["amenity"="library"]["books"~"health_sciences"]({{bbox}});node(w);relation["amenity"="library"]["books"~"health_sciences"]({{bbox}});node(w););out meta;',
+			iconSrc: imgSrc + 'libraries/books_health_sciences.svg',
+			iconStyle: 'background-color:#FFFFFF',
+			style: function (feature) {
+				var key_regex = /^name$/
+				var name_key = feature.getKeys().filter(function(t){return t.match(key_regex)}).pop() || "name"
+				var name = feature.get(name_key) || '';
 				var fill = new ol.style.Fill({
-					color: 'rgba(255,0,0,0.4)'
+					color: 'rgba(0,0,0,0.4)'
 				});
+
 				var stroke = new ol.style.Stroke({
-					color: 'rgba(255,0,0,0.4)',
-					width: 5
+					color: '#000000',
+					width: 1.25
 				});
 				var style = new ol.style.Style({
+					image: new ol.style.Circle({
+						fill: fill,
+						stroke: stroke,
+						radius: 5
+					}),
+							text: new ol.style.Text({
+								text: name,
+								color: 'rgba(0,0,0,0.4)',
+								font: '10px Verdana',
+								offsetX : 0,
+								offsetY : 30
+							}),
 					fill: fill,
 					stroke: stroke
 				});
 				return style;
 			}
-		},
+
+},
 		{
-			group: 'mtb:scale',
-			title: 'mtb:scale=5',
-			query: '(nwr["mtb:scale"="5"]({{bbox}});node(w););out;',
-			iconSrc: imgSrc + 'base/tdot.png',
-			iconStyle: 'background-color:#c23b22',
-			style: function () {
+			group: 'Fons documental',
+			title: 'Enginyeria industrial',
+			query: '(node["amenity"="library"]["books"~"industrial_engineering"]({{bbox}});node(w);way["amenity"="library"]["books"~"industrial_engineering"]({{bbox}});node(w);relation["amenity"="library"]["books"~"industrial_engineering"]({{bbox}});node(w););out meta;',
+			iconSrc: imgSrc + 'libraries/books_industrial_engineering.svg',
+			iconStyle: 'background-color:#FFFFFF',
+			style: function (feature) {
+				var key_regex = /^name$/
+				var name_key = feature.getKeys().filter(function(t){return t.match(key_regex)}).pop() || "name"
+				var name = feature.get(name_key) || '';
 				var fill = new ol.style.Fill({
-					color: 'rgba(194,59,34,0.4)'
+					color: 'rgba(0,0,0,0.4)'
 				});
+
 				var stroke = new ol.style.Stroke({
-					color: 'rgba(194,59,34,0.4)',
-					width: 5
+					color: '#000000',
+					width: 1.25
 				});
 				var style = new ol.style.Style({
+					image: new ol.style.Circle({
+						fill: fill,
+						stroke: stroke,
+						radius: 5
+					}),
+							text: new ol.style.Text({
+								text: name,
+								color: 'rgba(0,0,0,0.4)',
+								font: '10px Verdana',
+								offsetX : 0,
+								offsetY : 30
+							}),
 					fill: fill,
 					stroke: stroke
 				});
 				return style;
 			}
-		},
+
+},
 		{
-			group: 'mtb:scale',
-			title: 'mtb:scale=6',
-			query: '(nwr["mtb:scale"="6"]({{bbox}});node(w););out;',
-			iconSrc: imgSrc + 'base/tdot.png',
-			iconStyle: 'background-color:#800000',
-			style: function () {
+			group: 'Fons documental',
+			title: 'Dret',
+			query: '(node["amenity"="library"]["books"~"law"]({{bbox}});node(w);way["amenity"="library"]["books"~"law"]({{bbox}});node(w);relation["amenity"="library"]["books"~"law"]({{bbox}});node(w););out meta;',
+			iconSrc: imgSrc + 'libraries/books_law_engineering.svg',
+			iconStyle: 'background-color:#FFFFFF',
+			style: function (feature) {
+				var key_regex = /^name$/
+				var name_key = feature.getKeys().filter(function(t){return t.match(key_regex)}).pop() || "name"
+				var name = feature.get(name_key) || '';
 				var fill = new ol.style.Fill({
-					color: 'rgba(128,0,0,0.4)'
+					color: 'rgba(0,0,0,0.4)'
 				});
+
 				var stroke = new ol.style.Stroke({
-					color: 'rgba(128,0,0,0.4)',
-					width: 5
+					color: '#000000',
+					width: 1.25
 				});
 				var style = new ol.style.Style({
+					image: new ol.style.Circle({
+						fill: fill,
+						stroke: stroke,
+						radius: 5
+					}),
+							text: new ol.style.Text({
+								text: name,
+								color: 'rgba(0,0,0,0.4)',
+								font: '10px Verdana',
+								offsetX : 0,
+								offsetY : 30
+							}),
 					fill: fill,
 					stroke: stroke
 				});
 				return style;
 			}
-		},
+
+},
 		{
-			group: 'mtb:scale',
-			title: 'mtb:scale:uphill=0',
-			query: '(nwr["mtb:scale:uphill"="0"]({{bbox}});node(w););out;',
-			iconSrc: imgSrc + 'base/line.png',
-			iconStyle: 'background-color:#00ff00',
-			style: function () {
+			group: 'Fons documental',
+			title: 'Medicina',
+			query: '(node["amenity"="library"]["books"~"medicine"]({{bbox}});node(w);way["amenity"="library"]["books"~"medicine"]({{bbox}});node(w);relation["amenity"="library"]["books"~"medicine"]({{bbox}});node(w););out meta;',
+			iconSrc: imgSrc + 'libraries/books_medicine.svg',
+			iconStyle: 'background-color:#FFFFFF',
+			style: function (feature) {
+				var key_regex = /^name$/
+				var name_key = feature.getKeys().filter(function(t){return t.match(key_regex)}).pop() || "name"
+				var name = feature.get(name_key) || '';
 				var fill = new ol.style.Fill({
-					color: 'rgba(0,255,0,0.4)'
+					color: 'rgba(0,0,0,0.4)'
 				});
+
 				var stroke = new ol.style.Stroke({
-					color: 'rgba(0,255,0,0.4)',
-					width: 5
+					color: '#000000',
+					width: 1.25
 				});
 				var style = new ol.style.Style({
+					image: new ol.style.Circle({
+						fill: fill,
+						stroke: stroke,
+						radius: 5
+					}),
+							text: new ol.style.Text({
+								text: name,
+								color: 'rgba(0,0,0,0.4)',
+								font: '10px Verdana',
+								offsetX : 0,
+								offsetY : 30
+							}),
 					fill: fill,
 					stroke: stroke
 				});
 				return style;
 			}
-		},
+
+},
+		{
+			group: 'Fons documental',
+			title: 'Ciències',
+			query: '(node["amenity"="library"]["books"~"sciences"]({{bbox}});node(w);way["amenity"="library"]["books"~"sciences"]({{bbox}});node(w);relation["amenity"="library"]["books"~"sciences"]({{bbox}});node(w););out meta;',
+			iconSrc: imgSrc + 'libraries/books_sciences.svg',
+			iconStyle: 'background-color:#FFFFFF',
+			style: function (feature) {
+				var key_regex = /^name$/
+				var name_key = feature.getKeys().filter(function(t){return t.match(key_regex)}).pop() || "name"
+				var name = feature.get(name_key) || '';
+				var fill = new ol.style.Fill({
+					color: 'rgba(0,0,0,0.4)'
+				});
+
+				var stroke = new ol.style.Stroke({
+					color: '#000000',
+					width: 1.25
+				});
+				var style = new ol.style.Style({
+					image: new ol.style.Circle({
+						fill: fill,
+						stroke: stroke,
+						radius: 5
+					}),
+							text: new ol.style.Text({
+								text: name,
+								color: 'rgba(0,0,0,0.4)',
+								font: '10px Verdana',
+								offsetX : 0,
+								offsetY : 30
+							}),
+					fill: fill,
+					stroke: stroke
+				});
+				return style;
+			}
+
+},
+		{
+			group: 'Fons documental',
+			title: 'Ciències naturals',
+			query: '(node["amenity"="library"]["books"~"natural_sciences"]({{bbox}});node(w);way["amenity"="library"]["books"~"natural_sciences"]({{bbox}});node(w);relation["amenity"="library"]["books"~"natural_sciences"]({{bbox}});node(w););out meta;',
+			iconSrc: imgSrc + 'libraries/books_natural_sciences.svg',
+			iconStyle: 'background-color:#FFFFFF',
+			style: function (feature) {
+				var key_regex = /^name$/
+				var name_key = feature.getKeys().filter(function(t){return t.match(key_regex)}).pop() || "name"
+				var name = feature.get(name_key) || '';
+				var fill = new ol.style.Fill({
+					color: 'rgba(0,0,0,0.4)'
+				});
+
+				var stroke = new ol.style.Stroke({
+					color: '#000000',
+					width: 1.25
+				});
+				var style = new ol.style.Style({
+					image: new ol.style.Circle({
+						fill: fill,
+						stroke: stroke,
+						radius: 5
+					}),
+							text: new ol.style.Text({
+								text: name,
+								color: 'rgba(0,0,0,0.4)',
+								font: '10px Verdana',
+								offsetX : 0,
+								offsetY : 30
+							}),
+					fill: fill,
+					stroke: stroke
+				});
+				return style;
+			}
+},
+		{
+			group: 'Fons documental',
+			title: 'Ciències socials',
+			query: '(node["amenity"="library"]["books"~"social_sciences"]({{bbox}});node(w);way["amenity"="library"]["books"~"social_sciences"]({{bbox}});node(w);relation["amenity"="library"]["books"~"social_sciences"]({{bbox}});node(w););out meta;',
+			iconSrc: imgSrc + 'libraries/books_social_sciences.svg',
+			iconStyle: 'background-color:#FFFFFF',
+			style: function (feature) {
+				var key_regex = /^name$/
+				var name_key = feature.getKeys().filter(function(t){return t.match(key_regex)}).pop() || "name"
+				var name = feature.get(name_key) || '';
+				var fill = new ol.style.Fill({
+					color: 'rgba(0,0,0,0.4)'
+				});
+
+				var stroke = new ol.style.Stroke({
+					color: '#000000',
+					width: 1.25
+				});
+				var style = new ol.style.Style({
+					image: new ol.style.Circle({
+						fill: fill,
+						stroke: stroke,
+						radius: 5
+					}),
+							text: new ol.style.Text({
+								text: name,
+								color: 'rgba(0,0,0,0.4)',
+								font: '10px Verdana',
+								offsetX : 0,
+								offsetY : 30
+							}),
+					fill: fill,
+					stroke: stroke
+				});
+				return style;
+			}
+
+},
+		{
+			group: 'Fons documental',
+			title: 'Mercat',
+			query: '(node["amenity"="library"]["books"~"trade_studies"]({{bbox}});node(w);way["amenity"="library"]["books"~"trade_studies"]({{bbox}});node(w);relation["amenity"="library"]["books"~"trade_studies"]({{bbox}});node(w););out meta;',
+			iconSrc: imgSrc + 'libraries/books_trade_studies.svg',
+			iconStyle: 'background-color:#FFFFFF',
+			style: function (feature) {
+				var key_regex = /^name$/
+				var name_key = feature.getKeys().filter(function(t){return t.match(key_regex)}).pop() || "name"
+				var name = feature.get(name_key) || '';
+				var fill = new ol.style.Fill({
+					color: 'rgba(0,0,0,0.4)'
+				});
+
+				var stroke = new ol.style.Stroke({
+					color: '#000000',
+					width: 1.25
+				});
+				var style = new ol.style.Style({
+					image: new ol.style.Circle({
+						fill: fill,
+						stroke: stroke,
+						radius: 5
+					}),
+							text: new ol.style.Text({
+								text: name,
+								color: 'rgba(0,0,0,0.4)',
+								font: '10px Verdana',
+								offsetX : 0,
+								offsetY : 30
+							}),
+					fill: fill,
+					stroke: stroke
+				});
+				return style;
+			}
+},
+		{
+			group: 'Fons documental',
+			title: 'Anarquisme',
+			query: '(node["amenity"="library"]["books"~"anarchism"]({{bbox}});node(w);way["amenity"="library"]["books"~"anarchism"]({{bbox}});node(w);relation["amenity"="library"]["books"~"anarchism"]({{bbox}});node(w););out meta;',
+			iconSrc: imgSrc + 'libraries/books_anarchism.svg',
+			iconStyle: 'background-color:#FFFFFF',
+			style: function (feature) {
+				var key_regex = /^name$/
+				var name_key = feature.getKeys().filter(function(t){return t.match(key_regex)}).pop() || "name"
+				var name = feature.get(name_key) || '';
+				var fill = new ol.style.Fill({
+					color: 'rgba(0,0,0,0.4)'
+				});
+
+				var stroke = new ol.style.Stroke({
+					color: '#000000',
+					width: 1.25
+				});
+				var style = new ol.style.Style({
+					image: new ol.style.Circle({
+						fill: fill,
+						stroke: stroke,
+						radius: 5
+					}),
+							text: new ol.style.Text({
+								text: name,
+								color: 'rgba(0,0,0,0.4)',
+								font: '10px Verdana',
+								offsetX : 0,
+								offsetY : 30
+							}),
+					fill: fill,
+					stroke: stroke
+				});
+				return style;
+			}
+
+},
 		{
 			group: 'mtb:scale',
 			title: 'mtb:scale:uphill=1',

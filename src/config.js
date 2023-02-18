@@ -1594,6 +1594,538 @@ var config = {
 },
 		{
 			group: 'Tipus d\'operador',
+			title: 'Comunitat',
+			query: '(node["amenity"="library"]["operator:type"="community"]({{bbox}});node(w);way["amenity"="library"]["operator:type"="community"]({{bbox}});node(w);relation["amenity"="library"]["operator:type"="community"]({{bbox}});node(w););out meta;',
+			iconSrc: imgSrc + 'libraries/operator_community.svg',
+			iconStyle: 'background-color:#FFFFFF',
+			style: function (feature) {
+				var key_regex = /^name$/
+				var name_key = feature.getKeys().filter(function(t){return t.match(key_regex)}).pop() || "name"
+				var name = feature.get(name_key) || '';
+				var fill = new ol.style.Fill({
+					color: 'rgba(0,0,0,0.4)'
+				});
+
+				var stroke = new ol.style.Stroke({
+					color: '#000000',
+					width: 1.25
+				});
+				var style = new ol.style.Style({
+					image: new ol.style.Circle({
+						fill: fill,
+						stroke: stroke,
+						radius: 5
+					}),
+							text: new ol.style.Text({
+								text: name,
+								color: 'rgba(0,0,0,0.4)',
+								font: '10px Verdana',
+								offsetX : 0,
+								offsetY : 30
+							}),
+					fill: fill,
+					stroke: stroke
+				});
+				return style;
+			}
+
+},
+		{
+			group: 'Tipus d\'operador',
+			title: 'Corporació',
+			query: '(node["amenity"="library"]["operator:type"="corporation"]({{bbox}});node(w);way["amenity"="library"]["operator:type"="corporation"]({{bbox}});node(w);relation["amenity"="library"]["operator:type"="corporation"]({{bbox}});node(w););out meta;',
+			iconSrc: imgSrc + 'libraries/operator_corporation.svg',
+			iconStyle: 'background-color:#FFFFFF',
+			style: function (feature) {
+				var key_regex = /^name$/
+				var name_key = feature.getKeys().filter(function(t){return t.match(key_regex)}).pop() || "name"
+				var name = feature.get(name_key) || '';
+				var fill = new ol.style.Fill({
+					color: 'rgba(0,0,0,0.4)'
+				});
+
+				var stroke = new ol.style.Stroke({
+					color: '#000000',
+					width: 1.25
+				});
+				var style = new ol.style.Style({
+					image: new ol.style.Circle({
+						fill: fill,
+						stroke: stroke,
+						radius: 5
+					}),
+							text: new ol.style.Text({
+								text: name,
+								color: 'rgba(0,0,0,0.4)',
+								font: '10px Verdana',
+								offsetX : 0,
+								offsetY : 30
+							}),
+					fill: fill,
+					stroke: stroke
+				});
+				return style;
+			}
+
+},
+		{
+			group: 'Tipus d\'operador',
+			title: 'Fundació',
+			query: '(node["amenity"="library"]["operator:type"="foundation"]({{bbox}});node(w);way["amenity"="library"]["operator:type"="foundation"]({{bbox}});node(w);relation["amenity"="library"]["operator:type"="foundation"]({{bbox}});node(w););out meta;',
+			iconSrc: imgSrc + 'libraries/operator_foundation.svg',
+			iconStyle: 'background-color:#FFFFFF',
+			style: function (feature) {
+				var key_regex = /^name$/
+				var name_key = feature.getKeys().filter(function(t){return t.match(key_regex)}).pop() || "name"
+				var name = feature.get(name_key) || '';
+				var fill = new ol.style.Fill({
+					color: 'rgba(0,0,0,0.4)'
+				});
+
+				var stroke = new ol.style.Stroke({
+					color: '#000000',
+					width: 1.25
+				});
+				var style = new ol.style.Style({
+					image: new ol.style.Circle({
+						fill: fill,
+						stroke: stroke,
+						radius: 5
+					}),
+							text: new ol.style.Text({
+								text: name,
+								color: 'rgba(0,0,0,0.4)',
+								font: '10px Verdana',
+								offsetX : 0,
+								offsetY : 30
+							}),
+					fill: fill,
+					stroke: stroke
+				});
+				return style;
+			}
+
+},
+		{
+			group: 'Tipus d\'operador',
+			title: 'Govern',
+			query: '(node["amenity"="library"]["operator:type"="government"]({{bbox}});node(w);way["amenity"="library"]["operator:type"="government"]({{bbox}});node(w);relation["amenity"="library"]["operator:type"="government"]({{bbox}});node(w););out meta;',
+			iconSrc: imgSrc + 'libraries/operator_government.svg',
+			iconStyle: 'background-color:#FFFFFF',
+			style: function (feature) {
+				var key_regex = /^name$/
+				var name_key = feature.getKeys().filter(function(t){return t.match(key_regex)}).pop() || "name"
+				var name = feature.get(name_key) || '';
+				var fill = new ol.style.Fill({
+					color: 'rgba(0,0,0,0.4)'
+				});
+
+				var stroke = new ol.style.Stroke({
+					color: '#000000',
+					width: 1.25
+				});
+				var style = new ol.style.Style({
+					image: new ol.style.Circle({
+						fill: fill,
+						stroke: stroke,
+						radius: 5
+					}),
+							text: new ol.style.Text({
+								text: name,
+								color: 'rgba(0,0,0,0.4)',
+								font: '10px Verdana',
+								offsetX : 0,
+								offsetY : 30
+							}),
+					fill: fill,
+					stroke: stroke
+				});
+				return style;
+			}
+
+},
+		{
+			group: 'Tipus d\'operador',
+			title: 'Autoritat local',
+			query: '(node["amenity"="library"]["operator:type"="local_authority"]({{bbox}});node(w);way["amenity"="library"]["operator:type"="local_authority"]({{bbox}});node(w);relation["amenity"="library"]["operator:type"="local_authority"]({{bbox}});node(w););out meta;',
+			iconSrc: imgSrc + 'libraries/operator_local_authority.svg',
+			iconStyle: 'background-color:#FFFFFF',
+			style: function (feature) {
+				var key_regex = /^name$/
+				var name_key = feature.getKeys().filter(function(t){return t.match(key_regex)}).pop() || "name"
+				var name = feature.get(name_key) || '';
+				var fill = new ol.style.Fill({
+					color: 'rgba(0,0,0,0.4)'
+				});
+
+				var stroke = new ol.style.Stroke({
+					color: '#000000',
+					width: 1.25
+				});
+				var style = new ol.style.Style({
+					image: new ol.style.Circle({
+						fill: fill,
+						stroke: stroke,
+						radius: 5
+					}),
+							text: new ol.style.Text({
+								text: name,
+								color: 'rgba(0,0,0,0.4)',
+								font: '10px Verdana',
+								offsetX : 0,
+								offsetY : 30
+							}),
+					fill: fill,
+					stroke: stroke
+				});
+				return style;
+			}
+
+},
+		{
+			group: 'Tipus d\'operador',
+			title: 'Associació',
+			query: '(node["amenity"="library"]["operator:type"="association"]({{bbox}});node(w);way["amenity"="library"]["operator:type"="association"]({{bbox}});node(w);relation["amenity"="library"]["operator:type"="association"]({{bbox}});node(w););out meta;',
+			iconSrc: imgSrc + 'libraries/operator_association.svg',
+			iconStyle: 'background-color:#FFFFFF',
+			style: function (feature) {
+				var key_regex = /^name$/
+				var name_key = feature.getKeys().filter(function(t){return t.match(key_regex)}).pop() || "name"
+				var name = feature.get(name_key) || '';
+				var fill = new ol.style.Fill({
+					color: 'rgba(0,0,0,0.4)'
+				});
+
+				var stroke = new ol.style.Stroke({
+					color: '#000000',
+					width: 1.25
+				});
+				var style = new ol.style.Style({
+					image: new ol.style.Circle({
+						fill: fill,
+						stroke: stroke,
+						radius: 5
+					}),
+							text: new ol.style.Text({
+								text: name,
+								color: 'rgba(0,0,0,0.4)',
+								font: '10px Verdana',
+								offsetX : 0,
+								offsetY : 30
+							}),
+					fill: fill,
+					stroke: stroke
+				});
+				return style;
+			}
+
+},
+		{
+			group: 'Tipus d\'operador',
+			title: 'Associació',
+			query: '(node["amenity"="library"]["operator:type"="association"]({{bbox}});node(w);way["amenity"="library"]["operator:type"="association"]({{bbox}});node(w);relation["amenity"="library"]["operator:type"="association"]({{bbox}});node(w););out meta;',
+			iconSrc: imgSrc + 'libraries/operator_association.svg',
+			iconStyle: 'background-color:#FFFFFF',
+			style: function (feature) {
+				var key_regex = /^name$/
+				var name_key = feature.getKeys().filter(function(t){return t.match(key_regex)}).pop() || "name"
+				var name = feature.get(name_key) || '';
+				var fill = new ol.style.Fill({
+					color: 'rgba(0,0,0,0.4)'
+				});
+
+				var stroke = new ol.style.Stroke({
+					color: '#000000',
+					width: 1.25
+				});
+				var style = new ol.style.Style({
+					image: new ol.style.Circle({
+						fill: fill,
+						stroke: stroke,
+						radius: 5
+					}),
+							text: new ol.style.Text({
+								text: name,
+								color: 'rgba(0,0,0,0.4)',
+								font: '10px Verdana',
+								offsetX : 0,
+								offsetY : 30
+							}),
+					fill: fill,
+					stroke: stroke
+				});
+				return style;
+			}
+
+},
+		{
+			group: 'Tipus d\'operador',
+			title: 'Associació',
+			query: '(node["amenity"="library"]["operator:type"="association"]({{bbox}});node(w);way["amenity"="library"]["operator:type"="association"]({{bbox}});node(w);relation["amenity"="library"]["operator:type"="association"]({{bbox}});node(w););out meta;',
+			iconSrc: imgSrc + 'libraries/operator_association.svg',
+			iconStyle: 'background-color:#FFFFFF',
+			style: function (feature) {
+				var key_regex = /^name$/
+				var name_key = feature.getKeys().filter(function(t){return t.match(key_regex)}).pop() || "name"
+				var name = feature.get(name_key) || '';
+				var fill = new ol.style.Fill({
+					color: 'rgba(0,0,0,0.4)'
+				});
+
+				var stroke = new ol.style.Stroke({
+					color: '#000000',
+					width: 1.25
+				});
+				var style = new ol.style.Style({
+					image: new ol.style.Circle({
+						fill: fill,
+						stroke: stroke,
+						radius: 5
+					}),
+							text: new ol.style.Text({
+								text: name,
+								color: 'rgba(0,0,0,0.4)',
+								font: '10px Verdana',
+								offsetX : 0,
+								offsetY : 30
+							}),
+					fill: fill,
+					stroke: stroke
+				});
+				return style;
+			}
+
+},
+		{
+			group: 'Tipus d\'operador',
+			title: 'Associació',
+			query: '(node["amenity"="library"]["operator:type"="association"]({{bbox}});node(w);way["amenity"="library"]["operator:type"="association"]({{bbox}});node(w);relation["amenity"="library"]["operator:type"="association"]({{bbox}});node(w););out meta;',
+			iconSrc: imgSrc + 'libraries/operator_association.svg',
+			iconStyle: 'background-color:#FFFFFF',
+			style: function (feature) {
+				var key_regex = /^name$/
+				var name_key = feature.getKeys().filter(function(t){return t.match(key_regex)}).pop() || "name"
+				var name = feature.get(name_key) || '';
+				var fill = new ol.style.Fill({
+					color: 'rgba(0,0,0,0.4)'
+				});
+
+				var stroke = new ol.style.Stroke({
+					color: '#000000',
+					width: 1.25
+				});
+				var style = new ol.style.Style({
+					image: new ol.style.Circle({
+						fill: fill,
+						stroke: stroke,
+						radius: 5
+					}),
+							text: new ol.style.Text({
+								text: name,
+								color: 'rgba(0,0,0,0.4)',
+								font: '10px Verdana',
+								offsetX : 0,
+								offsetY : 30
+							}),
+					fill: fill,
+					stroke: stroke
+				});
+				return style;
+			}
+
+},
+		{
+			group: 'Tipus d\'operador',
+			title: 'Associació',
+			query: '(node["amenity"="library"]["operator:type"="association"]({{bbox}});node(w);way["amenity"="library"]["operator:type"="association"]({{bbox}});node(w);relation["amenity"="library"]["operator:type"="association"]({{bbox}});node(w););out meta;',
+			iconSrc: imgSrc + 'libraries/operator_association.svg',
+			iconStyle: 'background-color:#FFFFFF',
+			style: function (feature) {
+				var key_regex = /^name$/
+				var name_key = feature.getKeys().filter(function(t){return t.match(key_regex)}).pop() || "name"
+				var name = feature.get(name_key) || '';
+				var fill = new ol.style.Fill({
+					color: 'rgba(0,0,0,0.4)'
+				});
+
+				var stroke = new ol.style.Stroke({
+					color: '#000000',
+					width: 1.25
+				});
+				var style = new ol.style.Style({
+					image: new ol.style.Circle({
+						fill: fill,
+						stroke: stroke,
+						radius: 5
+					}),
+							text: new ol.style.Text({
+								text: name,
+								color: 'rgba(0,0,0,0.4)',
+								font: '10px Verdana',
+								offsetX : 0,
+								offsetY : 30
+							}),
+					fill: fill,
+					stroke: stroke
+				});
+				return style;
+			}
+
+},
+		{
+			group: 'Tipus d\'operador',
+			title: 'Associació',
+			query: '(node["amenity"="library"]["operator:type"="association"]({{bbox}});node(w);way["amenity"="library"]["operator:type"="association"]({{bbox}});node(w);relation["amenity"="library"]["operator:type"="association"]({{bbox}});node(w););out meta;',
+			iconSrc: imgSrc + 'libraries/operator_association.svg',
+			iconStyle: 'background-color:#FFFFFF',
+			style: function (feature) {
+				var key_regex = /^name$/
+				var name_key = feature.getKeys().filter(function(t){return t.match(key_regex)}).pop() || "name"
+				var name = feature.get(name_key) || '';
+				var fill = new ol.style.Fill({
+					color: 'rgba(0,0,0,0.4)'
+				});
+
+				var stroke = new ol.style.Stroke({
+					color: '#000000',
+					width: 1.25
+				});
+				var style = new ol.style.Style({
+					image: new ol.style.Circle({
+						fill: fill,
+						stroke: stroke,
+						radius: 5
+					}),
+							text: new ol.style.Text({
+								text: name,
+								color: 'rgba(0,0,0,0.4)',
+								font: '10px Verdana',
+								offsetX : 0,
+								offsetY : 30
+							}),
+					fill: fill,
+					stroke: stroke
+				});
+				return style;
+			}
+
+},
+		{
+			group: 'Tipus d\'operador',
+			title: 'Associació',
+			query: '(node["amenity"="library"]["operator:type"="association"]({{bbox}});node(w);way["amenity"="library"]["operator:type"="association"]({{bbox}});node(w);relation["amenity"="library"]["operator:type"="association"]({{bbox}});node(w););out meta;',
+			iconSrc: imgSrc + 'libraries/operator_association.svg',
+			iconStyle: 'background-color:#FFFFFF',
+			style: function (feature) {
+				var key_regex = /^name$/
+				var name_key = feature.getKeys().filter(function(t){return t.match(key_regex)}).pop() || "name"
+				var name = feature.get(name_key) || '';
+				var fill = new ol.style.Fill({
+					color: 'rgba(0,0,0,0.4)'
+				});
+
+				var stroke = new ol.style.Stroke({
+					color: '#000000',
+					width: 1.25
+				});
+				var style = new ol.style.Style({
+					image: new ol.style.Circle({
+						fill: fill,
+						stroke: stroke,
+						radius: 5
+					}),
+							text: new ol.style.Text({
+								text: name,
+								color: 'rgba(0,0,0,0.4)',
+								font: '10px Verdana',
+								offsetX : 0,
+								offsetY : 30
+							}),
+					fill: fill,
+					stroke: stroke
+				});
+				return style;
+			}
+
+},
+		{
+			group: 'Tipus d\'operador',
+			title: 'Associació',
+			query: '(node["amenity"="library"]["operator:type"="association"]({{bbox}});node(w);way["amenity"="library"]["operator:type"="association"]({{bbox}});node(w);relation["amenity"="library"]["operator:type"="association"]({{bbox}});node(w););out meta;',
+			iconSrc: imgSrc + 'libraries/operator_association.svg',
+			iconStyle: 'background-color:#FFFFFF',
+			style: function (feature) {
+				var key_regex = /^name$/
+				var name_key = feature.getKeys().filter(function(t){return t.match(key_regex)}).pop() || "name"
+				var name = feature.get(name_key) || '';
+				var fill = new ol.style.Fill({
+					color: 'rgba(0,0,0,0.4)'
+				});
+
+				var stroke = new ol.style.Stroke({
+					color: '#000000',
+					width: 1.25
+				});
+				var style = new ol.style.Style({
+					image: new ol.style.Circle({
+						fill: fill,
+						stroke: stroke,
+						radius: 5
+					}),
+							text: new ol.style.Text({
+								text: name,
+								color: 'rgba(0,0,0,0.4)',
+								font: '10px Verdana',
+								offsetX : 0,
+								offsetY : 30
+							}),
+					fill: fill,
+					stroke: stroke
+				});
+				return style;
+			}
+
+},
+		{
+			group: 'Tipus d\'operador',
+			title: 'Associació',
+			query: '(node["amenity"="library"]["operator:type"="association"]({{bbox}});node(w);way["amenity"="library"]["operator:type"="association"]({{bbox}});node(w);relation["amenity"="library"]["operator:type"="association"]({{bbox}});node(w););out meta;',
+			iconSrc: imgSrc + 'libraries/operator_association.svg',
+			iconStyle: 'background-color:#FFFFFF',
+			style: function (feature) {
+				var key_regex = /^name$/
+				var name_key = feature.getKeys().filter(function(t){return t.match(key_regex)}).pop() || "name"
+				var name = feature.get(name_key) || '';
+				var fill = new ol.style.Fill({
+					color: 'rgba(0,0,0,0.4)'
+				});
+
+				var stroke = new ol.style.Stroke({
+					color: '#000000',
+					width: 1.25
+				});
+				var style = new ol.style.Style({
+					image: new ol.style.Circle({
+						fill: fill,
+						stroke: stroke,
+						radius: 5
+					}),
+							text: new ol.style.Text({
+								text: name,
+								color: 'rgba(0,0,0,0.4)',
+								font: '10px Verdana',
+								offsetX : 0,
+								offsetY : 30
+							}),
+					fill: fill,
+					stroke: stroke
+				});
+				return style;
+			}
+
+},
+		{
+			group: 'Tipus d\'operador',
 			title: 'Associació',
 			query: '(node["amenity"="library"]["operator:type"="association"]({{bbox}});node(w);way["amenity"="library"]["operator:type"="association"]({{bbox}});node(w);relation["amenity"="library"]["operator:type"="association"]({{bbox}});node(w););out meta;',
 			iconSrc: imgSrc + 'libraries/operator_association.svg',

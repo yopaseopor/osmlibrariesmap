@@ -2051,7 +2051,7 @@ var config = {
 		{
 			group: 'Accessibilitat',
 			title: 'Visual-Limitat',
-			query: '(node["amenity"="library"]["access:blind"="limited"]({{bbox}});node(w);way["amenity"="library"]["access:blind"="limited"]({{bbox}});node(w);relation["amenity"="library"][["access:blind"="limited"]({{bbox}});node(w););out meta;',
+			query: '(node["amenity"="library"]["access:blind"="limited"]({{bbox}});node(w);way["amenity"="library"]["access:blind"="limited"]({{bbox}});node(w);relation["amenity"="library"]["access:blind"="limited"]({{bbox}});node(w););out meta;',
 			iconSrc: imgSrc + 'libraries/access_blind_limited.svg',
 			iconStyle: 'background-color:#FFFFFF',
 			style: function (feature) {
@@ -2089,7 +2089,7 @@ var config = {
 		{
 			group: 'Accessibilitat',
 			title: 'Visual-No',
-			query: '(node["amenity"="library"]["access:blind"="no"]({{bbox}});node(w);way["amenity"="library"]["access:blind"="no"]({{bbox}});node(w);relation["amenity"="library"][["access:blind"="no"]({{bbox}});node(w););out meta;',
+			query: '(node["amenity"="library"]["access:blind"="no"]({{bbox}});node(w);way["amenity"="library"]["access:blind"="no"]({{bbox}});node(w);relation["amenity"="library"]["access:blind"="no"]({{bbox}});node(w););out meta;',
 			iconSrc: imgSrc + 'libraries/access_blind_no.svg',
 			iconStyle: 'background-color:#FFFFFF',
 			style: function (feature) {
@@ -2127,7 +2127,7 @@ var config = {
 		{
 			group: 'Accessibilitat',
 			title: 'Auditiu-Sí',
-			query: '(node["amenity"="library"]["access:deaf"="yes"]({{bbox}});node(w);way["amenity"="library"]["access:deaf"="yes"]({{bbox}});node(w);relation["amenity"="library"][["access:deaf"="yes"]({{bbox}});node(w););out meta;',
+			query: '(node["amenity"="library"]["access:deaf"="yes"]({{bbox}});node(w);way["amenity"="library"]["access:deaf"="yes"]({{bbox}});node(w);relation["amenity"="library"]["access:deaf"="yes"]({{bbox}});node(w););out meta;',
 			iconSrc: imgSrc + 'libraries/access_deaf_yes.svg',
 			iconStyle: 'background-color:#FFFFFF',
 			style: function (feature) {
@@ -2165,7 +2165,7 @@ var config = {
 		{
 			group: 'Accessibilitat',
 			title: 'Auditiu-Limitat',
-			query: '(node["amenity"="library"]["access:deaf"="limited"]({{bbox}});node(w);way["amenity"="library"]["access:deaf"="limited"]({{bbox}});node(w);relation["amenity"="library"][["access:deaf"="limited"]({{bbox}});node(w););out meta;',
+			query: '(node["amenity"="library"]["access:deaf"="limited"]({{bbox}});node(w);way["amenity"="library"]["access:deaf"="limited"]({{bbox}});node(w);relation["amenity"="library"]["access:deaf"="limited"]({{bbox}});node(w););out meta;',
 			iconSrc: imgSrc + 'libraries/access_deaf_limited.svg',
 			iconStyle: 'background-color:#FFFFFF',
 			style: function (feature) {
@@ -2203,7 +2203,7 @@ var config = {
 		{
 			group: 'Accessibilitat',
 			title: 'Auditiu-No',
-			query: '(node["amenity"="library"]["access:deaf"="no"]({{bbox}});node(w);way["amenity"="library"]["access:deaf"="no"]({{bbox}});node(w);relation["amenity"="library"][["access:deaf"="no"]({{bbox}});node(w););out meta;',
+			query: '(node["amenity"="library"]["access:deaf"="no"]({{bbox}});node(w);way["amenity"="library"]["access:deaf"="no"]({{bbox}});node(w);relation["amenity"="library"]["access:deaf"="no"]({{bbox}});node(w););out meta;',
 			iconSrc: imgSrc + 'libraries/access_blind_no.svg',
 			iconStyle: 'background-color:#FFFFFF',
 			style: function (feature) {
@@ -2241,7 +2241,7 @@ var config = {
 		{
 			group: 'Accessibilitat',
 			title: 'Mental-Sí',
-			query: '(node["amenity"="library"]["access:mental_disabled"="yes"]({{bbox}});node(w);way["amenity"="library"]["access:mental_disabled"="yes"]({{bbox}});node(w);relation["amenity"="library"][["access:mental_disabled"="yes"]({{bbox}});node(w););out meta;',
+			query: '(node["amenity"="library"]["access:mental_disabled"="yes"]({{bbox}});node(w);way["amenity"="library"]["access:mental_disabled"="yes"]({{bbox}});node(w);relation["amenity"="library"]["access:mental_disabled"="yes"]({{bbox}});node(w););out meta;',
 			iconSrc: imgSrc + 'libraries/access_mental_disabled_yes.svg',
 			iconStyle: 'background-color:#FFFFFF',
 			style: function (feature) {
@@ -2279,7 +2279,7 @@ var config = {
 		{
 			group: 'Accessibilitat',
 			title: 'Mental-Limitat',
-			query: '(node["amenity"="library"]["access:mental_disabled"="limited"]({{bbox}});node(w);way["amenity"="library"]["access:mental_disabled"="limited"]({{bbox}});node(w);relation["amenity"="library"][["access:mental_disabled"="limited"]({{bbox}});node(w););out meta;',
+			query: '(node["amenity"="library"]["access:mental_disabled"="limited"]({{bbox}});node(w);way["amenity"="library"]["access:mental_disabled"="limited"]({{bbox}});node(w);relation["amenity"="library"]["access:mental_disabled"="limited"]({{bbox}});node(w););out meta;',
 			iconSrc: imgSrc + 'libraries/access_mental_disabled_limited.svg',
 			iconStyle: 'background-color:#FFFFFF',
 			style: function (feature) {
@@ -2317,7 +2317,7 @@ var config = {
 		{
 			group: 'Accessibilitat',
 			title: 'Mental-No',
-			query: '(node["amenity"="library"]["access:mental_disabled"="no"]({{bbox}});node(w);way["amenity"="library"]["access:mental_disabled"="no"]({{bbox}});node(w);relation["amenity"="library"][["access:mental_disabled"="no"]({{bbox}});node(w););out meta;',
+			query: '(node["amenity"="library"]["access:mental_disabled"="no"]({{bbox}});node(w);way["amenity"="library"]["access:mental_disabled"="no"]({{bbox}});node(w);relation["amenity"="library"]["access:mental_disabled"="no"]({{bbox}});node(w););out meta;',
 			iconSrc: imgSrc + 'libraries/access_mental_disabled_no.svg',
 			iconStyle: 'background-color:#FFFFFF',
 			style: function (feature) {

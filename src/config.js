@@ -183,7 +183,7 @@ var config = {
 			group: 'Accessibilitat',
 			title: 'Biblioteca adaptada',
 			query: '(node["amenity"="library"]["wheelchair"="yes"]({{bbox}});node(w);way["amenity"="library"]["wheelchair"="yes"]({{bbox}});node(w);relation["amenity"="library"]["wheelchair"="yes"]({{bbox}});node(w););out meta;',
-			iconSrc: imgSrc + 'accessibilitat/wheelchair_yes.svg',
+			iconSrc: imgSrc + 'libraries/wheelchair_yes.svg',
 			iconStyle: 'background-color:#00FF00',
 			style: function (feature) {
 				var key_regex = /^name$/
@@ -222,7 +222,7 @@ var config = {
 			group: 'Accessibilitat',
 			title: 'Biblioteca designada',
 			query: '(node["amenity"="library"]["wheelchair"="designated"]({{bbox}});node(w);way["amenity"="library"]["wheelchair"="designated"]({{bbox}});node(w);relation["amenity"="library"]["wheelchair"="designated"]({{bbox}});node(w););out meta;',
-			iconSrc: imgSrc + 'accessibilitat/wheelchair_designated.svg',
+			iconSrc: imgSrc + 'libraries/wheelchair_designated.svg',
 			iconStyle: 'background-color:#00FF00',
 			style: function (feature) {
 				var key_regex = /^name$/
@@ -260,7 +260,7 @@ var config = {
 			group: 'Accessibilitat',
 			title: 'Biblioteca No Adaptada',
 			query: '(node["amenity"="library"]["wheelchair"="no"]({{bbox}});node(w);way["amenity"="library"]["wheelchair"="no"]({{bbox}});node(w);relation["amenity"="library"]["wheelchair"="no"]({{bbox}});node(w););out meta;',
-			iconSrc: imgSrc + 'accessibilitat/wheelchair_no.svg',
+			iconSrc: imgSrc + 'libraries/wheelchair_no.svg',
 			iconStyle: 'background-color:#00FF00',
 			style: function (feature) {
 				var key_regex = /^name$/
@@ -298,7 +298,7 @@ var config = {
 			group: 'Accessibilitat',
 			title: 'Biblioteca Adaptada parcialment',
 			query: '(node["amenity"="library"]["wheelchair"="limited"]({{bbox}});node(w);way["amenity"="library"]["wheelchair"="limited"]({{bbox}});node(w);relation["amenity"="library"]["wheelchair"="limited"]({{bbox}});node(w););out meta;',
-			iconSrc: imgSrc + 'accessibilitat/wheelchair_limited.svg',
+			iconSrc: imgSrc + 'libraries/wheelchair_limited.svg',
 			iconStyle: 'background-color:#00FF00',
 			style: function (feature) {
 				var key_regex = /^name$/
@@ -336,7 +336,7 @@ var config = {
 			group: 'Accessibilitat',
 			title: 'Biblioteca amb adaptació desconeguda',
 			query: '(node["amenity"="library"][!"wheelchair"]({{bbox}});node(w);way["amenity"="library"][!"wheelchair"]({{bbox}});node(w);relation["amenity"="library"][!"wheelchair"]({{bbox}});node(w););out meta;',
-			iconSrc: imgSrc + 'accessibilitat/wheelchair_unknown.svg',
+			iconSrc: imgSrc + 'libraries/wheelchair_unknown.svg',
 			iconStyle: 'background-color:#00FF00',
 			style: function (feature) {
 				var key_regex = /^name$/
@@ -2128,7 +2128,7 @@ var config = {
 			group: 'Accessibilitat',
 			title: 'Visual-Desconegut',
 			query: '(node["amenity"="library"][!"access:blind"]({{bbox}});node(w);way["amenity"="library"][!"access:blind"]({{bbox}});node(w);relation["amenity"="library"][!"access:blind"]({{bbox}});node(w););out meta;',
-			iconSrc: imgSrc + 'accessibilitat/access_blind_unknown.svg',
+			iconSrc: imgSrc + 'libraries/access_blind_unknown.svg',
 			iconStyle: 'background-color:#00FF00',
 			style: function (feature) {
 				var key_regex = /^name$/
@@ -2280,7 +2280,7 @@ var config = {
 			group: 'Accessibilitat',
 			title: 'Auditiu-Desconegut',
 			query: '(node["amenity"="library"][!"access:deaf"]({{bbox}});node(w);way["amenity"="library"][!"access:deaf"]({{bbox}});node(w);relation["amenity"="library"][!"access:deaf"]({{bbox}});node(w););out meta;',
-			iconSrc: imgSrc + 'accessibilitat/access_deaf_unknown.svg',
+			iconSrc: imgSrc + 'libraries/access_deaf_unknown.svg',
 			iconStyle: 'background-color:#00FF00',
 			style: function (feature) {
 				var key_regex = /^name$/
@@ -2432,7 +2432,7 @@ var config = {
 			group: 'Accessibilitat',
 			title: 'Mental-Desconegut',
 			query: '(node["amenity"="library"][!"mental_disabled"]({{bbox}});node(w);way["amenity"="library"][!"mental_disabled"]({{bbox}});node(w);relation["amenity"="library"][!"mental_disabled"]({{bbox}});node(w););out meta;',
-			iconSrc: imgSrc + 'accessibilitat/mental_disabled_unknown.svg',
+			iconSrc: imgSrc + 'libraries/mental_disabled_unknown.svg',
 			iconStyle: 'background-color:#00FF00',
 			style: function (feature) {
 				var key_regex = /^name$/

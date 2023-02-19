@@ -2467,47 +2467,309 @@ var config = {
 
 },
 		{
-			group: 'mtb:scale',
-			title: 'mtb:scale:uphill=2',
-			query: '(nwr["mtb:scale:uphill"="2"]({{bbox}});node(w););out;',
-			iconSrc: imgSrc + 'base/line.png',
-			iconStyle: 'background-color:#ffe135',
-			style: function () {
+			group: 'Infantil',
+			title: 'Sí Àrea infantil',
+			query: '(node["amenity"="library"]["kids_area"="yes"]({{bbox}});node(w);way["amenity"="library"]["kids_area"="yes"]({{bbox}});node(w);relation["amenity"="library"]["kids_area"="yes"]({{bbox}});node(w););out meta;',
+			iconSrc: imgSrc + 'libraries/kids_area_yes.svg',
+			iconStyle: 'background-color:#FFFFFF',
+			style: function (feature) {
+				var key_regex = /^name$/
+				var name_key = feature.getKeys().filter(function(t){return t.match(key_regex)}).pop() || "name"
+				var name = feature.get(name_key) || '';
 				var fill = new ol.style.Fill({
-					color: 'rgba(255,225,53,0.4)'
+					color: 'rgba(0,0,0,0.4)'
 				});
+
 				var stroke = new ol.style.Stroke({
-					color: 'rgba(255,225,53,0.4)',
-					width: 5
+					color: '#000000',
+					width: 1.25
 				});
 				var style = new ol.style.Style({
+					image: new ol.style.Circle({
+						fill: fill,
+						stroke: stroke,
+						radius: 5
+					}),
+							text: new ol.style.Text({
+								text: name,
+								color: 'rgba(0,0,0,0.4)',
+								font: '10px Verdana',
+								offsetX : 0,
+								offsetY : 30
+							}),
 					fill: fill,
 					stroke: stroke
 				});
 				return style;
 			}
-		},
+
+},
 		{
-			group: 'mtb:scale',
-			title: 'mtb:scale:uphill=3',
-			query: '(nwr["mtb:scale:uphill"="3"]({{bbox}});node(w););out;',
-			iconSrc: imgSrc + 'base/line.png',
-			iconStyle: 'background-color:#ffa500',
-			style: function () {
+			group: 'Infantil',
+			title: 'No Àrea infantil',
+			query: '(node["amenity"="library"]["kids_area"="no"]({{bbox}});node(w);way["amenity"="library"]["kids_area"="no"]({{bbox}});node(w);relation["amenity"="library"]["kids_area"="no"]({{bbox}});node(w););out meta;',
+			iconSrc: imgSrc + 'libraries/kids_area_no.svg',
+			iconStyle: 'background-color:#FFFFFF',
+			style: function (feature) {
+				var key_regex = /^name$/
+				var name_key = feature.getKeys().filter(function(t){return t.match(key_regex)}).pop() || "name"
+				var name = feature.get(name_key) || '';
 				var fill = new ol.style.Fill({
-					color: 'rgba(255,165,0,0.4)'
+					color: 'rgba(0,0,0,0.4)'
 				});
+
 				var stroke = new ol.style.Stroke({
-					color: 'rgba(255,165,0,0.4)',
-					width: 5
+					color: '#000000',
+					width: 1.25
 				});
 				var style = new ol.style.Style({
+					image: new ol.style.Circle({
+						fill: fill,
+						stroke: stroke,
+						radius: 5
+					}),
+							text: new ol.style.Text({
+								text: name,
+								color: 'rgba(0,0,0,0.4)',
+								font: '10px Verdana',
+								offsetX : 0,
+								offsetY : 30
+							}),
 					fill: fill,
 					stroke: stroke
 				});
 				return style;
 			}
-		},
+
+},
+		{
+			group: 'Infantil',
+			title: 'Exterior',
+			query: '(node["amenity"="library"]["kids_area"="outdoor"]({{bbox}});node(w);way["amenity"="library"]["kids_area"="outdoor"]({{bbox}});node(w);relation["amenity"="library"]["kids_area"="outdoor"]({{bbox}});node(w););out meta;',
+			iconSrc: imgSrc + 'libraries/kids_area_outdoor.svg',
+			iconStyle: 'background-color:#FFFFFF',
+			style: function (feature) {
+				var key_regex = /^name$/
+				var name_key = feature.getKeys().filter(function(t){return t.match(key_regex)}).pop() || "name"
+				var name = feature.get(name_key) || '';
+				var fill = new ol.style.Fill({
+					color: 'rgba(0,0,0,0.4)'
+				});
+
+				var stroke = new ol.style.Stroke({
+					color: '#000000',
+					width: 1.25
+				});
+				var style = new ol.style.Style({
+					image: new ol.style.Circle({
+						fill: fill,
+						stroke: stroke,
+						radius: 5
+					}),
+							text: new ol.style.Text({
+								text: name,
+								color: 'rgba(0,0,0,0.4)',
+								font: '10px Verdana',
+								offsetX : 0,
+								offsetY : 30
+							}),
+					fill: fill,
+					stroke: stroke
+				});
+				return style;
+			}
+
+},
+		{
+			group: 'Infantil',
+			title: 'Interior',
+			query: '(node["amenity"="library"]["kids_area"="indoor"]({{bbox}});node(w);way["amenity"="library"]["kids_area"="indoor"]({{bbox}});node(w);relation["amenity"="library"]["kids_area"="indoor"]({{bbox}});node(w););out meta;',
+			iconSrc: imgSrc + 'libraries/kids_area_indoor.svg',
+			iconStyle: 'background-color:#FFFFFF',
+			style: function (feature) {
+				var key_regex = /^name$/
+				var name_key = feature.getKeys().filter(function(t){return t.match(key_regex)}).pop() || "name"
+				var name = feature.get(name_key) || '';
+				var fill = new ol.style.Fill({
+					color: 'rgba(0,0,0,0.4)'
+				});
+
+				var stroke = new ol.style.Stroke({
+					color: '#000000',
+					width: 1.25
+				});
+				var style = new ol.style.Style({
+					image: new ol.style.Circle({
+						fill: fill,
+						stroke: stroke,
+						radius: 5
+					}),
+							text: new ol.style.Text({
+								text: name,
+								color: 'rgba(0,0,0,0.4)',
+								font: '10px Verdana',
+								offsetX : 0,
+								offsetY : 30
+							}),
+					fill: fill,
+					stroke: stroke
+				});
+				return style;
+			}
+
+},
+		{
+			group: 'Infantil',
+			title: 'Supervisió sí',
+			query: '(node["amenity"="library"]["kids_area:supervised"="yes"]({{bbox}});node(w);way["amenity"="library"]["kids_area:supervised"="yes"]({{bbox}});node(w);relation["amenity"="library"]["kids_area:supervised"="yes"]({{bbox}});node(w););out meta;',
+			iconSrc: imgSrc + 'libraries/kids_supervised_yes.svg',
+			iconStyle: 'background-color:#FFFFFF',
+			style: function (feature) {
+				var key_regex = /^name$/
+				var name_key = feature.getKeys().filter(function(t){return t.match(key_regex)}).pop() || "name"
+				var name = feature.get(name_key) || '';
+				var fill = new ol.style.Fill({
+					color: 'rgba(0,0,0,0.4)'
+				});
+
+				var stroke = new ol.style.Stroke({
+					color: '#000000',
+					width: 1.25
+				});
+				var style = new ol.style.Style({
+					image: new ol.style.Circle({
+						fill: fill,
+						stroke: stroke,
+						radius: 5
+					}),
+							text: new ol.style.Text({
+								text: name,
+								color: 'rgba(0,0,0,0.4)',
+								font: '10px Verdana',
+								offsetX : 0,
+								offsetY : 30
+							}),
+					fill: fill,
+					stroke: stroke
+				});
+				return style;
+			}
+
+},
+		{
+			group: 'Infantil',
+			title: 'Supervisió no',
+			query: '(node["amenity"="library"]["kids_area:supervised"="no"]({{bbox}});node(w);way["amenity"="library"]["kids_area:supervised"="no"]({{bbox}});node(w);relation["amenity"="library"]["kids_area:supervised"="no"]({{bbox}});node(w););out meta;',
+			iconSrc: imgSrc + 'libraries/kids_supervised_no.svg',
+			iconStyle: 'background-color:#FFFFFF',
+			style: function (feature) {
+				var key_regex = /^name$/
+				var name_key = feature.getKeys().filter(function(t){return t.match(key_regex)}).pop() || "name"
+				var name = feature.get(name_key) || '';
+				var fill = new ol.style.Fill({
+					color: 'rgba(0,0,0,0.4)'
+				});
+
+				var stroke = new ol.style.Stroke({
+					color: '#000000',
+					width: 1.25
+				});
+				var style = new ol.style.Style({
+					image: new ol.style.Circle({
+						fill: fill,
+						stroke: stroke,
+						radius: 5
+					}),
+							text: new ol.style.Text({
+								text: name,
+								color: 'rgba(0,0,0,0.4)',
+								font: '10px Verdana',
+								offsetX : 0,
+								offsetY : 30
+							}),
+					fill: fill,
+					stroke: stroke
+				});
+				return style;
+			}
+
+},
+		{
+			group: 'Infantil',
+			title: 'Pagament sí',
+			query: '(node["amenity"="library"]["kids_area:fee"="sí"]({{bbox}});node(w);way["amenity"="library"]["kids_area:fee"="sí"]({{bbox}});node(w);relation["amenity"="library"]["kids_area:fee"="sí"]({{bbox}});node(w););out meta;',
+			iconSrc: imgSrc + 'libraries/kids_fee_yes.svg',
+			iconStyle: 'background-color:#FFFFFF',
+			style: function (feature) {
+				var key_regex = /^name$/
+				var name_key = feature.getKeys().filter(function(t){return t.match(key_regex)}).pop() || "name"
+				var name = feature.get(name_key) || '';
+				var fill = new ol.style.Fill({
+					color: 'rgba(0,0,0,0.4)'
+				});
+
+				var stroke = new ol.style.Stroke({
+					color: '#000000',
+					width: 1.25
+				});
+				var style = new ol.style.Style({
+					image: new ol.style.Circle({
+						fill: fill,
+						stroke: stroke,
+						radius: 5
+					}),
+							text: new ol.style.Text({
+								text: name,
+								color: 'rgba(0,0,0,0.4)',
+								font: '10px Verdana',
+								offsetX : 0,
+								offsetY : 30
+							}),
+					fill: fill,
+					stroke: stroke
+				});
+				return style;
+			}
+
+},
+		{
+			group: 'Infantil',
+			title: 'Pagament no',
+			query: '(node["amenity"="library"]["kids_area:fee"="no"]({{bbox}});node(w);way["amenity"="library"]["kids_area:fee"="no"]({{bbox}});node(w);relation["amenity"="library"]["kids_area:fee"="no"]({{bbox}});node(w););out meta;',
+			iconSrc: imgSrc + 'libraries/kids_fee_no.svg',
+			iconStyle: 'background-color:#FFFFFF',
+			style: function (feature) {
+				var key_regex = /^name$/
+				var name_key = feature.getKeys().filter(function(t){return t.match(key_regex)}).pop() || "name"
+				var name = feature.get(name_key) || '';
+				var fill = new ol.style.Fill({
+					color: 'rgba(0,0,0,0.4)'
+				});
+
+				var stroke = new ol.style.Stroke({
+					color: '#000000',
+					width: 1.25
+				});
+				var style = new ol.style.Style({
+					image: new ol.style.Circle({
+						fill: fill,
+						stroke: stroke,
+						radius: 5
+					}),
+							text: new ol.style.Text({
+								text: name,
+								color: 'rgba(0,0,0,0.4)',
+								font: '10px Verdana',
+								offsetX : 0,
+								offsetY : 30
+							}),
+					fill: fill,
+					stroke: stroke
+				});
+				return style;
+			}
+
+},
 		{
 			group: 'mtb:scale',
 			title: 'mtb:scale:uphill=4',

@@ -2470,7 +2470,7 @@ var config = {
 			group: 'Infantil',
 			title: 'Sí Àrea infantil',
 			query: '(node["amenity"="library"]["kids_area"="yes"]({{bbox}});node(w);way["amenity"="library"]["kids_area"="yes"]({{bbox}});node(w);relation["amenity"="library"]["kids_area"="yes"]({{bbox}});node(w););out meta;',
-			iconSrc: imgSrc + 'libraries/kids_area_yes.svg',
+			iconSrc: imgSrc + 'libraries/kids_yes.svg',
 			iconStyle: 'background-color:#FFFFFF',
 			style: function (feature) {
 				var key_regex = /^name$/
@@ -2508,7 +2508,7 @@ var config = {
 			group: 'Infantil',
 			title: 'No Àrea infantil',
 			query: '(node["amenity"="library"]["kids_area"="no"]({{bbox}});node(w);way["amenity"="library"]["kids_area"="no"]({{bbox}});node(w);relation["amenity"="library"]["kids_area"="no"]({{bbox}});node(w););out meta;',
-			iconSrc: imgSrc + 'libraries/kids_area_no.svg',
+			iconSrc: imgSrc + 'libraries/kids_no.svg',
 			iconStyle: 'background-color:#FFFFFF',
 			style: function (feature) {
 				var key_regex = /^name$/
@@ -2546,7 +2546,7 @@ var config = {
 			group: 'Infantil',
 			title: 'Exterior',
 			query: '(node["amenity"="library"]["kids_area"="outdoor"]({{bbox}});node(w);way["amenity"="library"]["kids_area"="outdoor"]({{bbox}});node(w);relation["amenity"="library"]["kids_area"="outdoor"]({{bbox}});node(w););out meta;',
-			iconSrc: imgSrc + 'libraries/kids_area_outdoor.svg',
+			iconSrc: imgSrc + 'libraries/kids_outdoor.svg',
 			iconStyle: 'background-color:#FFFFFF',
 			style: function (feature) {
 				var key_regex = /^name$/
@@ -2584,7 +2584,7 @@ var config = {
 			group: 'Infantil',
 			title: 'Interior',
 			query: '(node["amenity"="library"]["kids_area"="indoor"]({{bbox}});node(w);way["amenity"="library"]["kids_area"="indoor"]({{bbox}});node(w);relation["amenity"="library"]["kids_area"="indoor"]({{bbox}});node(w););out meta;',
-			iconSrc: imgSrc + 'libraries/kids_area_indoor.svg',
+			iconSrc: imgSrc + 'libraries/kids_indoor.svg',
 			iconStyle: 'background-color:#FFFFFF',
 			style: function (feature) {
 				var key_regex = /^name$/

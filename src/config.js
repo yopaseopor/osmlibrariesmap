@@ -2204,7 +2204,7 @@ var config = {
 			group: 'Accessibilitat',
 			title: 'Auditiu-No',
 			query: '(node["amenity"="library"]["access:deaf"="no"]({{bbox}});node(w);way["amenity"="library"]["access:deaf"="no"]({{bbox}});node(w);relation["amenity"="library"]["access:deaf"="no"]({{bbox}});node(w););out meta;',
-			iconSrc: imgSrc + 'libraries/access_blind_no.svg',
+			iconSrc: imgSrc + 'libraries/access_deaf_no.svg',
 			iconStyle: 'background-color:#FFFFFF',
 			style: function (feature) {
 				var key_regex = /^name$/

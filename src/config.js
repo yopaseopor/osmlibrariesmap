@@ -2126,6 +2126,44 @@ var config = {
 },
 		{
 			group: 'Accessibilitat',
+			title: 'Visual-Desconegut',
+			query: '(node["amenity"="library"][!"access:blind"]({{bbox}});node(w);way["amenity"="library"][!"access:blind"]({{bbox}});node(w);relation["amenity"="library"][!"access:blind"]({{bbox}});node(w););out meta;',
+			iconSrc: imgSrc + 'accessibilitat/access_blind_unknown.svg',
+			iconStyle: 'background-color:#00FF00',
+			style: function (feature) {
+				var key_regex = /^name$/
+				var name_key = feature.getKeys().filter(function(t){return t.match(key_regex)}).pop() || "name"
+				var name = feature.get(name_key) || '';
+				var fill = new ol.style.Fill({
+					color: 'rgba(0,0,0,0.4)'
+				});
+
+				var stroke = new ol.style.Stroke({
+					color: '#000000',
+					width: 1.25
+				});
+				var style = new ol.style.Style({
+					image: new ol.style.Circle({
+						fill: fill,
+						stroke: stroke,
+						radius: 5
+					}),
+							text: new ol.style.Text({
+								text: name,
+								color: 'rgba(0,0,255,0.4)',
+								font: '10px Verdana',
+								offsetX : 0,
+								offsetY : 30
+							}),
+					fill: fill,
+					stroke: stroke
+				});
+				return style;
+			}
+
+},
+		{
+			group: 'Accessibilitat',
 			title: 'Auditiu-Sí',
 			query: '(node["amenity"="library"]["access:deaf"="yes"]({{bbox}});node(w);way["amenity"="library"]["access:deaf"="yes"]({{bbox}});node(w);relation["amenity"="library"]["access:deaf"="yes"]({{bbox}});node(w););out meta;',
 			iconSrc: imgSrc + 'libraries/access_deaf_yes.svg',
@@ -2227,6 +2265,44 @@ var config = {
 							text: new ol.style.Text({
 								text: name,
 								color: 'rgba(0,0,0,0.4)',
+								font: '10px Verdana',
+								offsetX : 0,
+								offsetY : 30
+							}),
+					fill: fill,
+					stroke: stroke
+				});
+				return style;
+			}
+
+},
+		{
+			group: 'Accessibilitat',
+			title: 'Auditiu-Desconegut',
+			query: '(node["amenity"="library"][!"access:deaf"]({{bbox}});node(w);way["amenity"="library"][!"access:deaf"]({{bbox}});node(w);relation["amenity"="library"][!"access:deaf"]({{bbox}});node(w););out meta;',
+			iconSrc: imgSrc + 'accessibilitat/access_deaf_unknown.svg',
+			iconStyle: 'background-color:#00FF00',
+			style: function (feature) {
+				var key_regex = /^name$/
+				var name_key = feature.getKeys().filter(function(t){return t.match(key_regex)}).pop() || "name"
+				var name = feature.get(name_key) || '';
+				var fill = new ol.style.Fill({
+					color: 'rgba(0,0,0,0.4)'
+				});
+
+				var stroke = new ol.style.Stroke({
+					color: '#000000',
+					width: 1.25
+				});
+				var style = new ol.style.Style({
+					image: new ol.style.Circle({
+						fill: fill,
+						stroke: stroke,
+						radius: 5
+					}),
+							text: new ol.style.Text({
+								text: name,
+								color: 'rgba(0,0,255,0.4)',
 								font: '10px Verdana',
 								offsetX : 0,
 								offsetY : 30
@@ -2353,26 +2429,43 @@ var config = {
 
 },
 		{
-			group: 'mtb:scale',
-			title: 'mtb:scale:uphill=1',
-			query: '(nwr["mtb:scale:uphill"="1"]({{bbox}});node(w););out;',
-			iconSrc: imgSrc + 'base/line.png',
-			iconStyle: 'background-color:#ffff00',
-			style: function () {
+			group: 'Accessibilitat',
+			title: 'Mental-Desconegut',
+			query: '(node["amenity"="library"][!"mental_disabled"]({{bbox}});node(w);way["amenity"="library"][!"mental_disabled"]({{bbox}});node(w);relation["amenity"="library"][!"mental_disabled"]({{bbox}});node(w););out meta;',
+			iconSrc: imgSrc + 'accessibilitat/mental_disabled_unknown.svg',
+			iconStyle: 'background-color:#00FF00',
+			style: function (feature) {
+				var key_regex = /^name$/
+				var name_key = feature.getKeys().filter(function(t){return t.match(key_regex)}).pop() || "name"
+				var name = feature.get(name_key) || '';
 				var fill = new ol.style.Fill({
-					color: 'rgba(255,255,0,0.4)'
+					color: 'rgba(0,0,0,0.4)'
 				});
+
 				var stroke = new ol.style.Stroke({
-					color: 'rgba(255,255,0,0.4)',
-					width: 5
+					color: '#000000',
+					width: 1.25
 				});
 				var style = new ol.style.Style({
+					image: new ol.style.Circle({
+						fill: fill,
+						stroke: stroke,
+						radius: 5
+					}),
+							text: new ol.style.Text({
+								text: name,
+								color: 'rgba(0,0,255,0.4)',
+								font: '10px Verdana',
+								offsetX : 0,
+								offsetY : 30
+							}),
 					fill: fill,
 					stroke: stroke
 				});
 				return style;
 			}
-		},
+
+},
 		{
 			group: 'mtb:scale',
 			title: 'mtb:scale:uphill=2',

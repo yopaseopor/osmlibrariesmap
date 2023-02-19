@@ -2013,7 +2013,7 @@ var config = {
 		{
 			group: 'Accessibilitat',
 			title: 'Visual-Sí',
-			query: '(node["amenity"="library"]["access:blind"="yes"]({{bbox}});node(w);way["amenity"="library"]["access:blind"="yes"]({{bbox}});node(w);relation["amenity"="library"][["access:blind"="yes"]({{bbox}});node(w););out meta;',
+			query: '(nwr["amenity"="library"]["access:blind"="yes"]({{bbox}});node(w););out meta;',
 			iconSrc: imgSrc + 'libraries/access_blind_yes.svg',
 			iconStyle: 'background-color:#FFFFFF',
 			style: function (feature) {

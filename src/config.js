@@ -2129,7 +2129,7 @@ var config = {
 			title: 'Visual-Desconegut',
 			query: '(node["amenity"="library"][!"access:blind"]({{bbox}});node(w);way["amenity"="library"][!"access:blind"]({{bbox}});node(w);relation["amenity"="library"][!"access:blind"]({{bbox}});node(w););out meta;',
 			iconSrc: imgSrc + 'libraries/access_blind_unknown.svg',
-			iconStyle: 'background-color:#00FF00',
+			iconStyle: 'background-color:#FFFFFF',
 			style: function (feature) {
 				var key_regex = /^name$/
 				var name_key = feature.getKeys().filter(function(t){return t.match(key_regex)}).pop() || "name"
@@ -2281,7 +2281,7 @@ var config = {
 			title: 'Auditiu-Desconegut',
 			query: '(node["amenity"="library"][!"access:deaf"]({{bbox}});node(w);way["amenity"="library"][!"access:deaf"]({{bbox}});node(w);relation["amenity"="library"][!"access:deaf"]({{bbox}});node(w););out meta;',
 			iconSrc: imgSrc + 'libraries/access_deaf_unknown.svg',
-			iconStyle: 'background-color:#00FF00',
+			iconStyle: 'background-color:#FFFFFF',
 			style: function (feature) {
 				var key_regex = /^name$/
 				var name_key = feature.getKeys().filter(function(t){return t.match(key_regex)}).pop() || "name"
@@ -2432,8 +2432,8 @@ var config = {
 			group: 'Accessibilitat',
 			title: 'Mental-Desconegut',
 			query: '(node["amenity"="library"][!"mental_disabled"]({{bbox}});node(w);way["amenity"="library"][!"mental_disabled"]({{bbox}});node(w);relation["amenity"="library"][!"mental_disabled"]({{bbox}});node(w););out meta;',
-			iconSrc: imgSrc + 'libraries/mental_disabled_unknown.svg',
-			iconStyle: 'background-color:#00FF00',
+			iconSrc: imgSrc + 'libraries/access_mental_disabled_unknown.svg',
+			iconStyle: 'background-color:#FFFFFF',
 			style: function (feature) {
 				var key_regex = /^name$/
 				var name_key = feature.getKeys().filter(function(t){return t.match(key_regex)}).pop() || "name"

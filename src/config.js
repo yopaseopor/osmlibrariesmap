@@ -1784,9 +1784,9 @@ var config = {
 },
 		{
 			group: 'Tipus d\'operador',
-			title: 'Associació',
-			query: '(node["amenity"="library"]["operator:type"="association"]({{bbox}});node(w);way["amenity"="library"]["operator:type"="association"]({{bbox}});node(w);relation["amenity"="library"]["operator:type"="association"]({{bbox}});node(w););out meta;',
-			iconSrc: imgSrc + 'libraries/operator_association.svg',
+			title: 'Privat',
+			query: '(node["amenity"="library"]["operator:type"="private"]({{bbox}});node(w);way["amenity"="library"]["operator:type"="private"]({{bbox}});node(w);relation["amenity"="library"]["operator:type"="private"]({{bbox}});node(w););out meta;',
+			iconSrc: imgSrc + 'libraries/operator_private.svg',
 			iconStyle: 'background-color:#FFFFFF',
 			style: function (feature) {
 				var key_regex = /^name$/
@@ -1822,9 +1822,9 @@ var config = {
 },
 		{
 			group: 'Tipus d\'operador',
-			title: 'Associació',
-			query: '(node["amenity"="library"]["operator:type"="association"]({{bbox}});node(w);way["amenity"="library"]["operator:type"="association"]({{bbox}});node(w);relation["amenity"="library"]["operator:type"="association"]({{bbox}});node(w););out meta;',
-			iconSrc: imgSrc + 'libraries/operator_association.svg',
+			title: 'Privat (sense lucre)',
+			query: '(node["amenity"="library"]["operator:type"="private_non_profit"]({{bbox}});node(w);way["amenity"="library"]["operator:type"="private_non_profit"]({{bbox}});node(w);relation["amenity"="library"]["operator:type"="private_non_profit"]({{bbox}});node(w););out meta;',
+			iconSrc: imgSrc + 'libraries/operator_private_non_profit.svg',
 			iconStyle: 'background-color:#FFFFFF',
 			style: function (feature) {
 				var key_regex = /^name$/
@@ -1860,9 +1860,9 @@ var config = {
 },
 		{
 			group: 'Tipus d\'operador',
-			title: 'Associació',
-			query: '(node["amenity"="library"]["operator:type"="association"]({{bbox}});node(w);way["amenity"="library"]["operator:type"="association"]({{bbox}});node(w);relation["amenity"="library"]["operator:type"="association"]({{bbox}});node(w););out meta;',
-			iconSrc: imgSrc + 'libraries/operator_association.svg',
+			title: 'Públic',
+			query: '(node["amenity"="library"]["operator:type"="public"]({{bbox}});node(w);way["amenity"="library"]["operator:type"="public"]({{bbox}});node(w);relation["amenity"="library"]["operator:type"="public"]({{bbox}});node(w););out meta;',
+			iconSrc: imgSrc + 'libraries/operator_public.svg',
 			iconStyle: 'background-color:#FFFFFF',
 			style: function (feature) {
 				var key_regex = /^name$/
@@ -1898,9 +1898,9 @@ var config = {
 },
 		{
 			group: 'Tipus d\'operador',
-			title: 'Associació',
-			query: '(node["amenity"="library"]["operator:type"="association"]({{bbox}});node(w);way["amenity"="library"]["operator:type"="association"]({{bbox}});node(w);relation["amenity"="library"]["operator:type"="association"]({{bbox}});node(w););out meta;',
-			iconSrc: imgSrc + 'libraries/operator_association.svg',
+			title: 'Religiós',
+			query: '(node["amenity"="library"]["operator:type"="religious"]({{bbox}});node(w);way["amenity"="library"]["operator:type"="religious"]({{bbox}});node(w);relation["amenity"="library"]["operator:type"="religious"]({{bbox}});node(w););out meta;',
+			iconSrc: imgSrc + 'libraries/operator_religious.svg',
 			iconStyle: 'background-color:#FFFFFF',
 			style: function (feature) {
 				var key_regex = /^name$/
@@ -1936,9 +1936,47 @@ var config = {
 },
 		{
 			group: 'Tipus d\'operador',
-			title: 'Associació',
-			query: '(node["amenity"="library"]["operator:type"="association"]({{bbox}});node(w);way["amenity"="library"]["operator:type"="association"]({{bbox}});node(w);relation["amenity"="library"]["operator:type"="association"]({{bbox}});node(w););out meta;',
-			iconSrc: imgSrc + 'libraries/operator_association.svg',
+			title: 'Universitat',
+			query: '(node["amenity"="library"]["operator:type"="university"]({{bbox}});node(w);way["amenity"="library"]["operator:type"="university"]({{bbox}});node(w);relation["amenity"="library"]["operator:type"="university"]({{bbox}});node(w););out meta;',
+			iconSrc: imgSrc + 'libraries/operator_university.svg',
+			iconStyle: 'background-color:#FFFFFF',
+			style: function (feature) {
+				var key_regex = /^name$/
+				var name_key = feature.getKeys().filter(function(t){return t.match(key_regex)}).pop() || "name"
+				var name = feature.get(name_key) || '';
+				var fill = new ol.style.Fill({
+					color: 'rgba(0,0,0,0.4)'
+				});
+
+				var stroke = new ol.style.Stroke({
+					color: '#000000',
+					width: 1.25
+				});
+				var style = new ol.style.Style({
+					image: new ol.style.Circle({
+						fill: fill,
+						stroke: stroke,
+						radius: 5
+					}),
+							text: new ol.style.Text({
+								text: name,
+								color: 'rgba(0,0,0,0.4)',
+								font: '10px Verdana',
+								offsetX : 0,
+								offsetY : 30
+							}),
+					fill: fill,
+					stroke: stroke
+				});
+				return style;
+			}
+
+},
+		{
+			group: 'Tipus d\'operador',
+			title: 'Estatal',
+			query: '(node["amenity"="library"]["operator:type"="statewide"]({{bbox}});node(w);way["amenity"="library"]["operator:type"="statewide"]({{bbox}});node(w);relation["amenity"="library"]["operator:type"="statewide"]({{bbox}});node(w););out meta;',
+			iconSrc: imgSrc + 'libraries/operator_statewide.svg',
 			iconStyle: 'background-color:#FFFFFF',
 			style: function (feature) {
 				var key_regex = /^name$/

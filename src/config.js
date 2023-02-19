@@ -2125,10 +2125,10 @@ var config = {
 
 },
 		{
-			group: 'Tipus d\'operador',
-			title: 'Associació',
-			query: '(node["amenity"="library"]["operator:type"="association"]({{bbox}});node(w);way["amenity"="library"]["operator:type"="association"]({{bbox}});node(w);relation["amenity"="library"]["operator:type"="association"]({{bbox}});node(w););out meta;',
-			iconSrc: imgSrc + 'libraries/operator_association.svg',
+			group: 'Accessibilitat',
+			title: 'Auditiu-Sí',
+			query: '(node["amenity"="library"]["access:deaf"="yes"]({{bbox}});node(w);way["amenity"="library"]["access:deaf"="yes"]({{bbox}});node(w);relation["amenity"="library"][["access:deaf"="yes"]({{bbox}});node(w););out meta;',
+			iconSrc: imgSrc + 'libraries/access_deaf_yes.svg',
 			iconStyle: 'background-color:#FFFFFF',
 			style: function (feature) {
 				var key_regex = /^name$/
@@ -2163,10 +2163,10 @@ var config = {
 
 },
 		{
-			group: 'Tipus d\'operador',
-			title: 'Associació',
-			query: '(node["amenity"="library"]["operator:type"="association"]({{bbox}});node(w);way["amenity"="library"]["operator:type"="association"]({{bbox}});node(w);relation["amenity"="library"]["operator:type"="association"]({{bbox}});node(w););out meta;',
-			iconSrc: imgSrc + 'libraries/operator_association.svg',
+			group: 'Accessibilitat',
+			title: 'Auditiu-Limitat',
+			query: '(node["amenity"="library"]["access:deaf"="limited"]({{bbox}});node(w);way["amenity"="library"]["access:deaf"="limited"]({{bbox}});node(w);relation["amenity"="library"][["access:deaf"="limited"]({{bbox}});node(w););out meta;',
+			iconSrc: imgSrc + 'libraries/access_deaf_limited.svg',
 			iconStyle: 'background-color:#FFFFFF',
 			style: function (feature) {
 				var key_regex = /^name$/
@@ -2201,10 +2201,10 @@ var config = {
 
 },
 		{
-			group: 'Tipus d\'operador',
-			title: 'Associació',
-			query: '(node["amenity"="library"]["operator:type"="association"]({{bbox}});node(w);way["amenity"="library"]["operator:type"="association"]({{bbox}});node(w);relation["amenity"="library"]["operator:type"="association"]({{bbox}});node(w););out meta;',
-			iconSrc: imgSrc + 'libraries/operator_association.svg',
+			group: 'Accessibilitat',
+			title: 'Auditiu-No',
+			query: '(node["amenity"="library"]["access:deaf"="no"]({{bbox}});node(w);way["amenity"="library"]["access:deaf"="no"]({{bbox}});node(w);relation["amenity"="library"][["access:deaf"="no"]({{bbox}});node(w););out meta;',
+			iconSrc: imgSrc + 'libraries/access_blind_no.svg',
 			iconStyle: 'background-color:#FFFFFF',
 			style: function (feature) {
 				var key_regex = /^name$/
@@ -2239,10 +2239,86 @@ var config = {
 
 },
 		{
-			group: 'Tipus d\'operador',
-			title: 'Associació',
-			query: '(node["amenity"="library"]["operator:type"="association"]({{bbox}});node(w);way["amenity"="library"]["operator:type"="association"]({{bbox}});node(w);relation["amenity"="library"]["operator:type"="association"]({{bbox}});node(w););out meta;',
-			iconSrc: imgSrc + 'libraries/operator_association.svg',
+			group: 'Accessibilitat',
+			title: 'Mental-Sí',
+			query: '(node["amenity"="library"]["access:mental_disabled"="yes"]({{bbox}});node(w);way["amenity"="library"]["access:mental_disabled"="yes"]({{bbox}});node(w);relation["amenity"="library"][["access:mental_disabled"="yes"]({{bbox}});node(w););out meta;',
+			iconSrc: imgSrc + 'libraries/access_mental_disabled_yes.svg',
+			iconStyle: 'background-color:#FFFFFF',
+			style: function (feature) {
+				var key_regex = /^name$/
+				var name_key = feature.getKeys().filter(function(t){return t.match(key_regex)}).pop() || "name"
+				var name = feature.get(name_key) || '';
+				var fill = new ol.style.Fill({
+					color: 'rgba(0,0,0,0.4)'
+				});
+
+				var stroke = new ol.style.Stroke({
+					color: '#000000',
+					width: 1.25
+				});
+				var style = new ol.style.Style({
+					image: new ol.style.Circle({
+						fill: fill,
+						stroke: stroke,
+						radius: 5
+					}),
+							text: new ol.style.Text({
+								text: name,
+								color: 'rgba(0,0,0,0.4)',
+								font: '10px Verdana',
+								offsetX : 0,
+								offsetY : 30
+							}),
+					fill: fill,
+					stroke: stroke
+				});
+				return style;
+			}
+
+},
+		{
+			group: 'Accessibilitat',
+			title: 'Mental-Limitat',
+			query: '(node["amenity"="library"]["access:mental_disabled"="limited"]({{bbox}});node(w);way["amenity"="library"]["access:mental_disabled"="limited"]({{bbox}});node(w);relation["amenity"="library"][["access:mental_disabled"="limited"]({{bbox}});node(w););out meta;',
+			iconSrc: imgSrc + 'libraries/access_mental_disabled_limited.svg',
+			iconStyle: 'background-color:#FFFFFF',
+			style: function (feature) {
+				var key_regex = /^name$/
+				var name_key = feature.getKeys().filter(function(t){return t.match(key_regex)}).pop() || "name"
+				var name = feature.get(name_key) || '';
+				var fill = new ol.style.Fill({
+					color: 'rgba(0,0,0,0.4)'
+				});
+
+				var stroke = new ol.style.Stroke({
+					color: '#000000',
+					width: 1.25
+				});
+				var style = new ol.style.Style({
+					image: new ol.style.Circle({
+						fill: fill,
+						stroke: stroke,
+						radius: 5
+					}),
+							text: new ol.style.Text({
+								text: name,
+								color: 'rgba(0,0,0,0.4)',
+								font: '10px Verdana',
+								offsetX : 0,
+								offsetY : 30
+							}),
+					fill: fill,
+					stroke: stroke
+				});
+				return style;
+			}
+
+},
+		{
+			group: 'Accessibilitat',
+			title: 'Mental-No',
+			query: '(node["amenity"="library"]["access:mental_disabled"="no"]({{bbox}});node(w);way["amenity"="library"]["access:mental_disabled"="no"]({{bbox}});node(w);relation["amenity"="library"][["access:mental_disabled"="no"]({{bbox}});node(w););out meta;',
+			iconSrc: imgSrc + 'libraries/access_mental_disabled_no.svg',
 			iconStyle: 'background-color:#FFFFFF',
 			style: function (feature) {
 				var key_regex = /^name$/

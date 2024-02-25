@@ -39,7 +39,7 @@ var config = {
 		new ol.layer.Tile({
 			title: 'OpenStreetMap',
 			group: 'test',
-			iconSrc: imgSrc + 'osm_logo-layer.svg',
+			iconSrc: imgSrc + 'icones_web/osm_logo-layer.svg',
 			source: new ol.source.OSM()
 		}),
 		new ol.layer.Tile({
@@ -63,7 +63,7 @@ var config = {
 		}),
 		new ol.layer.Tile({
 			title: 'OpenCycleMap',
-			iconSrc: imgSrc + 'icones_web/opencycle_logo_layer.png',
+			iconSrc: imgSrc + 'opencycle_logo_layer.png',
 			source: new ol.source.XYZ({
 				attributions: 'Map data &copy; <a href="https://www.openstreetmap.org/" target="_blank">OpenStreetMap</a>, powered by &copy; <a href="http://www.thunderforest.com/" target="_blank">Thunderforest</a>',
 				url: 'https://{a-c}.tile.thunderforest.com/cycle/{z}/{x}/{y}.png?apikey=a5dd6a2f1c934394bce6b0fb077203eb'

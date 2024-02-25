@@ -73,6 +73,11 @@ a:hover {
 	right: 80px;
 }
 
+.osmcat-infobutton3 {
+	bottom: 60px;
+	right: 80px;
+}
+
 .osmcat-menu{
 	display: flex;
 	flex-wrap: wrap;

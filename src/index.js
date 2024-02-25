@@ -351,15 +351,7 @@ $(function () {
 		element: infoControlBuild2()
 	}));
 	
-			var infoControlBuild3 = function () {
-		var container = $('<div>Text').addClass('ol-control ol-unselectable osmcat-infobutton3').html($('Text2<button type="button"><i class="fa fa-search-plus"></i></button>').on('click', function () {
-			window.location.href = 'https://github.com/yopaseopor/osmlibrarymap';
-		}));
-		return container[0];
-	};
-	map.addControl(new ol.control.Control({
-		element: infoControlBuild3()
-	}));
+
 
 	// Copy permalink button
 	var permalinkControlBuild = function () {

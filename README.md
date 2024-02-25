@@ -3,6 +3,7 @@ OSM L Map neix aprofitant la base de dades d'Openstreetmap amb informació sobre
 
 # 0-La Base de dades: Openstreetmap
 OSM (Openstreetmap) no és un mapa, és una base de dades de punts i línies geolocalitzats, que entre d'altres coses es pot aprofitar per fer mapes (renderitzacions). Però també es poden aprofitar les dades . Tot plegat es fa amb claus, valors i relacions en aquests punts i línies.
+
 En aquest cas utilitzarem les claus:
 
 *	addr:street
@@ -79,6 +80,9 @@ En aquest cas utilitzarem les claus:
 *	image=
 *	source=survey/local_knowledge/url
 *	source:date=
+
+Per poder editar aquest mapa cal tenir usuari d'OSM o registrar-se [aquí](https://www.openstreetmap.org/user/new). Un cop registrat el compte ja podreu entrar i col·laborar amb OSM.
+Per poder-lo consultar no cal tenir usuari.
 
 # 1-Mapa
 -Mapa basat en [Bicycle tags map](https://wiki.openstreetmap.org/wiki/Bicycle_tags_map)

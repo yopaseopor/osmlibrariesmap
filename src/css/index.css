@@ -192,7 +192,7 @@ a:hover {
 		display: block;
 	}
 	.osmcat-layer {
-		height: 40%;
+		height: auto;
 		width: 100%;
 	}
 	.osmcat-content > div:hover {

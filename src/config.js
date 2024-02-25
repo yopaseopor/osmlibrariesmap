@@ -42,20 +42,19 @@ var config = {
 			iconSrc: imgSrc + 'osm_logo-layer.svg',
 			source: new ol.source.OSM()
 		}),
-		new ol.layer.Tile({
-			title: 'OpenStreetMap B&W',
-			group: 'test',
-			iconSrc: imgSrc + 'osmbw_logo-layer.png',
-			source: new ol.source.XYZ({
-				attributions: '&copy; <a href="https://www.openstreetmap.org/" target="_blank">OpenStreetMap</a>',
-				//url: 'https://toolserver.org/tiles/bw-mapnik/{z}/{x}/{y}.png'
-				url: 'https://tiles.wmflabs.org/bw-mapnik/{z}/{x}/{y}.png'
-			}),
-			visible: false
-		}),
+								new ol.layer.Tile({
+/*@@ título */					title: 'OpenStreetMap DE',
+/*@@ icono */					iconSrc: imgSrc + 'icones_web/osmbw_logo-layer.png',
+/*@@ zoom máximo */				maxZoom: 18,
+								source: new ol.source.XYZ({
+/*@@ atribución */				attributions: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors',
+/*@@ url */						url: 'https://{a-c}.tile.openstreetmap.de/{z}/{x}/{y}.png'
+								}),
+/*@@ visible de inicio */		visible: false
+/*@@ final de copia */			}),
 		new ol.layer.Tile({// OpenStreetMap France https://openstreetmap.fr
-			title: 'OpenStreetMap France',
-			iconSrc: imgSrc + 'osmfr_logo-layer.png',
+			title: 'OpenStreetMap FR',
+			iconSrc: imgSrc + 'icones_web/osmfr_logo-layer.png',
 			source: new ol.source.OSM({
 				attributions: '&copy; <a href="https://www.openstreetmap.fr/" target="_blank">OpenStreetMap France</a>',
 				url: 'https://{a-c}.tile.openstreetmap.fr/osmfr/{z}/{x}/{y}.png'
@@ -63,29 +62,11 @@ var config = {
 			visible: false
 		}),
 		new ol.layer.Tile({
-			title: 'OpenMapSurfer',
-			iconSrc: imgSrc + 'openroute_logo_layer.png',
-			source: new ol.source.XYZ({
-				attributions: 'Map data &copy; <a href="https://www.openstreetmap.org/" target="_blank">OpenStreetMap Contributors</a>, powered by <a href="https://mapsurfernet.com/" target="_blank">MapSurfer.NET</a>',
-				url: 'https://maps.heigit.org/openmapsurfer/tiles/roads/webmercator/{z}/{x}/{y}.png'
-			}),
-			visible: false
-		}),
-		new ol.layer.Tile({
 			title: 'OpenCycleMap',
-			iconSrc: imgSrc + 'opencycle_logo_layer.png',
+			iconSrc: imgSrc + 'icones_web/opencycle_logo_layer.png',
 			source: new ol.source.XYZ({
 				attributions: 'Map data &copy; <a href="https://www.openstreetmap.org/" target="_blank">OpenStreetMap</a>, powered by &copy; <a href="http://www.thunderforest.com/" target="_blank">Thunderforest</a>',
 				url: 'https://{a-c}.tile.thunderforest.com/cycle/{z}/{x}/{y}.png?apikey=a5dd6a2f1c934394bce6b0fb077203eb'
-			}),
-			visible: false
-		}),
-		new ol.layer.Tile({
-			title: 'Topotresc',
-			iconSrc: imgSrc + 'topotresc_layer.png',
-			source: new ol.source.XYZ({
-				attributions: 'Map data <a href="https://www.topotresc.com/" target="_blank">TopoTresk</a> by <a href="https://github.com/aresta/topotresc" target="_blank">aresta</a>',
-				url: 'https://api.topotresc.com/tiles/{z}/{x}/{y}'
 			}),
 			visible: false
 		}),

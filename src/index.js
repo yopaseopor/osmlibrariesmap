@@ -352,7 +352,7 @@ $(function () {
 	}));
 	
 			var infoControlBuild3 = function () {
-		var container = $('<div>Text').on('click', function () {
+		var container = $('<div>Text').addClass('ol-control ol-unselectable osmcat-infobutton2').html($('<button type="button"><i class="fa fa-search-plus"></i></button>').on('click', function () {
 			window.location.href = 'https://github.com/yopaseopor/osmlibrarymap';
 		}));
 		return container[0];

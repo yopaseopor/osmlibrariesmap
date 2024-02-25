@@ -3569,19 +3569,19 @@ var config = {
  },
  {
 			group: 'Lavabos|WC',
-			title: 'Amb accés|Con acceso|With acces',
+			title: 'Amb accés|Con acceso|With access',
 			query: '(nwr["amenity"="library"]["toilets:access"="yes"]({{bbox}});node(w););out meta;',
 			iconSrc: imgSrc + 'base/circle.svg',
-			iconStyle: 'background-color:rgba( 255, 165, 250 ,1)',
+			iconStyle: 'background-color:rgba( 37, 180, 2  ,1)',
 			style: function (feature) {
 				var key_regex = /^name$/
 				var name_key = feature.getKeys().filter(function(t){return t.match(key_regex)}).pop() || "name"
 				var name = feature.get(name_key) || '';
 				var fill = new ol.style.Fill({
-					color: 'rgba( 255, 165, 250 ,0.4)'
+					color: 'rgba( 37, 180, 2  ,1)'
 				});
 				var stroke = new ol.style.Stroke({
-					color: 'rgba( 255, 165, 250 ,1)',
+					color: 'rgba( 37, 180, 2  ,1)',
 					width: 1
 				});
 				var style = new ol.style.Style({

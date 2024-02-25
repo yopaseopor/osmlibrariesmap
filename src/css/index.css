@@ -186,7 +186,7 @@ a:hover {
 
 	.menu{
 		height: 100%;
-		width: 300px;
+		width: auto;
 	}
 	.osmcat-menu{
 		display: block;

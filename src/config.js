@@ -40,18 +40,18 @@ var config = {
 			title: 'OpenStreetMap',
 			group: 'test',
 			iconSrc: imgSrc + 'osm_logo-layer.svg',
-source: new ol.source.OSM()
-/*@@ inicio de copia */			}),
-								new ol.layer.Tile({
-/*@@ título */					title: 'OpenStreetMap DE',
-/*@@ icono */					iconSrc: imgSrc + 'icones_web/osmbw_logo-layer.png',
-/*@@ zoom máximo */				maxZoom: 18,
-								source: new ol.source.XYZ({
-/*@@ atribución */				attributions: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors',
-/*@@ url */						url: 'https://{a-c}.tile.openstreetmap.de/{z}/{x}/{y}.png'
-								}),
-/*@@ visible de inicio */		visible: false
-/*@@ final de copia */			}),
+			source: new ol.source.OSM()
+		}),
+		new ol.layer.Tile({
+			title: 'OpenStreetMap DE',
+			iconSrc: imgSrc + 'icones_web/osmbw_logo-layer.png',
+			maxZoom: 18,
+			source: new ol.source.XYZ({
+				attributions: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors',
+				url: 'https://{a-c}.tile.openstreetmap.de/{z}/{x}/{y}.png'
+			}),
+			visible: false
+		}),
 		new ol.layer.Tile({// OpenStreetMap France https://openstreetmap.fr
 			title: 'OpenStreetMap FR',
 			iconSrc: imgSrc + 'icones_web/osmfr_logo-layer.png',

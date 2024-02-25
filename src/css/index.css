@@ -193,7 +193,7 @@ a:hover {
 	}
 	.osmcat-layer {
 		height: auto;
-		width: 100%;
+		width: auto;
 	}
 	.osmcat-content > div:hover {
 		cursor: pointer;

@@ -165,6 +165,7 @@ var config = {
 			title: 'Biblioteca adaptada',
 			query: '(node["amenity"="library"]["wheelchair"="yes"]({{bbox}});node(w);way["amenity"="library"]["wheelchair"="yes"]({{bbox}});node(w);relation["amenity"="library"]["wheelchair"="yes"]({{bbox}});node(w););out meta;',
 			iconSrc: imgSrc + 'libraries/wheelchair_yes.svg',
+			attributions: '&copy; <a href="https://www.openstreetmap.fr/" target="_blank">OpenStreetMap France</a>',
 			iconStyle: 'background-color:#00FF00',
 			style: function (feature) {
 				var key_regex = /^name$/

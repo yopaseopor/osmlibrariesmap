@@ -53,7 +53,7 @@ var config = {
 /*@@ visible de inicio */		visible: false
 /*@@ final de copia */			}),
 		new ol.layer.Tile({// OpenStreetMap France https://openstreetmap.fr
-			title: 'OpenStreetMap FR',
+			title: 'OpenStreetMap<br> FR',
 			iconSrc: imgSrc + 'icones_web/osmfr_logo-layer.png',
 			source: new ol.source.OSM({
 				attributions: '&copy; <a href="https://www.openstreetmap.fr/" target="_blank">OpenStreetMap France</a>',

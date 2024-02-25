@@ -2770,21 +2770,114 @@ var config = {
 			}
 
 },
-		{
-			group: 'mtb:scale',
-			title: 'mtb:scale:uphill=4',
-			query: '(nwr["mtb:scale:uphill"="4"]({{bbox}});node(w););out;',
-			iconSrc: imgSrc + 'base/line.png',
-			iconStyle: 'background-color:#ff0000',
-			style: function () {
+			
+{
+			group: 'Changing_table|Cambiador|Canviador',
+			title: 'Changing table<br>Cambiador<br>Canviador',
+			query: '(nwr["changing_table"="yes"]({{bbox}});node(w););out meta;',
+			iconSrc: imgSrc + 'base/circle.svg',
+			iconStyle: 'background-color:rgba( 37, 180, 2  ,1)',
+			style: function (feature) {
+				var key_regex = /^name$/
+				var name_key = feature.getKeys().filter(function(t){return t.match(key_regex)}).pop() || "name"
+				var name = feature.get(name_key) || '';
 				var fill = new ol.style.Fill({
-					color: 'rgba(255,0,0,0.4)'
+					color: 'rgba( 37, 180, 2  ,0.4)'
 				});
 				var stroke = new ol.style.Stroke({
-					color: 'rgba(255,0,0,0.4)',
-					width: 5
+					color: 'rgba( 37, 180, 2  ,1)',
+					width: 1
 				});
 				var style = new ol.style.Style({
+					image: new ol.style.Circle({
+						fill: fill,
+						stroke: stroke,
+						radius: 5
+					}),
+							text: new ol.style.Text({
+								text: name,
+								offsetX : 0,
+								offsetY : 20,
+								fill: new ol.style.Fill({
+                            color: 'rgba(0,0,0,1)'
+                        }),
+						}),
+					fill: fill,
+					stroke: stroke
+				});
+				return style;
+			}
+ },
+			
+{
+			group: 'Changing_table|Cambiador|Canviador',
+			title: 'No changing table<br>No cambiador<br>No canviador',
+			query: '(nwr["changing_table"="no"]({{bbox}});node(w););out meta;',
+			iconSrc: imgSrc + 'base/circle.svg',
+			iconStyle: 'background-color:rgba( 202, 0, 0 ,1)',
+			style: function (feature) {
+				var key_regex = /^name$/
+				var name_key = feature.getKeys().filter(function(t){return t.match(key_regex)}).pop() || "name"
+				var name = feature.get(name_key) || '';
+				var fill = new ol.style.Fill({
+					color: 'rgba( 202, 0, 0 ,0.4)'
+				});
+				var stroke = new ol.style.Stroke({
+					color: 'rgba( 202, 0, 0 ,1)',
+					width: 1
+				});
+				var style = new ol.style.Style({
+					image: new ol.style.Circle({
+						fill: fill,
+						stroke: stroke,
+						radius: 5
+					}),
+							text: new ol.style.Text({
+								text: name,
+								offsetX : 0,
+								offsetY : 20,
+								fill: new ol.style.Fill({
+                            color: 'rgba(0,0,0,1)'
+                        }),
+						}),
+					fill: fill,
+					stroke: stroke
+				});
+				return style;
+			}
+ },
+			
+{
+			group: 'Changing_table|Cambiador|Canviador',
+			title: 'Limited changing table<br>Uso limitado<br>Ús limitat',
+			query: '(nwr["changing_table"="limited"]({{bbox}});node(w););out meta;',
+			iconSrc: imgSrc + 'base/circle.svg',
+			iconStyle: 'background-color:rgba(243, 156, 18 ,1)',
+			style: function (feature) {
+				var key_regex = /^name$/
+				var name_key = feature.getKeys().filter(function(t){return t.match(key_regex)}).pop() || "name"
+				var name = feature.get(name_key) || '';
+				var fill = new ol.style.Fill({
+					color: 'rgba(243, 156, 18 ,0.4)'
+				});
+				var stroke = new ol.style.Stroke({
+					color: 'rgba(243, 156, 18 ,1)',
+					width: 1
+				});
+				var style = new ol.style.Style({
+					image: new ol.style.Circle({
+						fill: fill,
+						stroke: stroke,
+						radius: 5
+					}),
+							text: new ol.style.Text({
+								text: name,
+								offsetX : 0,
+								offsetY : 20,
+								fill: new ol.style.Fill({
+                            color: 'rgba(0,0,0,1)'
+                        }),
+						}),
 					fill: fill,
 					stroke: stroke
 				});
@@ -2792,281 +2885,8 @@ var config = {
 			}
 		},
 		{
-			group: 'mtb:scale',
-			title: 'mtb:scale:uphill=5',
-			query: '(nwr["mtb:scale:uphill"="5"]({{bbox}});node(w););out;',
-			iconSrc: imgSrc + 'base/line.png',
-			iconStyle: 'background-color:#c23b22',
-			style: function () {
-				var fill = new ol.style.Fill({
-					color: 'rgba(194,59,34,0.4)'
-				});
-				var stroke = new ol.style.Stroke({
-					color: 'rgba(194,59,34,0.4)',
-					width: 5
-				});
-				var style = new ol.style.Style({
-					fill: fill,
-					stroke: stroke
-				});
-				return style;
-			}
-		},
-		{
-			group: 'mtb:scale',
-			title: 'mtb:scale:uphill=6',
-			query: '(nwr["mtb:scale:uphill"="6"]({{bbox}});node(w););out;',
-			iconSrc: imgSrc + 'base/line.png',
-			iconStyle: 'background-color:#800000',
-			style: function () {
-				var fill = new ol.style.Fill({
-					color: 'rgba(128,0,0,0.4)'
-				});
-				var stroke = new ol.style.Stroke({
-					color: 'rgba(128,0,0,0.4)',
-					width: 5
-				});
-				var style = new ol.style.Style({
-					fill: fill,
-					stroke: stroke
-				});
-				return style;
-			}
-		},
-		{
-			group: 'mtb:scale',
-			title: 'mtb:scale:imba=0',
-			query: '(nwr["mtb:scale:tdot2"="0"]({{bbox}});node(w););out;',
-			iconSrc: imgSrc + 'base/line.png',
-			iconStyle: 'background-color:#00ff00',
-			style: function () {
-				var fill = new ol.style.Fill({
-					color: 'rgba(0,255,0,0.4)'
-				});
-				var stroke = new ol.style.Stroke({
-					color: 'rgba(0,255,0,0.4)',
-					width: 5
-				});
-				var style = new ol.style.Style({
-					fill: fill,
-					stroke: stroke
-				});
-				return style;
-			}
-		},
-		{
-			group: 'mtb:scale',
-			title: 'mtb:scale:imba=1',
-			query: '(nwr["mtb:scale:imba"="1"]({{bbox}});node(w););out;',
-			iconSrc: imgSrc + 'base/tdot2.png',
-			iconStyle: 'background-color:#ffff00',
-			style: function () {
-				var fill = new ol.style.Fill({
-					color: 'rgba(255,255,0,0.4)'
-				});
-				var stroke = new ol.style.Stroke({
-					color: 'rgba(255,255,0,0.4)',
-					width: 5
-				});
-				var style = new ol.style.Style({
-					fill: fill,
-					stroke: stroke
-				});
-				return style;
-			}
-		},
-		{
-			group: 'mtb:scale',
-			title: 'mtb:scale:imba=2',
-			query: '(nwr["mtb:scale:imba"="2"]({{bbox}});node(w););out;',
-			iconSrc: imgSrc + 'base/tdot2.png',
-			iconStyle: 'background-color:#ffe135',
-			style: function () {
-				var fill = new ol.style.Fill({
-					color: 'rgba(255,225,53,0.4)'
-				});
-				var stroke = new ol.style.Stroke({
-					color: 'rgba(255,225,53,0.4)',
-					width: 5
-				});
-				var style = new ol.style.Style({
-					fill: fill,
-					stroke: stroke
-				});
-				return style;
-			}
-		},
-		{
-			group: 'mtb:scale',
-			title: 'mtb:scale:imba=3',
-			query: '(nwr["mtb:scale:imba"="3"]({{bbox}});node(w););out;',
-			iconSrc: imgSrc + 'base/tdot2.png',
-			iconStyle: 'background-color:#ffa500',
-			style: function () {
-				var fill = new ol.style.Fill({
-					color: 'rgba(255,165,0,0.4)'
-				});
-				var stroke = new ol.style.Stroke({
-					color: 'rgba(255,165,0,0.4)',
-					width: 5
-				});
-				var style = new ol.style.Style({
-					fill: fill,
-					stroke: stroke
-				});
-				return style;
-			}
-		},
-		{
-			group: 'mtb:scale',
-			title: 'mtb:scale:imba=4',
-			query: '(nwr["mtb:scale:imba"="4"]({{bbox}});node(w););out;',
-			iconSrc: imgSrc + 'base/tdot2.png',
-			iconStyle: 'background-color:#ff0000',
-			style: function () {
-				var fill = new ol.style.Fill({
-					color: 'rgba(255,0,0,0.4)'
-				});
-				var stroke = new ol.style.Stroke({
-					color: 'rgba(255,0,0,0.4)',
-					width: 5
-				});
-				var style = new ol.style.Style({
-					fill: fill,
-					stroke: stroke
-				});
-				return style;
-			}
-		},
-		{
-			group: 'mtb:scale',
-			title: 'class:bicycle:mtb=3',
-			query: '(nwr["class:bicycle:mtb"="3"]({{bbox}});node(w););out;',
-			iconSrc: imgSrc + 'base/tlineline.png',
-			iconStyle: 'background-color:#00ff00',
-			style: function () {
-				var fill = new ol.style.Fill({
-					color: 'rgba(0,255,0,0.4)'
-				});
-				var stroke = new ol.style.Stroke({
-					color: 'rgba(0,255,0,0.4)',
-					width: 5
-				});
-				var style = new ol.style.Style({
-					fill: fill,
-					stroke: stroke
-				});
-				return style;
-			}
-		},
-		{
-			group: 'mtb:scale',
-			title: 'class:bicycle:mtb=2',
-			query: '(nwr["class:bicycle:mtb"="2"]({{bbox}});node(w););out;',
-			iconSrc: imgSrc + 'base/tlineline.png',
-			iconStyle: 'background-color:#ffff00',
-			style: function () {
-				var fill = new ol.style.Fill({
-					color: 'rgba(255,255,0,0.4)'
-				});
-				var stroke = new ol.style.Stroke({
-					color: 'rgba(255,255,0,0.4)',
-					width: 5
-				});
-				var style = new ol.style.Style({
-					fill: fill,
-					stroke: stroke
-				});
-				return style;
-			}
-		},
-		{
-			group: 'mtb:scale',
-			title: 'class:bicycle:mtb=1',
-			query: '(nwr["class:bicycle:mtb"="1"]({{bbox}});node(w););out;',
-			iconSrc: imgSrc + 'base/tlineline.png',
-			iconStyle: 'background-color:#ffe135',
-			style: function () {
-				var fill = new ol.style.Fill({
-					color: 'rgba(255,225,53,0.4)'
-				});
-				var stroke = new ol.style.Stroke({
-					color: 'rgba(255,225,53,0.4)',
-					width: 5
-				});
-				var style = new ol.style.Style({
-					fill: fill,
-					stroke: stroke
-				});
-				return style;
-			}
-		},
-		{
-			group: 'mtb:scale',
-			title: 'class:bicycle:mtb=0',
-			query: '(nwr["class:bicycle:mtb"="0"]({{bbox}});node(w););out;',
-			iconSrc: imgSrc + 'base/tlineline.png',
-			iconStyle: 'background-color:#ffa500',
-			style: function () {
-				var fill = new ol.style.Fill({
-					color: 'rgba(255,165,0,0.4)'
-				});
-				var stroke = new ol.style.Stroke({
-					color: 'rgba(255,165,0,0.4)',
-					width: 5
-				});
-				var style = new ol.style.Style({
-					fill: fill,
-					stroke: stroke
-				});
-				return style;
-			}
-		},
-		{
-			group: 'mtb:scale',
-			title: 'class:bicycle:mtb=-1',
-			query: '(nwr["class:bicycle:mtb"="-1"]({{bbox}});node(w););out;',
-			iconSrc: imgSrc + 'base/tlineline.png',
-			iconStyle: 'background-color:#ff0000',
-			style: function () {
-				var fill = new ol.style.Fill({
-					color: 'rgba(255,0,0,0.4)'
-				});
-				var stroke = new ol.style.Stroke({
-					color: 'rgba(255,0,0,0.4)',
-					width: 5
-				});
-				var style = new ol.style.Style({
-					fill: fill,
-					stroke: stroke
-				});
-				return style;
-			}
-		},
-		{
-			group: 'mtb:scale',
-			title: 'class:bicycle:mtb=-2',
-			query: '(nwr["class:bicycle:mtb"="-2"]({{bbox}});node(w););out;',
-			iconSrc: imgSrc + 'base/tlineline.png',
-			iconStyle: 'background-color:#c23b22',
-			style: function () {
-				var fill = new ol.style.Fill({
-					color: 'rgba(194,59,34,0.4)'
-				});
-				var stroke = new ol.style.Stroke({
-					color: 'rgba(194,59,34,0.4)',
-					width: 5
-				});
-				var style = new ol.style.Style({
-					fill: fill,
-					stroke: stroke
-				});
-				return style;
-			}
-		},
-		{
-			group: 'mtb:scale',
-			title: 'class:bicycle:mtb=-3',
+			group: 'Test',
+			title: 'Test',
 			query: '(nwr["class:bicycle:mtb"="-3"]({{bbox}});node(w););out;',
 			iconSrc: imgSrc + 'base/tlineline.png',
 			iconStyle: 'background-color:#800000',

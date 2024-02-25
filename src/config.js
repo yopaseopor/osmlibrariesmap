@@ -214,7 +214,7 @@ var config = {
 					stroke: stroke
 				});
 				return style;
-				var style = new ol.style.Style({
+				var style2 = new ol.style.Style({
 					image: new ol.style.Circle({
 						fill: fill,
 						stroke: stroke,
@@ -223,14 +223,14 @@ var config = {
 							text: new ol.style.Text({
 								text: name,
 								color: 'rgba(0,128,0,0.4)',
-								font: '10px Verdana',
+								font: '10px Arial',
 								offsetX : 0,
 								offsetY : 15
 							}),
 					fill: fill,
 					stroke: stroke
 				});
-				return style;
+				return style2;
 			}
 
 },

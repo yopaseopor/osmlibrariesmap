@@ -4024,8 +4024,8 @@ var config = {
 			
 {
 			group: 'Serveis|Servicios|Services',
-			title: 'Sí (adaptats/dos)<br>Yes (adapted)',
-			query: '(nwr["amenity"="library"]["toilets:wheelchair"="yes"]({{bbox}});node(w););out meta;',
+			title: 'Ordinadors|Ordenadores|PC`s',
+			query: '(nwr["amenity"="library"]["service:computer"="yes"]({{bbox}});node(w););out meta;',
 			iconSrc: imgSrc + 'base/circle.svg',
 			iconStyle: 'background-color:rgba( 37, 180, 2  ,1)',
 			style: function (feature) {
@@ -4062,8 +4062,8 @@ var config = {
 			
 {
 			group: 'Serveis|Servicios|Services',
-			title: 'No adaptats/dos|No adapted',
-			query: '(nwr["amenity"="library"]["toilets:wheelchair"="no"]({{bbox}});node(w););out meta;',
+			title: 'Copia|Copy',
+			query: '(nwr["amenity"="library"]["service:copy"="yes"]({{bbox}});node(w););out meta;',
 			iconSrc: imgSrc + 'base/circle.svg',
 			iconStyle: 'background-color:rgba( 202, 0, 0 ,1)',
 			style: function (feature) {
@@ -4100,8 +4100,8 @@ var config = {
 			
 {
 			group: 'Serveis|Servicios|Services',
-			title: 'Accés públic',
-			query: '(nwr["amenity"="library"]["toilets:access"="public"]({{bbox}});node(w););out meta;',
+			title: 'Impressió/sión|Print',
+			query: '(nwr["amenity"="library"]["service:print"="yes"]({{bbox}});node(w););out meta;',
 			iconSrc: imgSrc + 'base/circle.svg',
 			iconStyle: 'background-color:rgba(243, 156, 18 ,1)',
 			style: function (feature) {
@@ -4138,8 +4138,8 @@ var config = {
 		
 {
 			group: 'Serveis|Servicios|Services',
-			title: 'Usuaris/os|Users',
-			query: '(nwr["amenity"="library"]["toilets:access"="customers"]({{bbox}});node(w););out meta;',
+			title: 'Impressió/sión 3D|Print 3D',
+			query: '(nwr["amenity"="library"]["service:3dprint"="yes"]({{bbox}});node(w););out meta;',
 			iconSrc: imgSrc + 'base/circle.svg',
 			iconStyle: 'background-color:rgba(52, 152, 219 ,1)',
 			style: function (feature) {
@@ -4176,8 +4176,8 @@ var config = {
 			
 {
 			group: 'Serveis|Servicios|Services',
-			title: 'Privats/dos|Private',
-			query: '(nwr["amenity"="library"]["toilets:access"="private"]({{bbox}});node(w););out meta;',
+			title: 'Jocs|Juegos|Gaming',
+			query: '(nwr["amenity"="library"]["service:gaming"="yes"]({{bbox}});node(w););out meta;',
 			iconSrc: imgSrc + 'base/circle.svg',
 			iconStyle: 'background-color:rgba(125, 206, 160 ,1)',
 			style: function (feature) {
@@ -4214,8 +4214,8 @@ var config = {
 		
 {
 			group: 'Serveis|Servicios|Services',
-			title: 'Permissius/vos|Permissive',
-			query: '(nwr["amenity"="library"]["toilets:access"="permissive"]({{bbox}});node(w););out meta;',
+			title: 'Escàner|Scan',
+			query: '(nwr["amenity"="library"]["service:scan"="yes"]({{bbox}});node(w););out meta;',
 			iconSrc: imgSrc + 'base/circle.svg',
 			iconStyle: 'background-color:rgba( 255, 165, 250 ,1)',
 			style: function (feature) {

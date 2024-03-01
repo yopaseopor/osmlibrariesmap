@@ -171,6 +171,9 @@ var config = {
 				var key_regex = /^name$/
 				var name_key = feature.getKeys().filter(function(t){return t.match(key_regex)}).pop() || "name"
 				var name = feature.get(name_key) || '';
+				var key_regex2 = /^wheelchair$/
+				var name_key2 = feature.getKeys().filter(function(t){return t.match(key_regex)}).pop() || "name2"
+				var name2 = feature.get(name_key2) || '';
 				var fill = new ol.style.Fill({
 					color: 'rgba(0,255,0,0.4)'
 				});
@@ -203,7 +206,7 @@ var config = {
 						radius: 5
 					}),
 							text: new ol.style.Text({
-								text: "Sí",
+								text: name2,
 								color: 'rgba(0,128,0,0.4)',
 								font: '10px Arial',
 								offsetX : 0,

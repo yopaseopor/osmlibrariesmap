@@ -172,8 +172,8 @@ var config = {
 				var name_key = feature.getKeys().filter(function(t){return t.match(key_regex)}).pop() || "name"
 				var name = feature.get(name_key) || '';
 				var key_regex2 = /^wheelchair$/
-				var name_key2 = feature.getKeys().filter(function(t){return t.match(key_regex)}).pop() || "name2"
-				var name2 = feature.get(name_key2) || 'wheelchair';
+				var name_key2 = feature.getKeys().filter(function(t){return t.match(key_regex2)}).pop() || "name2"
+				var name2 = feature.get(name_key2) || '';
 				var fill = new ol.style.Fill({
 					color: 'rgba(0,255,0,0.4)'
 				});

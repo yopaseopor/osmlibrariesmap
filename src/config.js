@@ -198,7 +198,6 @@ var config = {
 					fill: fill,
 					stroke: stroke
 				});
-				return style;
 				var style2 = new ol.style.Style({
 					image: new ol.style.Circle({
 						fill: fill,
@@ -215,7 +214,7 @@ var config = {
 					fill: fill,
 					stroke: stroke
 				});
-				return style2;
+				return [style, style2];
 			}
 
 },

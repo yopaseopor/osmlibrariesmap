@@ -4858,8 +4858,8 @@ var config = {
 					stroke: stroke
 				});
 				var styles = {
-					'amenity': {
-						'parking': new ol.style.Style({
+					'wheelchair': {
+						'yes': new ol.style.Style({
 							image: new ol.style.Icon({
 						scale: 0.4,
 						src: 'https://raw.githubusercontent.com/yopaseopor/beta_preset_josm/master/ES/traffic_signs/ES/ES_R2.png'
@@ -4873,8 +4873,8 @@ var config = {
 							})
 						})
 					},
-					'traffic_sign:backward': {
-						'ES:R1': new ol.style.Style({
+					'wheelchair': {
+						'no': new ol.style.Style({
 							image: new ol.style.Icon({
 						scale: 0.4,
 						src: 'https://raw.githubusercontent.com/yopaseopor/beta_preset_josm/master/ES/traffic_signs/ES/ES_R2.png'
@@ -4888,8 +4888,8 @@ var config = {
 							})
 						})
 															},
-					'natural': {
-						'tree': new ol.style.Style({
+					'wheelchair': {
+						'limited': new ol.style.Style({
 							image: new ol.style.Circle({
 								radius: 2,
 								fill: new ol.style.Fill({

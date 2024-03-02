@@ -4849,7 +4849,7 @@ var config = {
 					}),
 							text: new ol.style.Text({
 								text: 'Accessibilitat '+ name2,
-								color: 'rgba(0,255,0,0.4)',
+								color: 'rgba(255,0,0,0.4)',
 								font: '10px Arial',
 								offsetX : 0,
 								offsetY : 15

@@ -171,9 +171,6 @@ var config = {
 				var key_regex = /^name$/
 				var name_key = feature.getKeys().filter(function(t){return t.match(key_regex)}).pop() || "name"
 				var name = feature.get(name_key) || '';
-				var key_regex2 = /^wheelchair$/
-				var name_key2 = feature.getKeys().filter(function(t){return t.match(key_regex2)}).pop() || "name2"
-				var name2 = feature.get(name_key2) || '';
 				var fill = new ol.style.Fill({
 					color: 'rgba(0,255,0,0.4)'
 				});
@@ -198,23 +195,8 @@ var config = {
 					fill: fill,
 					stroke: stroke
 				});
-				var style2 = new ol.style.Style({
-					image: new ol.style.Circle({
-						fill: fill,
-						stroke: stroke,
-						radius: 5
-					}),
-							text: new ol.style.Text({
-								text: 'Accessibilitat '+ name2,
-								color: 'rgba(0,128,0,0.4)',
-								font: '10px Arial',
-								offsetX : 0,
-								offsetY : 15
-							}),
-					fill: fill,
-					stroke: stroke
-				});
-				return [style, style2];
+				
+				return style;
 			}
 
 },

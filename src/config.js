@@ -205,7 +205,7 @@ var config = {
 						radius: 5
 					}),
 							text: new ol.style.Text({
-								text: name2,
+								text: name2 + 'test',
 								color: 'rgba(0,128,0,0.4)',
 								font: '10px Arial',
 								offsetX : 0,

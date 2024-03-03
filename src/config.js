@@ -4905,12 +4905,12 @@ var config = {
 					if (value !== undefined) {
 						for (var regexp in styles[key]) {
 							if (new RegExp(regexp).test(value)) {
-								return style2,style,styles [key][regexp];
+								return styles [key][regexp];
 							}
 						}
 					}
 				}
-				return null;
+				return [style, style2];
 
 			}
 

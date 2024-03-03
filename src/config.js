@@ -4847,13 +4847,16 @@ var config = {
 						stroke: stroke,
 						radius: 5
 					}),
-							text: new ol.style.Text({
+					
+					text: new ol.style.Text({
 								text: 'Accessibilitat '+ name2,
-								color: 'rgba(255,0,0,0.4)',
-								font: '10px Arial',
+								font: 'small-caps bold 18px/1 sans-serif',
 								offsetX : 0,
-								offsetY : 15
-							}),
+								offsetY : 15,
+								fill: new ol.style.Fill({
+                            color: 'rgba(255,255,255,1)'
+                        }),
+					
 					fill: fill,
 					stroke: stroke
 				});

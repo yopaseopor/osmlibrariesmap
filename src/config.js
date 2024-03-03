@@ -4856,6 +4856,7 @@ var config = {
 								fill: new ol.style.Fill({
                             color: 'rgba(255,255,255,1)'
                         }),
+					}),
 					
 					fill: fill,
 					stroke: stroke

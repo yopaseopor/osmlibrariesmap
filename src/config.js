@@ -4817,6 +4817,50 @@ var config = {
 				var key_regex2 = /^wheelchair$/
 				var name_key2 = feature.getKeys().filter(function(t){return t.match(key_regex2)}).pop() || "name2"
 				var name2 = feature.get(name_key2) || '';
+				var fill = new ol.style.Fill({
+					color: 'rgba(0,255,0,0.4)'
+				});
+
+				var stroke = new ol.style.Stroke({
+					color: '#00FF00',
+					width: 1.25
+				});
+				var style = new ol.style.Style({
+					image: new ol.style.Circle({
+						fill: fill,
+						stroke: stroke,
+						radius: 5
+					}),
+							text: new ol.style.Text({
+								text: name,
+								color: 'rgba(0,128,0,0.4)',
+								font: '10px Verdana',
+								offsetX : 0,
+								offsetY : 30
+							}),
+					fill: fill,
+					stroke: stroke
+				});
+				var style2 = new ol.style.Style({
+					image: new ol.style.Circle({
+						fill: fill,
+						stroke: stroke,
+						radius: 5
+					}),
+					
+					text: new ol.style.Text({
+								text: 'Accessibilitat '+ name2,
+								font: 'small-caps bold 18px/1 sans-serif',
+								offsetX : 0,
+								offsetY : 15,
+								fill: new ol.style.Fill({
+                            color: 'rgba(255,255,255,1)'
+                        }),
+					}),
+					
+					fill: fill,
+					stroke: stroke
+				});
 				var styles = {
 					'wheelchair': {
 						'yes': new ol.style.Style({
@@ -4851,15 +4895,13 @@ var config = {
 							fill: new ol.style.Fill({
 								color: 'rgba(170, 170, 170, 0.3)'
 							}),
-							ttext: new ol.style.Text({
-								text: 'Accessibilitat '+ name2,
-								font: 'small-caps bold 18px/1 sans-serif',
+							text: new ol.style.Text({
+								text: name2,
+								color: 'rgba(0,0,255,0.4)',
+								font: '10px Verdana',
 								offsetX : 0,
-								offsetY : 15,
-								fill: new ol.style.Fill({
-                            color: 'rgba(255,255,255,1)'
-                        }),
-					}),
+								offsetY : 30
+						})
 															},
 					'wheelchair': {
 						'limited': new ol.style.Style({
@@ -4886,10 +4928,6 @@ var config = {
 				return null;
 
 			}
-		}
-			}
-}
-
 
  },
   

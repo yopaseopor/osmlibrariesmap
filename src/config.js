@@ -4877,6 +4877,7 @@ var config = {
 							}),
 							text: new ol.style.Text({
 								text: name,
+								color: 'rgba(0,0,255,0.4)',
 								font: '10px Verdana',
 								offsetX : 0,
 								offsetY : 30
@@ -4925,7 +4926,7 @@ var config = {
 						}
 					}
 				}
-				return null;
+				return [style, style2];
 
 			}
 

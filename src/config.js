@@ -4886,7 +4886,8 @@ var config = {
 				return null;
 
 			}
-
+		}
+	}
  },
   
 {

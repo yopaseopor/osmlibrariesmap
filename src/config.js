@@ -4801,12 +4801,12 @@ var config = {
 				});
 				return style;
 			}
- },
+},
   
 {
 			group: 'Test',
-			title: 'Biblioteca',
-			query: '(nwr["amenity"="library"]["wheelchair"]({{bbox}});node(w););out meta;',
+			title: 'Biblioteca adaptada',
+			query: '(node["amenity"="library"]["wheelchair"="yes"]({{bbox}});node(w);way["amenity"="library"]["wheelchair"="yes"]({{bbox}});node(w);relation["amenity"="library"]["wheelchair"="yes"]({{bbox}});node(w););out meta;',
 			iconSrc: imgSrc + 'libraries/wheelchair_yes.svg',
 			attributions: '&copy; <a href="https://www.openstreetmap.fr/" target="_blank">OpenStreetMap France</a>',
 			iconStyle: 'background-color:#00FF00',
@@ -4847,90 +4847,20 @@ var config = {
 						stroke: stroke,
 						radius: 5
 					}),
-					
-					text: new ol.style.Text({
+							text: new ol.style.Text({
 								text: 'Accessibilitat '+ name2,
-								font: 'small-caps bold 18px/1 sans-serif',
+								color: 'rgba(0,128,0,0.4)',
+								font: '10px Arial',
 								offsetX : 0,
-								offsetY : 15,
-								fill: new ol.style.Fill({
-                            color: 'rgba(255,255,255,1)'
-                        }),
-					}),
-					
+								offsetY : 15
+							}),
 					fill: fill,
 					stroke: stroke
 				});
-				var styles = {
-					'wheelchair': {
-						'yes': new ol.style.Style({
-							image: new ol.style.Icon({
-						scale: 0.4,
-						src: 'https://raw.githubusercontent.com/yopaseopor/beta_preset_josm/master/ES/traffic_signs/ES/ES_R2.png'
-						}),
-							stroke: new ol.style.Stroke({
-								color: 'rgba(170, 170, 170, 1.0)',
-								width: 1
-							}),
-							fill: new ol.style.Fill({
-								color: 'rgba(170, 170, 170, 0.3)'
-							}),
-							text: new ol.style.Text({
-								text: name,
-								color: 'rgba(0,0,255,0.4)',
-								font: '10px Verdana',
-								offsetX : 0,
-								offsetY : 30
-						})
-					},
-					'wheelchair': {
-						'no': new ol.style.Style({
-							image: new ol.style.Icon({
-						scale: 0.4,
-						src: 'https://raw.githubusercontent.com/yopaseopor/beta_preset_josm/master/ES/traffic_signs/ES/ES_R2.png'
-						}),
-							stroke: new ol.style.Stroke({
-								color: 'rgba(170, 170, 170, 1.0)',
-								width: 1
-							}),
-							fill: new ol.style.Fill({
-								color: 'rgba(170, 170, 170, 0.3)'
-							}),
-							text: new ol.style.Text({
-								text: name2,
-								color: 'rgba(0,0,255,0.4)',
-								font: '10px Verdana',
-								offsetX : 0,
-								offsetY : 30
-						})
-															},
-					'wheelchair': {
-						'limited': new ol.style.Style({
-							image: new ol.style.Circle({
-								radius: 2,
-								fill: new ol.style.Fill({
-									color: 'rgba(140, 208, 95, 1.0)'
-								}),
-								stroke: null
-							})
-						})
-					}
-				};
-				for (var key in styles) {
-					var value = feature.get(key);
-					if (value !== undefined) {
-						for (var regexp in styles[key]) {
-							if (new RegExp(regexp).test(value)) {
-								return styles [key][regexp];
-							}
-						}
-					}
-				}
 				return [style, style2];
-
 			}
 
- },
+},,
   
 {
 			group: 'Test',

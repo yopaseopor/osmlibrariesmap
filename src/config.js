@@ -4885,7 +4885,7 @@ var config = {
 							}),
 							fill: new ol.style.Fill({
 								color: 'rgba(140, 208, 95, 1.0)'
-								})
+								}),
 							})
 						})
 					}
